@@ -27,6 +27,7 @@
       "class-methods-use-this": "off",
       "@typescript-eslint/no-explicit-any": "error",
       "import/no-cycle": "off",
-      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }]
+      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+      "@typescript-eslint/no-useless-constructor": "off"
   }
 }
