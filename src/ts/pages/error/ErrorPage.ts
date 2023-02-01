@@ -6,7 +6,7 @@ class ErrorPage extends Page {
   }
 
   render() {
-    this.container.innerHTML = `<a href="#">click to main</a>`;
+    this.container.innerHTML = `<a href="#">click to main from error</a>`;
     return this.container;
   }
 }
