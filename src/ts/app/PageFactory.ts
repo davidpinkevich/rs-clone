@@ -8,6 +8,9 @@ class PageFactory {
     let page: Page | null = null;
 
     switch (idPage) {
+      case "":
+        page = new MainPage(idPage);
+        break;
       case PageIds.MainPage:
         page = new MainPage(idPage);
         break;
