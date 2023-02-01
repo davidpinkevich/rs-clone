@@ -8,6 +8,8 @@ class App {
     App.container.innerHTML = "";
     let page: Page | null = null;
 
+    console.log(1);
+
     const pageFactory = new PageFactory();
     page = pageFactory.createPage(idPage);
 
@@ -21,7 +23,8 @@ class App {
     const hash = window.location.hash.replace(/^#/, "");
     App.renderNewPage(hash);
     window.addEventListener("hashchange", () => {
-      App.renderNewPage(hash);
+      const currentHash = window.location.hash.replace(/^#/, "");
+      App.renderNewPage(currentHash);
     });
   }
 
