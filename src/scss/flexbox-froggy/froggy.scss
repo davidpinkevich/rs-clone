@@ -8,17 +8,9 @@ $lineNumbersColor: #999;
   margin: 0 auto;
 }
 
-.froggy-main {
-
-}
-
 .header {
   &__controls {}
 }
-
-.froggy-header {}
-
-.main {}
 
 .froggy-main {
   display: flex;
@@ -88,6 +80,7 @@ $lineNumbersColor: #999;
     max-height: calc(100vh - 59px - 2em);
   }
 
+  // общие свойства для лягушек и кувшинок
   .frogs, .lilies {
     position: absolute;
     top: 0;
@@ -96,8 +89,30 @@ $lineNumbersColor: #999;
     height: 100%;
     padding: 1em;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
   }
 
+  .frog__container, .lily__container {
+    position: relative;
+    width: 20%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .frog-img {
+      width: 60%;
+    }
+
+    .lily-img {
+      width: 90%;
+      height: 100%;
+    }
+  }
+
+  // независимые свойства
   .frogs {
     z-index: 20;
   }

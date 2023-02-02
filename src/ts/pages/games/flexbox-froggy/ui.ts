@@ -21,11 +21,27 @@ const getSidebarHTML = () => `
   </section>
 `;
 
+export const getFrogHTML = () => `
+  <div class="frog__container">
+    <img class="frog-img" src="./assets/images/froggy/frog-green.svg" alt="frog">
+  </div>
+`;
+
+export const getLilyHTML = () => `
+  <div class="lily__container">
+    <img class="lily-img green" src="./assets/images/froggy/lilypad-green.svg" alt="lilypad">
+  </div>
+`;
+
 const getViewHTML = () => `
   <section id="view">
     <div class="board">
-      <div class="frogs"></div>
-      <div class="lilies"></div>
+      <div class="frogs">
+
+      </div>
+      <div class="lilies">
+
+      </div>
     </div>
   </section>
 `;
