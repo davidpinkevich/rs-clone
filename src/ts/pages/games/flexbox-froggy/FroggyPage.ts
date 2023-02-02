@@ -5,6 +5,10 @@ class FroggyPage extends Page {
     super(id);
   }
 
+  executeAfterRender(): void {
+    console.log(1);
+  }
+
   render() {
     this.container.innerHTML = `<a href="#">click to main from froggy</a>`;
     return this.container;

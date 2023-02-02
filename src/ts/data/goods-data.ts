@@ -1,6 +1,6 @@
 export const enum PageIds {
   MainPage = "#",
-  SurgeonPage = '#surgeon',
-  FroggyPage = '#froggy',
-  GardenPage = '#garden',
+  SurgeonPage = "#surgeon",
+  FroggyPage = "#froggy",
+  GardenPage = "#garden",
 }
