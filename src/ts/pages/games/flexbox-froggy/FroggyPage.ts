@@ -1,16 +1,15 @@
 import Page from "../../abstract/page";
+import getPageHTML from "./ui";
 
 class FroggyPage extends Page {
   constructor(id: string) {
     super(id);
   }
 
-  executeAfterRender(): void {
-    console.log(1);
-  }
+  executeAfterRender(): void {}
 
   render() {
-    this.container.innerHTML = `<a href="#">click to main from froggy</a>`;
+    this.container.innerHTML = getPageHTML();
     return this.container;
   }
 }
