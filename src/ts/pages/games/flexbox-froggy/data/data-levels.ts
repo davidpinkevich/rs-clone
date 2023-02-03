@@ -7,8 +7,8 @@ const levels: IFroggyLevel[] = [
     },
     beforeText: "#pond {\n  display: flex;",
     stringsCount: 1,
-    items: ["green"],
-    styles: { "justify-content": "flex-end", "align-items": "center" },
+    items: ["green", "yellow"],
+    styles: { "justify-content": "flex-end" },
     // stylesForInit: ["wrap"], для тех уровней, где жабки на новую строку переносятся
   },
   {
