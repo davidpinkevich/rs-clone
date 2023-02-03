@@ -1,4 +1,4 @@
-import { IFroggyLevel } from "../../../types/types";
+import { IFroggyLevel } from "../../../../types/types";
 
 const levels: IFroggyLevel[] = [
   {

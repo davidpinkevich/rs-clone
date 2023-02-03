@@ -1,4 +1,4 @@
-import levels from "../data-levels";
+import levels from "../data/data-levels";
 import Frogs from "./Frogs";
 import Info from "./Info";
 import Lilies from "./Lilies";
