@@ -1,5 +1,5 @@
 import RULES_GARDEN from "../data/rules";
-import Coordinates from "../coordinates/Coordinates";
+import Coordinates from "../../../../utils/Coordinates";
 
 const moveWater = () => {
   const input = <HTMLInputElement>document.querySelector("input");
@@ -10,9 +10,8 @@ const moveWater = () => {
     const text = RULES_GARDEN.WATER_RULES[2];
     const newStyles = `${text}${input.value}`;
     water.setAttribute("style", newStyles);
-    const kek = new Coordinates(carrots, water);
-    console.log(kek);
-    kek.comparisonСoordinates();
+    const test = new Coordinates(carrots, water);
+    test.comparisonСoordinates();
   });
 };
 
