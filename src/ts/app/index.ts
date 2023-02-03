@@ -14,7 +14,7 @@ class App {
     if (page) {
       const pageHTML = page.render();
       App.container.append(pageHTML);
-      page.exetuceAfterRender();
+      page.executeAfterRender();
     }
   }
 

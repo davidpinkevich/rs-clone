@@ -1,0 +1,140 @@
+$boardColor: #1f5768;
+$editorColor: #e0e0e0;
+$lineNumbersColor: #999;
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  &__controls {}
+}
+
+.froggy-main {
+  display: flex;
+  justify-content: center;
+
+  // с 760px flex-direction: column;
+}
+
+#sidebar {
+  padding: 24px 32px;
+  min-width: 300px;
+  max-width: 800px;
+  width: 100%;
+
+  .sidebar-header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .header__title {
+      font-size: 28px;
+    }
+  }
+
+  .instructions {
+    margin-bottom: 20px;
+  }
+
+  .editor {
+    position: relative;
+    height: 260px;
+    font-size: 20px;
+    background-color: $editorColor;
+
+    .line-numbers {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: right;
+      background-color: $lineNumbersColor;
+      color: white;
+      padding: 15px 6px;
+    }
+
+    .code__wrapper {
+      margin-top: 4px;
+      position: absolute;
+      left: 40px;
+      top: 10px;
+      width: 85%;
+
+      #code {
+        display: block;
+        width: calc(100% - 24px);
+        height: 24px;
+        margin-left: 22px;
+      }
+    }
+
+    .next-btn {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+#view {
+  padding: 16px;
+
+  .board {
+    position: sticky;
+    width: 50vw;
+    height: 50vw;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: calc(100vh - 59px - 2em);
+    max-height: calc(100vh - 59px - 2em);
+  }
+
+  // общие свойства для лягушек и кувшинок
+  .frogs, .lilies {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .frog__container, .lily__container {
+    position: relative;
+    width: 20%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .frog-img {
+      width: 60%;
+    }
+
+    .lily-img {
+      width: 91%;
+      height: 91%;
+    }
+  }
+
+  // независимые свойства
+  .frogs {
+    z-index: 20;
+  }
+
+  .lilies {
+    z-index: 10;
+    border-radius: 10px;
+    background-color: $boardColor;
+  }
+}

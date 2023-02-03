@@ -8,6 +8,17 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+ * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 html {
     line-height: 1.15;
     /* 1 */
@@ -376,4 +387,25 @@ template {
 
 [hidden] {
     display: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+input, textarea {
+    outline: none;
 }
