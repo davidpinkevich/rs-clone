@@ -5,6 +5,7 @@ export interface IFroggyLevel {
   items: string[];
   styles: TStyles;
   stylesForInit?: string[];
+  order?: string;
 }
 
 type TInstructions = { [key: string]: string };

@@ -30,7 +30,7 @@ class Frogs {
       const frogNodeImg = frogNode.querySelector(
         ".frog-img"
       ) as HTMLImageElement;
-      frogNodeImg.classList.add(frog);
+      frogNodeImg.classList.add(`frog-${frog}`);
       frogNodeImg.src = `./assets/images/froggy/frog-${frog}.svg`;
 
       frogsContainer.innerHTML += frogNode.innerHTML;

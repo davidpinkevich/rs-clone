@@ -22,7 +22,7 @@ class Lilies {
       const lilyNodeImg = lilyNode.querySelector(
         ".lily-img"
       ) as HTMLImageElement;
-      lilyNodeImg.classList.add(lily);
+      lilyNodeImg.classList.add(`lily-${lily}`);
       lilyNodeImg.src = `./assets/images/froggy/lilypad-${lily}.svg`;
 
       liliesContainer.innerHTML += lilyNode.innerHTML;
@@ -32,7 +32,20 @@ class Lilies {
     const cssText = entries
       .map((style) => `${style[0]}: ${style[1]};`)
       .join("");
-    liliesContainer.style.cssText = cssText;
+
+    if (levelInfo.order) {
+      const orderLilies = Array.from(
+        this.container.querySelectorAll(`.lily-${levelInfo.order}`)
+      );
+      orderLilies.forEach((orderLily) => {
+        const orderLilyWrapper = orderLily.closest(
+          ".lily__wrapper"
+        ) as HTMLElement;
+        orderLilyWrapper.style.cssText = cssText;
+      });
+    } else {
+      liliesContainer.style.cssText = cssText;
+    }
   }
 }
 
