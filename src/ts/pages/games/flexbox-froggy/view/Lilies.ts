@@ -1,4 +1,4 @@
-import { IFroggyLevel, TStyleKey } from "../../../../types/types";
+import { IFroggyLevel } from "../../../../types/types";
 import { getLilyHTML } from "./ui";
 
 class Lilies {
@@ -29,11 +29,10 @@ class Lilies {
     });
 
     const entries = Object.entries(levelInfo.styles);
-    entries.forEach((entry) => {
-      const styleKey = entry[0] as TStyleKey;
-      const styleValue = entry[1];
-      liliesContainer.style[styleKey] = styleValue;
-    });
+    const cssText = entries
+      .map((style) => `${style[0]}: ${style[1]};`)
+      .join("");
+    liliesContainer.style.cssText = cssText;
   }
 }
 

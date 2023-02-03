@@ -9,12 +9,3 @@ export interface IFroggyLevel {
 
 type TInstructions = { [key: string]: string };
 type TStyles = { [key: string]: string };
-export type TStyleKey =
-  | "justifyContent"
-  | "alignItems"
-  | "flexDirection"
-  | "order"
-  | "alignSelf"
-  | "flexWrap"
-  | "flexFlow"
-  | "alignContent";

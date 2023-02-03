@@ -13,13 +13,35 @@ class FroggyPage extends Page {
     this.view = new AppView(this.container);
   }
 
-  executeAfterRender(): void {}
+  executeAfterRender(): void {
+    this.inputListener();
+  }
 
   render() {
     this.container.innerHTML = getPageHTML();
     this.view.drawLevel(this.level);
     return this.container;
   }
+
+  inputListener() {
+    const frogsContainer = this.container.querySelector(
+      ".frogs"
+    ) as HTMLElement;
+    const input = this.container.querySelector("#code") as HTMLTextAreaElement;
+    input.addEventListener("input", () => {
+      // this.setStylesFrogs(input.value);
+      frogsContainer.style.cssText = input.value;
+    });
+  }
+
+  // setStylesFrogs(inputValue: string) {
+  //   const arrayStyles = inputValue.split(/\n/g).filter((style) => style !== "");
+  //   arrayStyles.forEach((style) => {
+  //     // массив свойств
+  //     // const { styleKey, valueKey } = style.split(":");
+  //     const entry = style.split(":");
+  //   });
+  // }
 }
 
 export default FroggyPage;
