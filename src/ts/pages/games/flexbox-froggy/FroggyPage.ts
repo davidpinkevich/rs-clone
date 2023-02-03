@@ -9,22 +9,16 @@ class FroggyPage extends Page {
 
   constructor(id: string) {
     super(id);
-    this.level = 1; // localstorage.getItem(...) || 1;
-    this.view = new AppView(this.container, this.level);
+    this.level = 1; // ... localstorage.getItem(...) || 1;
+    this.view = new AppView(this.container);
   }
 
   executeAfterRender(): void {}
 
   render() {
     this.container.innerHTML = getPageHTML();
-    this.drawLevel();
+    this.view.drawLevel(this.level);
     return this.container;
-  }
-
-  drawLevel() {
-    this.view.drawFrogs();
-    this.view.drawLilies();
-    this.view.drawInfo();
   }
 }
 

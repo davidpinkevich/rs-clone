@@ -6,35 +6,38 @@ import Lilies from "./Lilies";
 class AppView {
   private container: HTMLElement;
 
-  private level: number;
-
   private frogs: Frogs;
 
   private lilies: Lilies;
 
   private info: Info;
 
-  constructor(container: HTMLElement, level: number) {
+  constructor(container: HTMLElement) {
     this.container = container;
-    this.level = level;
     this.frogs = new Frogs(this.container);
     this.lilies = new Lilies(this.container);
     this.info = new Info(this.container);
   }
 
-  drawFrogs() {
-    const levelInfo = levels[this.level - 1];
+  drawFrogs(level: number) {
+    const levelInfo = levels[level - 1];
     this.frogs.draw(levelInfo);
   }
 
-  drawLilies() {
-    const levelInfo = levels[this.level - 1];
+  drawLilies(level: number) {
+    const levelInfo = levels[level - 1];
     this.lilies.draw(levelInfo);
   }
 
-  drawInfo() {
-    const levelInfo = levels[this.level - 1];
+  drawInfo(level: number) {
+    const levelInfo = levels[level - 1];
     this.info.draw(levelInfo);
+  }
+
+  drawLevel(level: number) {
+    this.drawFrogs(level);
+    this.drawLilies(level);
+    this.drawInfo(level);
   }
 }
 
