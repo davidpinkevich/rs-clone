@@ -24,24 +24,25 @@ class FroggyPage extends Page {
   }
 
   inputListener() {
-    const frogsContainer = this.container.querySelector(
-      ".frogs"
-    ) as HTMLElement;
+    const frogsContainer = this.container.querySelector(".frogs");
     const input = this.container.querySelector("#code") as HTMLTextAreaElement;
     input.addEventListener("input", () => {
-      // this.setStylesFrogs(input.value);
-      frogsContainer.style.cssText = input.value;
+      (frogsContainer as HTMLElement).style.cssText = input.value;
+      console.log(this.isWin());
     });
   }
 
-  // setStylesFrogs(inputValue: string) {
-  //   const arrayStyles = inputValue.split(/\n/g).filter((style) => style !== "");
-  //   arrayStyles.forEach((style) => {
-  //     // массив свойств
-  //     // const { styleKey, valueKey } = style.split(":");
-  //     const entry = style.split(":");
-  //   });
-  // }
+  isWin() {
+    const frogContainers = Array.from(
+      this.container.querySelectorAll(".frog__container")
+    );
+    console.log(frogContainers);
+    const lilyContainers = Array.from(
+      this.container.querySelectorAll(".lily__container")
+    );
+    console.log(lilyContainers);
+    return true;
+  }
 }
 
 export default FroggyPage;

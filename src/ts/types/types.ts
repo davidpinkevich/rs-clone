@@ -9,4 +9,4 @@ export interface IFroggyLevel {
 
 type TInstructions = { [key: string]: string };
 type TStyles = { [key: string]: string };
-export type TLocalStorageObj = { [key: string]: string }; 
+export type TLocalStorageObj = { [key: string]: string };
