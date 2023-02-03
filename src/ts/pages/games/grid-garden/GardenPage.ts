@@ -7,7 +7,7 @@ class GardenPage extends Page {
     super(id);
   }
 
-  exetuceAfterRender(): void {
+  executeAfterRender(): void {
     startGame();
   }
 
