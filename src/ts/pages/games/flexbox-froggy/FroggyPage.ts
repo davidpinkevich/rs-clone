@@ -1,14 +1,18 @@
 import Page from "../../abstract/page";
-import getPageHTML, { getFrogHTML, getLilyHTML } from "./ui";
+import getPageHTML from "./view/ui";
 import levels from "./data-levels";
-import { IFroggyLevel, TStyleKey } from "../../../types/types";
+import { IFroggyLevel } from "../../../types/types";
+import AppView from "./view/AppView";
 
 class FroggyPage extends Page {
   private level: number;
 
+  private view: AppView;
+
   constructor(id: string) {
     super(id);
     this.level = 1; // localstorage.getItem(...) || 1;
+    this.view = new AppView(this.container, this.level);
   }
 
   executeAfterRender(): void {}
@@ -21,65 +25,18 @@ class FroggyPage extends Page {
 
   drawLevel() {
     const levelInfo = levels[this.level - 1];
-    this.drawFrogs(levelInfo);
-    this.drawLilies(levelInfo);
+    this.view.drawFrogs();
+    this.view.drawLilies();
+    this.drawInstructions(levelInfo);
   }
 
-  drawFrogs(levelInfo: IFroggyLevel) {
-    const { stylesForInit } = levelInfo;
+  drawInstructions(levelInfo: IFroggyLevel) {
+    const levelInstructions = levelInfo.instructions;
 
-    const frogsContainer = this.container.querySelector(
-      ".frogs"
+    const instructionsContainer = this.container.querySelector(
+      ".instructions"
     ) as HTMLElement;
-    frogsContainer.innerHTML = "";
-
-    if (stylesForInit && stylesForInit.find((frog) => frog === "wrap")) {
-      frogsContainer.style.flexWrap = "wrap";
-    } else {
-      frogsContainer.style.flexWrap = "nowrap";
-    }
-
-    const frogs = levelInfo.items;
-    frogs.forEach((frog) => {
-      const frogNode = document.createElement("div");
-      frogNode.innerHTML = getFrogHTML();
-
-      const frogNodeImg = frogNode.querySelector(
-        ".frog-img"
-      ) as HTMLImageElement;
-      frogNodeImg.classList.add(frog);
-      frogNodeImg.src = `./assets/images/froggy/frog-${frog}.svg`;
-
-      frogsContainer.innerHTML += frogNode.innerHTML;
-    });
-  }
-
-  drawLilies(levelInfo: IFroggyLevel) {
-    const liliesContainer = this.container.querySelector(
-      ".lilies"
-    ) as HTMLElement;
-    liliesContainer.innerHTML = "";
-
-    const lilies = levelInfo.items;
-    lilies.forEach((lily) => {
-      const lilyNode = document.createElement("div");
-      lilyNode.innerHTML = getLilyHTML();
-
-      const lilyNodeImg = lilyNode.querySelector(
-        ".lily-img"
-      ) as HTMLImageElement;
-      lilyNodeImg.classList.add(lily);
-      lilyNodeImg.src = `./assets/images/froggy/lilypad-${lily}.svg`;
-
-      liliesContainer.innerHTML += lilyNode.innerHTML;
-    });
-
-    const entries = Object.entries(levelInfo.styles);
-    entries.forEach((entry) => {
-      const styleKey = entry[0] as TStyleKey;
-      const styleValue = entry[1];
-      liliesContainer.style[styleKey] = styleValue;
-    });
+    instructionsContainer.innerHTML = levelInstructions.en;
   }
 }
 

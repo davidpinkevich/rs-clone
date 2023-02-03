@@ -394,3 +394,7 @@ template {
 textarea {
     resize: none;
 }
+
+input, textarea {
+    outline: none;
+}
