@@ -1,17 +1,35 @@
 class Coordinates {
-  private firstElem: DOMRect;
+  public elemFirst: DOMRect;
 
-  private secondElem: DOMRect;
+  public elemSecond: DOMRect;
 
-  constructor(firstElem: HTMLElement, secondElem: HTMLElement) {
-    this.firstElem = firstElem.getBoundingClientRect();
-    this.secondElem = secondElem.getBoundingClientRect();
+  constructor(elemFirst: HTMLElement, elemSecond: HTMLElement) {
+    this.elemFirst = elemFirst.getBoundingClientRect();
+    this.elemSecond = elemSecond.getBoundingClientRect();
   }
 
-  comparisonCoordinates() {
+  getTop(element: DOMRect) {
+    return element.top + window.pageYOffset;
+  }
+
+  getLeft(element: DOMRect) {
+    return element.left + window.pageXOffset;
+  }
+
+  getRight(element: DOMRect) {
+    return element.right + window.pageXOffset;
+  }
+
+  getBottom(element: DOMRect) {
+    return element.bottom + window.pageYOffset;
+  }
+
+  comparisonСoordinates() {
     return (
-      this.firstElem.top === this.secondElem.top &&
-      this.firstElem.left === this.secondElem.left
+      this.getTop(this.elemFirst) === this.getTop(this.elemSecond) &&
+      this.getLeft(this.elemFirst) === this.getLeft(this.elemSecond) &&
+      this.getRight(this.elemFirst) === this.getRight(this.elemSecond) &&
+      this.getBottom(this.elemFirst) === this.getBottom(this.elemSecond)
     );
   }
 }
