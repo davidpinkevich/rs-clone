@@ -1,12 +1,18 @@
 import Page from "../../abstract/page";
+import drowPageGarden from "./patterns/drow-page";
+import startGame from "./start-game/start-game";
 
 class GardenPage extends Page {
   constructor(id: string) {
     super(id);
   }
 
+  exetuceAfterRender(): void {
+    startGame();
+  }
+
   render() {
-    this.container.innerHTML = `<a href="#">click to main from garden</a>`;
+    this.container.innerHTML = `${drowPageGarden()}`;
     return this.container;
   }
 }
