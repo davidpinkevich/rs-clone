@@ -6,6 +6,8 @@ abstract class Page {
     this.container.id = id;
   }
 
+  exetuceAfterRender() {}
+
   render() {
     return this.container;
   }
