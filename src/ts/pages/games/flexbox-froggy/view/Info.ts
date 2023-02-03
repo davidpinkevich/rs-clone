@@ -21,6 +21,9 @@ class Info {
     (codeContainer.querySelector("#before") as HTMLElement).textContent =
       levelInfo.beforeText;
     (codeContainer.querySelector("#after") as HTMLElement).textContent = "}";
+    (codeContainer.querySelector("#code") as HTMLDivElement).style.height = `${
+      24 * levelInfo.stringsCount
+    }px`;
   }
 }
 

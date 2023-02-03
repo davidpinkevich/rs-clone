@@ -1,5 +1,4 @@
 export interface IFroggyLevel {
-  id: number;
   instructions: TInstructions;
   beforeText: string;
   stringsCount: number;
