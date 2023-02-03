@@ -1,7 +1,5 @@
 import Page from "../../abstract/page";
 import getPageHTML from "./view/ui";
-import levels from "./data-levels";
-import { IFroggyLevel } from "../../../types/types";
 import AppView from "./view/AppView";
 
 class FroggyPage extends Page {
@@ -24,19 +22,9 @@ class FroggyPage extends Page {
   }
 
   drawLevel() {
-    const levelInfo = levels[this.level - 1];
     this.view.drawFrogs();
     this.view.drawLilies();
-    this.drawInstructions(levelInfo);
-  }
-
-  drawInstructions(levelInfo: IFroggyLevel) {
-    const levelInstructions = levelInfo.instructions;
-
-    const instructionsContainer = this.container.querySelector(
-      ".instructions"
-    ) as HTMLElement;
-    instructionsContainer.innerHTML = levelInstructions.en;
+    this.view.drawInfo();
   }
 }
 

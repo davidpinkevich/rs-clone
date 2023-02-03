@@ -11,9 +11,9 @@ const getSidebarHTML = () => `
       <div class="line-numbers">
         1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br> 7 <br> 8 <br> 9 <br> 10 <br>
       </div>
-      <div style="position: absolute; left: 40px; top: 10px">
+      <div class="code__wrapper">
         <pre id="before"></pre>
-        <textarea id="code" autofocus></textarea>
+        <textarea id="code" autofocus rows="1"></textarea>
         <pre id="after"></pre>
       </div>
       <button class="button next-btn" disabled>Next</button>

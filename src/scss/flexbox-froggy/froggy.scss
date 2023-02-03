@@ -57,6 +57,17 @@ $lineNumbersColor: #999;
       padding: 15px 6px;
     }
 
+    .code__wrapper {
+      margin-top: 4px;
+      position: absolute;
+      left: 40px;
+      top: 10px;
+
+      #after {
+        margin-top: -6px;
+      }
+    }
+
     .next-btn {
       position: absolute;
       right: 16px;

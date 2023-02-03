@@ -1,6 +1,6 @@
 import { IFroggyLevel } from "../../../../types/types";
 
-class Info { 
+class Info {
   private container: HTMLElement;
 
   constructor(container: HTMLElement) {
@@ -15,7 +15,12 @@ class Info {
     ) as HTMLElement;
     instructionsContainer.innerHTML = levelInstructions.en;
 
-    
+    const codeContainer = this.container.querySelector(
+      ".editor"
+    ) as HTMLElement;
+    (codeContainer.querySelector("#before") as HTMLElement).textContent =
+      levelInfo.beforeText;
+    (codeContainer.querySelector("#after") as HTMLElement).textContent = "}";
   }
 }
 

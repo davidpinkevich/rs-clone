@@ -2,7 +2,6 @@ export interface IFroggyLevel {
   id: number;
   instructions: TInstructions;
   beforeText: string;
-  afterText: string;
   stringsCount: number;
   items: string[];
   styles: TStyles;
