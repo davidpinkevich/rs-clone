@@ -11,7 +11,7 @@ class FroggyPage extends Page {
 
   constructor(id: string) {
     super(id);
-    this.level = 21; // ... localstorage.getItem(...) || 1;
+    this.level = 1; // ... localstorage.getItem(...) || 1;
     this.view = new AppView(this.container);
   }
 

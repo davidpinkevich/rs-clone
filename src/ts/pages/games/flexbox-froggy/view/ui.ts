@@ -47,14 +47,16 @@ const getViewHTML = () => `
 `;
 
 const getPageHTML = () => `
-  <div class="container">
-    <header class="header froggy-header"></header>
-    <div class="main froggy-main">
+  <header class="header froggy-header">
+    <div class="container"></div>
+  </header>
+  <div class="main froggy-main">
+    <div class="container">
       ${getSidebarHTML()}
       ${getViewHTML()}
     </div>
-    <a href="#">click to main from froggy 111</a>
   </div>
+  <a href="#">click to main from froggy 111</a>
 `;
 
 export default getPageHTML;
