@@ -1,5 +1,6 @@
 import Page from "../../abstract/page";
 import innerSurgeon from "./inner-surgeon";
+import nextHandler from "./next-handler";
 import startHandler from "./start-handler";
 
 class SurgeonPage extends Page {
@@ -9,6 +10,7 @@ class SurgeonPage extends Page {
 
   executeAfterRender(): void {
     startHandler();
+    nextHandler();
   }
 
   render() {
