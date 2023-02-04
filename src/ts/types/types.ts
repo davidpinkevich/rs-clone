@@ -7,6 +7,16 @@ export interface IFroggyLevel {
   stylesForInit?: string[];
 }
 
+export type TRulesGarden = {
+  FIELD: number;
+  RULES_ENG: string[];
+  RULES_RU: string[];
+  TEXT__GARDEN: string[];
+  TEXT__WATER: string[];
+  CARROT_RULES: string[];
+  WATER_RULES: string[];
+};
+
 type TInstructions = { [key: string]: string };
 type TStyles = { [key: string]: string };
 export type TLocalStorageObj = { [key: string]: string };
