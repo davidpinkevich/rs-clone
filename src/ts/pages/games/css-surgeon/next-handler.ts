@@ -7,13 +7,15 @@ const nextHandler = () => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
 
   nextBtn.addEventListener("click", () => {
+    hideLevels();
     surgeonStore.currentLevel += 1;
     if (surgeonStore.currentLevel >= surgeonStore.levels.length) {
       nextBtn.disabled = true;
     }
     createInstruction();
-    hideLevels();
-    showLevel();
+    setTimeout(() => {
+      showLevel();
+    }, 3000);
   });
 };
 
