@@ -1,4 +1,3 @@
-import { LEVELS_GARDEN } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 import drowLevels from "./drow-levels";
 
@@ -17,18 +16,14 @@ const chooseLevel = () => {
 
   btns.addEventListener("click", (event: Event) => {
     const ls = new LocalStorage("gridGarden");
-    if (Number(ls.get("numberLevel")) === LEVELS_GARDEN.START + 1) {
-      last.disabled = true;
-    } else if (Number(ls.get("numberLevel")) === LEVELS_GARDEN.END - 1) {
-      next.disabled = true;
-    }
-    console.log(ls.getAll());
+    const numberLevel = Number(ls.get("numberLevel"));
+
     if (event.target === last) {
-      ls.set("numberLevel", `${Number(ls.get("numberLevel")) - 1}`);
+      ls.set("numberLevel", `${numberLevel - 1}`);
       next.disabled = false;
       drowLevels();
     } else if (event.target === next) {
-      ls.set("numberLevel", `${Number(ls.get("numberLevel")) + 1}`);
+      ls.set("numberLevel", `${numberLevel + 1}`);
       last.disabled = false;
       drowLevels();
     }
