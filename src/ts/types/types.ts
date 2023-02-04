@@ -4,7 +4,7 @@ export interface IFroggyLevel {
   stringsCount: number;
   items: string[];
   styles: TStyles;
-  stylesForInit?: string[];
+  wrapForInit?: boolean;
   order?: string;
 }
 

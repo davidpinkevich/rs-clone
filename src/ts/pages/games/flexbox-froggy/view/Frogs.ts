@@ -9,18 +9,13 @@ class Frogs {
   }
 
   draw(levelInfo: IFroggyLevel) {
-    const { stylesForInit } = levelInfo;
-
     const frogsContainer = this.container.querySelector(
       ".frogs"
     ) as HTMLElement;
     frogsContainer.innerHTML = "";
 
-    if (stylesForInit && stylesForInit.find((frog) => frog === "wrap")) {
-      frogsContainer.style.flexWrap = "wrap";
-    } else {
-      frogsContainer.style.flexWrap = "nowrap";
-    }
+    const { wrapForInit } = levelInfo;
+    frogsContainer.style.flexWrap = wrapForInit ? "wrap" : "nowrap";
 
     const frogs = levelInfo.items;
     frogs.forEach((frog) => {

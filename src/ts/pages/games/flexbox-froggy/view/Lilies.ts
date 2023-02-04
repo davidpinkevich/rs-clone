@@ -28,6 +28,14 @@ class Lilies {
       liliesContainer.innerHTML += lilyNode.innerHTML;
     });
 
+    this.setStyles(levelInfo);
+  }
+
+  setStyles(levelInfo: IFroggyLevel) {
+    const liliesContainer = this.container.querySelector(
+      ".lilies"
+    ) as HTMLElement;
+
     const entries = Object.entries(levelInfo.styles);
     const cssText = entries
       .map((style) => `${style[0]}: ${style[1]};`)

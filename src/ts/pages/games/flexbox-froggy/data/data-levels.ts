@@ -9,7 +9,6 @@ const levels: IFroggyLevel[] = [
     stringsCount: 1,
     items: ["green"],
     styles: { "justify-content": "flex-end" },
-    // stylesForInit: ["wrap"], для тех уровней, где жабки на новую строку переносятся
   },
   {
     instructions: {
@@ -256,7 +255,7 @@ const levels: IFroggyLevel[] = [
       "green",
     ],
     styles: { "align-content": "flex-start", "flex-wrap": "wrap" },
-    stylesForInit: ["wrap"],
+    wrapForInit: true,
   },
   {
     instructions: {
@@ -282,7 +281,7 @@ const levels: IFroggyLevel[] = [
       "green",
     ],
     styles: { "align-content": "flex-end", "flex-wrap": "wrap" },
-    stylesForInit: ["wrap"],
+    wrapForInit: true,
   },
   {
     instructions: {
@@ -312,7 +311,7 @@ const levels: IFroggyLevel[] = [
       "align-content": "center",
       "flex-wrap": "wrap",
     },
-    stylesForInit: ["wrap"],
+    wrapForInit: true,
   },
   {
     instructions: {
