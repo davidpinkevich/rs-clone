@@ -11,7 +11,7 @@ class FroggyPage extends Page {
 
   constructor(id: string) {
     super(id);
-    this.level = 14; // ... localstorage.getItem(...) || 1;
+    this.level = 24; // ... localstorage.getItem(...) || 1;
     this.view = new AppView(this.container);
   }
 
@@ -41,9 +41,12 @@ class FroggyPage extends Page {
           orderFrogWrapper.style.cssText = input.value;
         });
       } else {
-        (frogsContainer as HTMLElement).style.cssText = input.value;
+        (frogsContainer as HTMLElement).style.cssText = levelInfo.stylesForInit
+          ? `flex-wrap: wrap;${input.value}`
+          : input.value;
       }
       if (this.isWin()) {
+        // временно
         console.log("win");
       }
     });
