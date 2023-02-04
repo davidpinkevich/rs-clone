@@ -113,7 +113,7 @@
     padding: 54px 0 54px 0;
     position: relative;
     height: 94vh;
-    transition: background-color .2s ease-in-out .6s;
+    transition: background-color .2s ease-in-out 2s;
   }
 
   &__items-wrapper,
@@ -190,6 +190,11 @@
     width: 427px;
     height: 787px;
     position: relative;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &__sam {
+    transition: transform 3s ease-in-out;
   }
 
   &__sam-img {
