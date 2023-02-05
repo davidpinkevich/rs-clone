@@ -18,7 +18,6 @@ const addCarrots = () => {
     "style",
     `${RULES_GARDEN.CARROT_RULES[Number(numberLvl) - 1]}`
   );
-  console.log(carrot);
   svgImage.style.background = "url(./assets/images/grid-garden/carrot-two.svg)";
   field.append(carrot);
 };

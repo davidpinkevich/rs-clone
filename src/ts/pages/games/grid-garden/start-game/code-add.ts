@@ -23,7 +23,6 @@ const addCode = () => {
   const lel: NodeListOf<HTMLElement> = document.querySelectorAll(
     ".code__garden-task-text>span"
   );
-  console.log(lel);
   for (let i = 0; i < lel.length; i += 1) {
     lel[i].innerHTML = `${`${i + 1}.`}`;
   }

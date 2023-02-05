@@ -8,13 +8,11 @@ const addWater = () => {
   water.classList.add("field__water-item");
   const ls = new LocalStorage("gridGarden");
   const numberLvl = ls.get("numberLevel");
-  // field.setAttribute("style", `${RULES_GARDEN.WATER_RULES[11]}`);  когда для garden по идее
   water.setAttribute(
     "style",
     `${RULES_GARDEN.WATER_RULES[Number(numberLvl) - 1]}`
   );
   field.append(water);
-  console.log(water);
 };
 
 export default addWater;

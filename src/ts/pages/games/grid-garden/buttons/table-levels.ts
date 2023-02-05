@@ -25,7 +25,6 @@ const addTableLevels = () => {
       const ls = new LocalStorage("gridGarden");
       ls.set("numberLevel", target.dataset.levelGrid);
       const numberLevel = Number(ls.get("numberLevel"));
-      console.log("numberLevel", numberLevel);
       drowLevels();
 
       const last = <HTMLButtonElement>(

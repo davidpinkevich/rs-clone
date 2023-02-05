@@ -17,12 +17,3 @@ const drowLevels = () => {
 };
 
 export default drowLevels;
-
-// addRules();
-// createField(); возможно не надо
-// addCode();
-// addCarrots();
-// addWater();
-// moveWater();
-// moveGarden();
-// chooseLevel();
