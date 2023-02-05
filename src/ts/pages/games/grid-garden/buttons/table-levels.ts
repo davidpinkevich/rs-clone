@@ -4,7 +4,7 @@ import drowLevels from "./drow-levels";
 
 const addTableLevels = () => {
   const table = <HTMLElement>document.querySelector(".state__levels");
-
+  const btn = <HTMLButtonElement>document.querySelector(".code__garden-button");
   const tableContainer = document.createElement("div");
   tableContainer.classList.add("state__levels-wrapper");
   table.append(tableContainer);
@@ -20,6 +20,8 @@ const addTableLevels = () => {
   tableContainer.addEventListener("click", (event: Event) => {
     const target = event.target as HTMLElement;
     if (target.dataset.levelGrid) {
+      btn.disabled = true;
+      btn.classList.remove("code__garden-button-active");
       const ls = new LocalStorage("gridGarden");
       ls.set("numberLevel", target.dataset.levelGrid);
       const numberLevel = Number(ls.get("numberLevel"));
