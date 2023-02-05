@@ -132,14 +132,17 @@ $lineNumbersColor: #999;
         cursor: pointer;
 
         &:hover {
-          border: 2px solid #8FC690;
+          border: 2px solid #9FA7AF;
         }
       }
 
       .level-marker.solved {
-        background-color: #228b24
-      }
+        background-color: #228b24;
 
+        &:hover {
+          border: 2px solid #8FC690;
+        }
+      }
     }
 
     .tooltip {
@@ -240,7 +243,8 @@ $lineNumbersColor: #999;
         display: block;
         width: calc(100% - 24px);
         height: 20px;
-        margin-left: 18px;
+        margin-left: 16px;
+        padding-left: 1px;
         overflow: hidden;
         padding-top: 3px;
       }

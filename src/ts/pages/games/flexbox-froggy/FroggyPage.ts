@@ -1,22 +1,26 @@
 import Page from "../../abstract/page";
-import getPageHTML from "./view/ui";
 import AppView from "./view/AppView";
-import Coordinates from "../../../utils/Coordinates";
+import LocalStorage from "../../../utils/LocalStorage";
+import getPageHTML from "./view/ui";
 import levels from "./data/data-levels";
+import { updateStatePage, isWin } from "./froggy-helper";
 
 class FroggyPage extends Page {
   private level: number;
 
   private view: AppView;
 
+  private ls: LocalStorage;
+
   constructor(id: string) {
     super(id);
-    this.level = 1; // ... localstorage.getItem(...) || 1;
+    this.ls = new LocalStorage("froggy");
+    this.level = Number(this.ls.get("currentLevel")) || 1; // ... localstorage.getItem(...) || 1;
     this.view = new AppView(this.container);
   }
 
   executeAfterRender(): void {
-    this.updateStatePage();
+    updateStatePage(this.level);
     this.allListener();
   }
 
@@ -26,53 +30,10 @@ class FroggyPage extends Page {
     return this.container;
   }
 
-  updateStatePage() {
-    const leftArrow = document.querySelector(".arrow.left");
-    const rightArrow = document.querySelector(".arrow.right");
-    if (this.level === 1) {
-      leftArrow?.classList.add("disabledButton");
-    } else if (this.level === levels.length) {
-      rightArrow?.classList.add("disabledButton");
-    } else {
-      leftArrow?.classList.remove("disabledButton");
-      rightArrow?.classList.remove("disabledButton");
-    }
-
-    const levelLabel = document.querySelector(
-      ".level-indicator"
-    ) as HTMLElement;
-    levelLabel.textContent = `Level ${this.level} of 24 ▾`;
-
-    const nextBtn = this.container.querySelector(
-      ".next-btn"
-    ) as HTMLButtonElement;
-    nextBtn.classList.add("disabledButton");
-  }
-
-  isWin() {
-    const frogContainers = Array.from(
-      this.container.querySelectorAll(".frog__wrapper")
-    );
-    const lilyContainers = Array.from(
-      this.container.querySelectorAll(".lily__wrapper")
-    );
-
-    for (let i = 0; i < frogContainers.length; i += 1) {
-      const coordinates = new Coordinates(
-        frogContainers[i] as HTMLElement,
-        lilyContainers[i] as HTMLElement
-      );
-      if (!coordinates.comparisonСoordinates()) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
   allListener() {
     this.inputListener();
     this.levelCounterListener();
+    this.nextLevelBtnListener();
   }
 
   inputListener() {
@@ -94,6 +55,14 @@ class FroggyPage extends Page {
         (frogsContainer as HTMLElement).style.cssText = levelInfo.wrapForInit
           ? `flex-wrap: wrap;${input.value}`
           : input.value;
+      }
+
+      const nextBtn = this.container.querySelector(".next-btn");
+      if (isWin()) {
+        (document.querySelector(".correct") as HTMLAudioElement).play();
+        nextBtn?.classList.remove("disabledButton");
+      } else {
+        nextBtn?.classList.add("disabledButton");
       }
     });
   }
@@ -119,19 +88,41 @@ class FroggyPage extends Page {
       } else {
         levelsWrapper.style.display = "none";
       }
+
+      const newLevel = e.target as HTMLElement;
+      if (newLevel.closest(".level-marker")) {
+        this.level = Number(newLevel.dataset.level);
+        this.view.drawLevel(this.level);
+        updateStatePage(this.level);
+        this.ls.set("currentLevel", String(this.level));
+        levelsWrapper.style.display = "none";
+      }
+    });
+  }
+
+  nextLevelBtnListener() {
+    const nextBtn = document.querySelector(".next-btn") as HTMLButtonElement;
+    nextBtn.addEventListener("click", () => {
+      let completedLevels = JSON.parse(this.ls.get("completedLevels") || "[]");
+      completedLevels.push(this.level);
+      completedLevels = Array.from(new Set(completedLevels));
+      this.ls.set("completedLevels", JSON.stringify(completedLevels));
+      this.nextLevel();
     });
   }
 
   nextLevel() {
     this.level += 1;
     this.view.drawLevel(this.level);
-    this.updateStatePage();
+    updateStatePage(this.level);
+    this.ls.set("currentLevel", String(this.level));
   }
 
   prevLevel() {
     this.level -= 1;
     this.view.drawLevel(this.level);
-    this.updateStatePage();
+    updateStatePage(this.level);
+    this.ls.set("currentLevel", String(this.level));
   }
 }
 

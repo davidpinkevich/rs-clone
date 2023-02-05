@@ -32,7 +32,7 @@ const getEditorHTML = () => `
       <textarea id="code" autofocus rows="1"></textarea>
       <pre id="after"></pre>
     </div>
-    <button class="next-btn" disabled>Next</button>
+    <button class="next-btn">Next</button>
   </div>
 `;
 
@@ -82,6 +82,12 @@ const getPageHTML = () => `
         ${getSidebarHTML()}
         ${getViewHTML()}
       </div>
+    </div>
+    <div id="audio">
+      <audio class="correct" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/correct.wav"></audio>
+      <audio class="incorrect" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/incorrect.wav"></audio>
+      <audio class="boing" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/boing.wav"></audio>
+      <audio class="win" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/win.mp3"></audio>
     </div>
   </section>
 `;
