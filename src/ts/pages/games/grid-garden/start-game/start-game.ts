@@ -8,6 +8,7 @@ import moveGarden from "../field-create/move-garden";
 import chooseLevel from "../buttons/choose-level";
 import hiddenTable from "../buttons/table-hidden";
 import addTableLevels from "../buttons/table-levels";
+import addActiveLevelGarden from "../buttons/active-level-table";
 
 const startGame = () => {
   addRules();
@@ -20,6 +21,7 @@ const startGame = () => {
   chooseLevel();
   hiddenTable();
   addTableLevels();
+  addActiveLevelGarden();
 };
 
 export default startGame;
