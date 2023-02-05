@@ -9,6 +9,8 @@ import chooseLevel from "../buttons/choose-level";
 import hiddenTable from "../buttons/table-hidden";
 import addTableLevels from "../buttons/table-levels";
 import addActiveLevelGarden from "../buttons/active-level-table";
+import nextButtonLevelGrid from "../buttons/next-button";
+import addWinsGridLS from "../buttons/wins-ls";
 
 const startGame = () => {
   addRules();
@@ -18,10 +20,12 @@ const startGame = () => {
   addWater();
   moveWater();
   moveGarden();
-  chooseLevel();
   hiddenTable();
   addTableLevels();
+  chooseLevel();
   addActiveLevelGarden();
+  nextButtonLevelGrid();
+  addWinsGridLS();
 };
 
 export default startGame;
