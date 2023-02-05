@@ -1,6 +1,6 @@
 import LocalStorage from "../../../../utils/LocalStorage";
 import drowLevels from "./drow-levels";
-import addWinsGridLS from "./wins-ls";
+import addWinsGridLS from "./wins-ls-btn";
 
 const nextButtonLevelGrid = () => {
   const btn = <HTMLButtonElement>document.querySelector(".code__garden-button");
@@ -21,7 +21,7 @@ const nextButtonLevelGrid = () => {
     btnsTable[numberLevel - 1].classList.add("table__level-win");
     btnsTable[numberLevel - 1].classList.remove("table__level-active");
     btnsTable[numberLevel].classList.add("table__level-active");
-    addWinsGridLS(numberLevel - 1);
+    addWinsGridLS();
     ls.set("numberLevel", `${numberLevel + 1}`);
     drowLevels();
   });

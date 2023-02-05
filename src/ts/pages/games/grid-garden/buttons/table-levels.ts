@@ -1,6 +1,7 @@
 import { LEVELS_GARDEN } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 import drowLevels from "./drow-levels";
+import resetLevels from "./reset-levels";
 
 const addTableLevels = () => {
   const table = <HTMLElement>document.querySelector(".state__levels");
@@ -8,6 +9,12 @@ const addTableLevels = () => {
   const tableContainer = document.createElement("div");
   tableContainer.classList.add("state__levels-wrapper");
   table.append(tableContainer);
+
+  const btnReset = document.createElement("button");
+  btnReset.classList.add("state__levels-reset");
+  btnReset.innerHTML = "Reset";
+  table.append(btnReset);
+  btnReset.addEventListener("click", resetLevels);
 
   for (let i = 1; i <= LEVELS_GARDEN.END; i += 1) {
     const item = document.createElement("div");

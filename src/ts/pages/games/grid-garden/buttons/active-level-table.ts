@@ -7,23 +7,13 @@ const addActiveLevelGarden = () => {
   );
 
   const lsItems = new LocalStorage("gridGarden");
-  const lsWins = new LocalStorage("gridGardenWins");
   const numberLevel = lsItems.get("numberLevel");
-  const numberWins = JSON.parse(lsWins.get("numberWins"));
 
   items.forEach((item) => {
     if (item.dataset.levelGrid === numberLevel) {
       item.classList.add("table__level-active");
     } else {
       item.classList.remove("table__level-active");
-    }
-  });
-
-  numberWins.forEach((item: boolean, index: number) => {
-    if (item) {
-      items[index].classList.add("table__level-win");
-    } else {
-      items[index].classList.remove("table__level-win");
     }
   });
 
