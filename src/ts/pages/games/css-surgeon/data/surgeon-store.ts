@@ -16,7 +16,7 @@ const surgeonStore = {
         "If you want to move an element up or down along the vertical axis, you can use <code>transform</code> with the <code>translateY</code> operation instead. Can you use this to restore CSS Sam's <storng>HANDLEBAR MUSTACHE</storng>?",
       descr2:
         "By the way, you can use a variety of units besides pixels, including <code>em</code>, <code>rem</code>, <code>pt</code>, and <code>%</code>. Percentage is calculated based on the element's own width or height.",
-      origin: "47.5% 11%",
+      origin: "48.5% 9.5%",
     },
     {
       level: 3,
@@ -56,6 +56,15 @@ const surgeonStore = {
     },
     {
       level: 7,
+      selector: "#pull-yourself-up-by-your-bootstrap",
+      descr1:
+        "So far you've learned how to transform elements using <code>translate</code> and <code>rotate</code>. You can also combine these by separating them with a space, like so: <code>transform: translateX(20px) rotate(45deg);</code> Use both operations for CSS Sam's <strong>PULL-YOURSELF-UP-BY-YOUR-BOOTSTRAP</strong>.",
+      descr2:
+        "Order matters here. Try switching the order of <code>rotate</code> and <code>translateX</code> here and notice the change. This happens because after you rotate the element, the horizontal and vertical directions rotate with it!",
+      origin: "43% 101%",
+    },
+    {
+      level: 8,
       selector: "#six-pack",
       descr1:
         "The third operation that <code>transform</code> can use is <code>scale</code>. This allows you to make an element bigger or smaller at will. <code>scale</code> accepts a unit-less value, where a number between 0 and 1 will shrink the element, and an element larger than 1 will enlarge it.",
@@ -64,7 +73,7 @@ const surgeonStore = {
       origin: "49.6% 56.5%",
     },
     {
-      level: 8,
+      level: 9,
       selector: "#fused-backbone",
       descr1:
         "If you want to scale an element differently in the vertical and horizontal directions, you can give use two values separated by a comma, such as <code>transform: scale(3, 2);</code> Use this to stretch CSS Sam's <strong>FUSED BACKBONE</strong> back in place.",
@@ -73,13 +82,48 @@ const surgeonStore = {
       origin: "49% 38%",
     },
     {
-      level: 9,
+      level: 10,
+      selector: "#gulping-gullet",
+      descr1:
+        "Setting <code>scale</code> to a negative value will flip the element in that direction.",
+      descr2:
+        "Use this to size CSS Sam's <strong>GULPING GULLET</strong> just right.",
+      origin: "52% 23%",
+    },
+    {
+      level: 11,
+      selector: "#knee-jerk-reaction",
+      descr1:
+        "This time, use a combination of <code>scale</code> and <code>translate</code> to repair CSS Sam's <strong>KNEE-JERK REACTION</strong>.",
+      descr2:
+        "Remember that order matters when using multiple operations at once.",
+      origin: "45% 85%",
+    },
+    {
+      level: 12,
       selector: "#mighty-python",
       descr1:
         "The final operation that <code>transform</code> can use is <code>skew</code>, which distorts the element in one or both dimensions. This operation uses the same units as <code>rotate</code>, including degrees and radians, and accepts horizontal and vertical values separated by a comma.",
       descr2:
         "<code>skewX</code> and <code>skewY</code> can be used to skew in a single direction. Operate on CSS Sam's <strong>MIGHTY PYTHON</strong> using <code>skewX</code>.",
       origin: "36% 32%",
+    },
+    {
+      level: 13,
+      selector: "#droopy-lid",
+      descr1:
+        "Now use <code>skew</code> and <code>translate</code> to reshape CSS Sam's <strong>DROOPY LID</strong>.",
+      descr2: "",
+      origin: "55% -5%",
+    },
+    {
+      level: 14,
+      selector: "#spring-in-your-step",
+      descr1:
+        "CSS Sam is almost back to full health! All that's left is for you to apply all four <code>transform</code> operations at once to restore Sam's <strong>SPRING-IN-YOUR-STEP</strong>.",
+      descr2:
+        "These four operations are <code>translate</code>, <code>rotate</code>, <code>scale</code>, and <code>scale</code>.",
+      origin: "52% 104%",
     },
   ],
   currentLevel: 1,
