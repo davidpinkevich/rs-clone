@@ -15,7 +15,9 @@ const drowPageGarden = () => `<div class="garden __container">
   <div class="garden__info-rules"></div>
   <div class="garden__info-code code__garden">
     <div class="code__garden-task"></div>
-    <button class="code__garden-button" disabled>Next</button>
+    <div class="code__garden-button-wrapper">
+      <button class="code__garden-button" disabled>Next</button>
+    </div>
   </div>
 </div>
 <div class="garden__game"></div>

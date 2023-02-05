@@ -8,6 +8,10 @@ const moveGarden = () => {
   const groundField = <HTMLElement>document.querySelector(".field__ground");
   const carrotsField = <HTMLElement>document.querySelector(".field__carrots");
 
+  const btnNext = <HTMLButtonElement>(
+    document.querySelector(".code__garden-button")
+  );
+
   const ls = new LocalStorage("gridGarden");
   const numberLvl = ls.get("numberLevel");
 
@@ -24,7 +28,13 @@ const moveGarden = () => {
       const carr = <HTMLElement>document.querySelector(".field__carrots-item");
       const water = <HTMLElement>document.querySelector(".field__water-item");
       const test = new Coordinates(carr, water);
-      console.log(test.comparisonСoordinates());
+      if (test.comparisonСoordinates()) {
+        btnNext.disabled = false;
+        btnNext.classList.add("code__garden-button-active");
+      } else {
+        btnNext.disabled = true;
+        btnNext.classList.remove("code__garden-button-active");
+      }
     });
   }
 };
