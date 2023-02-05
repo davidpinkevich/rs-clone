@@ -1,5 +1,5 @@
-import { IFroggyLevel } from "../../../../types/types";
-import { getLilyHTML } from "./ui";
+import { IFroggyLevel } from "../../../../../types/types";
+import { getLilyHTML } from "../ui";
 
 class Lilies {
   private container: HTMLElement;

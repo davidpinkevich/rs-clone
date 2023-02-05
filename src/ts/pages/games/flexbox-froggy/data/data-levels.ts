@@ -317,7 +317,7 @@ const levels: IFroggyLevel[] = [
     instructions: {
       en: `<p>Bring the frogs home one last time by using the CSS properties you\\'ve learned:</p><ul><li><code>justify-content</code></li><li><code>align-items</code></li><li><code>flex-direction</code></li><li><code>order</code></li><li><code>align-self</code></li><li><code>flex-wrap</code></li><li><code>flex-flow</code></li><li><code>align-content</code><img src="https://code.org/api/hour/finish_flexbox_froggy.png"></li></ul>`,
     },
-    beforeText: "#pond {\n  display: flex;\n  flex-wrap: wrap;\n",
+    beforeText: "#pond {\n  display: flex;\n",
     stringsCount: 4,
     items: ["red", "green", "green", "green", "green", "yellow", "yellow"],
     styles: {

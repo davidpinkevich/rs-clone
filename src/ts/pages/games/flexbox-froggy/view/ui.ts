@@ -1,23 +1,49 @@
+export const getLevelHTML = () => `<span class="level-marker"></span>`;
+
+const getLevelsWrapperHTML = () => `
+  <div class="levels-wrapper tooltip" style="display: none;">
+    <div class="levels"></div>
+    <div class="label-reset">Reset</div>
+  </div>
+`;
+
+const getControlsHTML = () => `
+  <div class="header__controls controls">
+    <div class="level-counter">
+      <span class="arrow left">
+        <span class="triangle"></span>
+      </span>
+      <div class="level-indicator">Level 1 of 24 ▾</div>
+      <span class="arrow right">
+        <span class="triangle"></span>
+      </span>
+      ${getLevelsWrapperHTML()}
+    </div>
+  </div>
+`;
+
+const getEditorHTML = () => `
+  <div class="editor">
+    <div class="line-numbers">
+      1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br> 7 <br> 8 <br> 9 <br> 10 <br>
+    </div>
+    <div class="code__wrapper">
+      <pre id="before"></pre>
+      <textarea id="code" autofocus rows="1"></textarea>
+      <pre id="after"></pre>
+    </div>
+    <button class="next-btn" disabled>Next</button>
+  </div>
+`;
+
 const getSidebarHTML = () => `
   <section id="sidebar">
     <div class="sidebar-header">
       <h1 class="header__title title">FLEXBOX FROGGY</h1>
-      <div class="header__controls controls">
-        TODO: controls
-      </div>
+      ${getControlsHTML()}
     </div>
     <div class="instructions">ЗДЕСЬ ГЕНЕРИРОВАТЬ ИНСТРУКЦИИ</div>
-    <div class="editor">
-      <div class="line-numbers">
-        1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br> 7 <br> 8 <br> 9 <br> 10 <br>
-      </div>
-      <div class="code__wrapper">
-        <pre id="before"></pre>
-        <textarea id="code" autofocus rows="1"></textarea>
-        <pre id="after"></pre>
-      </div>
-      <button class="button next-btn" disabled>Next</button>
-    </div>
+    ${getEditorHTML()}
   </section>
 `;
 
@@ -47,16 +73,17 @@ const getViewHTML = () => `
 `;
 
 const getPageHTML = () => `
-  <header class="header froggy-header">
-    <div class="container"></div>
-  </header>
-  <div class="main froggy-main">
-    <div class="container">
-      ${getSidebarHTML()}
-      ${getViewHTML()}
+  <section class="froggy-page">
+    <header class="header froggy-header">
+      <div class="container"></div>
+    </header>
+    <div class="main froggy-main">
+      <div class="container">
+        ${getSidebarHTML()}
+        ${getViewHTML()}
+      </div>
     </div>
-  </div>
-  <a href="#">click to main from froggy 111</a>
+  </section>
 `;
 
 export default getPageHTML;

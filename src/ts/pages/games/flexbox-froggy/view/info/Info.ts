@@ -1,4 +1,6 @@
-import { IFroggyLevel } from "../../../../types/types";
+import { IFroggyLevel } from "../../../../../types/types";
+import levels from "../../data/data-levels";
+import { getLevelHTML } from "../ui";
 
 class Info {
   private container: HTMLElement;
@@ -24,6 +26,31 @@ class Info {
     (codeContainer.querySelector("#code") as HTMLDivElement).style.height = `${
       24 * levelInfo.stringsCount
     }px`;
+
+    this.drawLevelsMenu();
+  }
+
+  drawLevelsMenu() {
+    const levelsContainer = this.container.querySelector(
+      ".levels"
+    ) as HTMLElement;
+    levelsContainer.innerHTML = "";
+
+    let counter = 1;
+    levels.forEach(() => {
+      const levelNode = document.createElement("div");
+      levelNode.innerHTML = getLevelHTML();
+
+      const currentLevel = levelNode.querySelector(
+        ".level-marker"
+      ) as HTMLElement;
+      currentLevel.setAttribute("data-level", String(counter));
+      currentLevel.textContent = String(counter);
+
+      counter += 1;
+
+      levelsContainer.innerHTML += levelNode.innerHTML;
+    });
   }
 }
 

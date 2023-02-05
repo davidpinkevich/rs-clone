@@ -1,5 +1,5 @@
-import { IFroggyLevel } from "../../../../types/types";
-import { getFrogHTML } from "./ui";
+import { IFroggyLevel } from "../../../../../types/types";
+import { getFrogHTML } from "../ui";
 
 class Frogs {
   private container: HTMLElement;

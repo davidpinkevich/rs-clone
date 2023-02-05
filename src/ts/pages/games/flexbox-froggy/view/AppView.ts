@@ -1,7 +1,7 @@
 import levels from "../data/data-levels";
-import Frogs from "./Frogs";
-import Info from "./Info";
-import Lilies from "./Lilies";
+import Frogs from "./frogs/Frogs";
+import Info from "./info/Info";
+import Lilies from "./lilies/Lilies";
 
 class AppView {
   private container: HTMLElement;
