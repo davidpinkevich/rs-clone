@@ -7,6 +7,7 @@ const nextHandler = () => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
 
   nextBtn.addEventListener("click", () => {
+    nextBtn.disabled = true;
     hideLevels();
     surgeonStore.currentLevel += 1;
     if (surgeonStore.currentLevel >= surgeonStore.levels.length) {
