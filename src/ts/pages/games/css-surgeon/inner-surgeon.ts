@@ -43,7 +43,7 @@ const innerSurgeon = () => `
                     <textarea class="surgeon__code" id="code" autofocus autocapitalize="none"></textarea>
                     <div class="surgeon__after" id="after">}</div>
                 </div>
-                <button class="button button__next">Next</button>
+                <button class="button button__next" disabled>Next</button>
             </div>
         </section>
         <section class="surgeon__view">
@@ -83,7 +83,7 @@ const innerSurgeon = () => `
                         style="transform: translateX(100px) translateY(150px)" />
                     <img data-level="4" class="surgeon__holes surgeon__holes_4 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/meatier-thigh-hole.svg"
-                        style="transform: rotate(180deg)" />
+                        style="transform: rotate(90deg)" />
                     <img data-level="5" class="surgeon__holes surgeon__holes_5 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/limp-node-hole.svg"
                         style="transform: rotate(270deg)" />
