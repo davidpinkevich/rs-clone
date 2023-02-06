@@ -82,7 +82,31 @@ $lineNumbersColor: #999;
 
   .controls {
     display: flex;
+    align-items: center;
     height: 28px;
+    gap: 10px;
+
+    .controls-sound {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 0 6px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #8CC691;
+      } 
+    }
+
+    .controls-language {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 4px 7px 6px 7px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #8CC691;
+      }
+    }
 
     .level-counter {
       display: flex;
@@ -91,6 +115,7 @@ $lineNumbersColor: #999;
     }
 
     .level-indicator {
+      height: 28px;
       display: inline-flex;
       justify-content: center;
       align-items: center;

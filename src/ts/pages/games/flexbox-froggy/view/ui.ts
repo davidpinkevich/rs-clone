@@ -9,6 +9,10 @@ const getLevelsWrapperHTML = () => `
 
 const getControlsHTML = () => `
   <div class="header__controls controls">
+    <div class="controls-sound">
+      <img class="sound-img" src="./assets/images/froggy/sound-on.svg" width="25px" height="25px" alt="sound">
+    </div>
+    <div class="controls-language">en</div>
     <div class="level-counter">
       <span class="arrow left">
         <span class="triangle"></span>

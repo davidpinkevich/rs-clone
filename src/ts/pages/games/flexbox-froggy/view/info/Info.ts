@@ -1,5 +1,6 @@
-import { IFroggyLevel } from "../../../../../types/types";
+import LocalStorage from "../../../../../utils/LocalStorage";
 import levels from "../../data/data-levels";
+import { IFroggyLevel } from "../../../../../types/types";
 import { getLevelHTML } from "../ui";
 
 class Info {
@@ -12,10 +13,11 @@ class Info {
   draw(levelInfo: IFroggyLevel) {
     const levelInstructions = levelInfo.instructions;
 
+    const language = new LocalStorage("froggy").get("language") || "en";
     const instructionsContainer = this.container.querySelector(
       ".instructions"
     ) as HTMLElement;
-    instructionsContainer.innerHTML = levelInstructions.en;
+    instructionsContainer.innerHTML = levelInstructions[language];
 
     const codeContainer = this.container.querySelector(
       ".editor"
