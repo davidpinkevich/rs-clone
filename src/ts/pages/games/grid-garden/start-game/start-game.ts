@@ -11,6 +11,7 @@ import addTableLevels from "../buttons/table-levels";
 import addActiveLevelGarden from "../buttons/active-level-table";
 import nextButtonLevelGrid from "../buttons/next-button";
 import restartAddWins from "../buttons/restart-wins";
+import changeLangGrid from "../buttons/change-lang";
 
 const startGame = () => {
   addRules();
@@ -26,6 +27,7 @@ const startGame = () => {
   addActiveLevelGarden();
   nextButtonLevelGrid();
   restartAddWins();
+  changeLangGrid();
 };
 
 export default startGame;
