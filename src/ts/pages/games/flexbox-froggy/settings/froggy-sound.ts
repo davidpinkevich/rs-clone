@@ -13,6 +13,9 @@ export const toggleSound = () => {
   sound = sound === "on" ? "off" : "on";
   ls.set("sound", sound);
 
+  (document.querySelector(".win") as HTMLAudioElement).volume =
+    sound === "on" ? 1 : 0;
+
   const soundImg = document.querySelector(".sound-img") as HTMLImageElement;
   soundImg.src = `./assets/images/froggy/sound-${sound}.svg`;
 };

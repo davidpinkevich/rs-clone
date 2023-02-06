@@ -144,10 +144,17 @@ class FroggyPage extends Page {
       this.ls = new LocalStorage("froggy");
       this.ls.set("completedLevels", JSON.stringify(completedLevels));
 
-      animateFrogs();
-      setTimeout(() => {
-        this.nextLevel();
-      }, 800);
+      if (this.level === levels.length) {
+        animateFrogs();
+        setTimeout(() => {
+          this.view.drawWin();
+        }, 800);
+      } else {
+        animateFrogs();
+        setTimeout(() => {
+          this.nextLevel();
+        }, 800);
+      }
     });
   }
 

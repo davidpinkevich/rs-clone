@@ -5,6 +5,15 @@ import { setSound } from "./froggy-sound";
 import { setLanguage } from "./froggy-language";
 
 const updateStatePage = (level: number) => {
+  const view = document.querySelector("#view") as HTMLElement;
+  view.style.display = "block";
+  const editor = document.querySelector(".editor") as HTMLElement;
+  editor.style.display = "block";
+  const controlsLanguage = document.querySelector(".controls-language");
+  (controlsLanguage as HTMLElement).style.display = "block";
+
+  (document.querySelector(".win") as HTMLAudioElement).pause();
+
   const leftArrow = document.querySelector(".arrow.left");
   const rightArrow = document.querySelector(".arrow.right");
   if (level === 1) {

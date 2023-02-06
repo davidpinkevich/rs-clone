@@ -1,6 +1,7 @@
 import Frogs from "./frogs/Frogs";
 import Lilies from "./lilies/Lilies";
 import Info from "./info/Info";
+import Win from "./win/Win";
 import levels from "../data/data-levels";
 
 class AppView {
@@ -12,11 +13,14 @@ class AppView {
 
   private info: Info;
 
+  private win: Win;
+
   constructor(container: HTMLElement) {
     this.container = container;
     this.frogs = new Frogs(this.container);
     this.lilies = new Lilies(this.container);
     this.info = new Info(this.container);
+    this.win = new Win();
   }
 
   drawFrogs(level: number) {
@@ -38,6 +42,10 @@ class AppView {
     this.drawFrogs(level);
     this.drawLilies(level);
     this.drawInfo(level);
+  }
+
+  drawWin() {
+    this.win.draw();
   }
 }
 
