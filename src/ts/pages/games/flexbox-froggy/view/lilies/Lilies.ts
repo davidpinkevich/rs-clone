@@ -1,5 +1,6 @@
 import { IFroggyLevel } from "../../../../../types/types";
 import { getLilyHTML } from "../ui";
+import randomFromTo from "../../settings/random";
 
 class Lilies {
   private container: HTMLElement;
@@ -18,6 +19,10 @@ class Lilies {
     lilies.forEach((lily) => {
       const lilyNode = document.createElement("div");
       lilyNode.innerHTML = getLilyHTML();
+
+      (
+        lilyNode.querySelector(".lily-img") as HTMLImageElement
+      ).style.transform = `rotate(${randomFromTo(0, 359)}deg)`;
 
       const lilyNodeImg = lilyNode.querySelector(
         ".lily-img"
