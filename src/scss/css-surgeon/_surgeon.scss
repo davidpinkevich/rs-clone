@@ -35,6 +35,20 @@
     }
   }
 
+  &__controls {
+    display: none;
+  }
+
+  &__counter {
+    width: 140px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #c51126;
+    color: #fff;
+    border-radius: 4px;
+  }
+
   &__instructions {
     padding: 15px 0 15px 0;
     font-size: 15px;
@@ -130,6 +144,7 @@
 
   &__holes,
   &__items {
+    opacity: 0;
 
     &_0 {
       width: 130px;
