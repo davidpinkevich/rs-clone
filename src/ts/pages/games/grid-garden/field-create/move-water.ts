@@ -2,6 +2,7 @@ import { GRID_LS } from "../../../../data/goods-data";
 import RULES_GARDEN from "../data/rules";
 import Coordinates from "../../../../utils/Coordinates";
 import LocalStorage from "../../../../utils/LocalStorage";
+import addWinSoundGrid from "../sound/win-sound";
 
 const moveWater = () => {
   const input = <HTMLInputElement>document.querySelector(".water__input");
@@ -20,10 +21,11 @@ const moveWater = () => {
       const text = RULES_GARDEN.WATER_RULES[Number(numberLvl) - 1];
       const newStyles = `${text}${input.value}`;
       water.setAttribute("style", newStyles);
-      const test = new Coordinates(carrots, water);
-      if (test.comparisonСoordinates()) {
+      const result = new Coordinates(carrots, water);
+      if (result.comparisonСoordinates()) {
         btnNext.disabled = false;
         btnNext.classList.add("code__garden-button-active");
+        addWinSoundGrid();
       } else {
         btnNext.disabled = true;
         btnNext.classList.remove("code__garden-button-active");
