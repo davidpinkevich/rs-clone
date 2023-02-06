@@ -1,38 +1,95 @@
+$gardenColor: rgb(93,164,73);
+$codeColor: rgb(224,224,224);
+$textColor: rgb(248, 244, 244);
+$textCodeColor: rgb(152, 155, 157);
+$md2: 1400px;
+
+@mixin adaptiv-320($property, $startSize, $minSize) {
+	#{$property}: calc(#{$minSize + px} + (#{$startSize} - #{$minSize}) * ((100vw - 320px) / (1400 - 320)));
+}
+
+[id*="#garden"] {
+  background-color: $gardenColor;
+  text-shadow: 1px 1px 1px black;
+  font-size: 16px;
+  padding-top: 50px; // убрать после хедера
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100vh;
+  line-height: 150%;
+  @media (max-width:$md2){
+    @include adaptiv-320(font-size, 16, 12);
+  }
+}
 .garden {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
+  @media (max-width:850px){
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .garden__info {
-  width: 50%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.garden__info-rules {
+  color: $textColor;
 }
 
 .garden__info-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 0px;
+  gap: 10px;
+  @media (max-width:1100px){
+    flex-direction: column;
+  }
 }
 
 .garden__info-header-title {
   text-transform: uppercase;
+  margin: 0;
+  color: $textColor;
 }
 
 .garden__info-text,
 .garden__info-example {
   margin-bottom: 20px;
+
+  & span {
+    font-weight: 700;
+    text-decoration: underline;
+    background-color: rgb(125,182,109);
+  }
 }
 
 .code__garden-task-text {
   margin-top: 0;
   margin-bottom: 10px;
+  color: $textCodeColor;
+  text-shadow: none;
+  display: flex;
 }
 
 // field
 .garden__game {
+  background-color: rgb(108, 58, 11);
+  flex-shrink: 0;
+  border-radius: 12px;
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
+
+  @media (max-width:$md2){
+    @include adaptiv-320(width, 600, 300);
+    @include adaptiv-320(height, 600, 300);
+  }
 }
 
 .field__ground,
@@ -43,31 +100,397 @@
   grid-template-columns: repeat(5, 20%);
   grid-template-rows: repeat(5, 20%);
   border-radius: 12px;
-  box-shadow: inset 0px 0px 3px 3px black;
   padding: 10px;
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
 }
 
 .field__ground-item {
-  border: 2px solid rebeccapurple;
-  border-radius: 8px;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0px 0px 3px 3px black;
 }
 
+@keyframes carrotScale {
+  0%{
+    transform: skewX(0deg);
+  }
+  25%{
+    transform: skewX(-1deg);
+  }
+  50%{
+    transform: sskewX(0deg);
+  }
+  75%{
+    transform: skewX(1deg);
+  }
+  100%{
+    transform: skewX(0deg);
+  }
+}
+
+@keyframes carrotSkew {
+  0%{
+    transform: skewX(0deg);
+  }
+  25%{
+    transform: skewX(-2deg);
+  }
+  50%{
+    transform: sskewX(0deg);
+  }
+  75%{
+    transform: skewX(2deg);
+  }
+  100%{
+    transform: skewX(0deg);
+  }
+}
 .field__carrots-item {
-  background-color: red;
+  position: relative;
+  z-index: 20;
+}
+
+.field__carrots-item-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: carrotSkew;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 .field__water-item {
-  background-color: blue;
+  // background-color: rgb(66, 66, 219);
+  background-color: rgb(47, 47, 253);
+  opacity: 0.4;
   z-index: 5;
 }
 
 .water__input {
-  background-color: rgb(161, 147, 147);
-  color: rgb(237, 203, 9);
+  background-color: $textColor;
+  width: 100%;
+  padding: 5px;
+  color: black;
   font-size: 20px;
+
+  @media (max-width:$md2){
+    @include adaptiv-320(font-size, 20, 12);
+  }
+}
+
+.water__input.water__input-area {
+  height: 60px;
+  background-color: $textColor;
+  font-size: 20px;
+  color: black;
+
+  @media (max-width:$md2){
+    @include adaptiv-320(font-size, 20, 12);
+  }
+}
+
+.column__start-info,
+.column__end-info,
+.row__start-info,
+.row__end-info,
+.row__info,
+.column__info,
+.area__info,
+.template__columns-info,
+.template__rows-info,
+.template__info {
+  font-weight: 700;
+  text-decoration: underline;
+  background-color: rgb(125,182,109);
+}
+
+// test
+.garden__input {
+  background-color: rgb(161, 147, 147);
+  border-radius: 4px;
+  width: 100%;
+  background-color: white;
+  font-size: 20px;
+  color: black;
+
+  @media (max-width:$md2){
+    @include adaptiv-320(font-size, 20, 12);
+  }
+}
+
+.code__garden {
+  position: relative;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: $codeColor;
+}
+
+.settings__garden {
+  display: flex;
+  gap: 10px;
+}
+// кнопки переключения лвлов
+.settings__garden-levels {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings__garden-levels-last,
+.settings__garden-levels-next {
+  cursor: pointer;
+  background-color: rgb(125,182,109);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  filter: invert(100%);
+  box-shadow: inset 0px 0px 2px 2px black;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.25);
+    box-shadow: inset 0px 0px 3px 3px black;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}
+
+.code__garden-button-wrapper {
+  display: flex;
+  justify-content: right;
+}
+.code__garden-button {
+  display: flex;
+  font-size: 24px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 5px 20px;
+  background-color: rgb(221,185,127);
+}
+
+.code__garden-task-left {
+  padding-left: 20px;
+}
+
+.code__garden-task-text > span {
+  position: relative;
+  color: rgb(83, 74, 74);
+  top: 0;
+  left: -5px;
+}
+
+.code__garden-task-left > span {
+  position: relative;
+  top: 0;
+  left: -25px;
+}
+
+.settings__garden-levels-list {
+  box-shadow: inset 0px 0px 2px 2px white;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(125,182,109);
+  color: $textColor;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 8px;
+  padding: 5px 10px;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: inset 0px 0px 3px 3px white;
+  }
+
+  @media (max-width:$md2){
+    @include adaptiv-320(width, 100, 60);
+  }
+}
+
+//------ таблица левелов---------------------
+.state__levels {
+  position: absolute;
+  background-color: rgb(44,62,80);
+  border-radius: 4px;
+  z-index: 2;
+  top: 105px;
+  padding: 10px 0;
+}
+.state__levels-wrapper {
+  width: 155px;
+  height: 165px;
+  padding: 10px;
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(4, 25%);
+  justify-content: center;
+
+}
+
+.state__levels-item {
+  display: flex;
+  background-color: rgb(86,101,115);
+  box-shadow: inset 0px 0px 0px 0px white;
+  cursor: pointer;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.15);
+    box-shadow: inset 0px 0px 2px 2px white;
+  }
+}
+
+.table__level-active {
+  box-shadow: inset 0px 0px 2px 2px white;
+}
+//----------------------------------------------------
+// Кнопка активации следующего уровня
+@keyframes nextLevelGardenState {
+  0% {
+    transform:rotate(0deg);
+  }
+  25% {
+    transform:rotate(-5deg);
+  }
+  50% {
+    transform:rotate(0deg);
+  }
+  75% {
+    transform:rotate(5deg);
+  }
+  100% {
+    transform:rotate(0deg);
+  }
+}
+
+@keyframes nextLevelGardenInfinit {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.code__garden-button-active {
+  animation: nextLevelGardenState 1s ease-in, nextLevelGardenInfinit 2s ease-in 1s infinite;
+  background-color: rgb(218,147,30);
+  cursor: pointer;
+}
+
+.table__level-win {
+  background-color: rgb(93,164,73);
+}
+// ----------------------------------------
+.state__levels-reset {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(44,62,80);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.settings__garden-sound,
+.settings__garden-lang {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  align-items: center;
+  background-color: rgb(125,182,109);
+  box-shadow: inset 0px 0px 2px 2px white;
+  color: $textColor;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 5px 8px;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: inset 0px 0px 3px 3px white;
+  }
+
+  @media (max-width:$md2){
+    @include adaptiv-320(width, 100, 75);
+  }
+}
+
+.grid__result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.grid__result-body {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 500px;
+  padding: 0px 10px 40px 10px;
+  border-radius: 12px;
+  background-color: white;
+
+  @media (max-width:$md2){
+    @include adaptiv-320(width, 500, 280);
+  }
+}
+
+.grid__result-body-img {
+  width: 300px;
+  height: 300px;
+
+  @media (max-width:$md2){
+    @include adaptiv-320(width, 300, 200);
+    @include adaptiv-320(height, 300, 200);
+  }
+}
+
+.grid__result-body-text {
+  margin-bottom: 15px;
+  & span {
+    font-size: 28px;
+    color: rgb(18, 89, 17);
+  }
+}
+
+.grid__result-body-link {
+  background-color: green;
+  cursor: pointer;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: inset 0px 0px 4px 4px black;
+  }
 }
