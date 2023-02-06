@@ -1,5 +1,5 @@
-import { IFroggyLevel } from "../../../../types/types";
-import { getFrogHTML } from "./ui";
+import { IFroggyLevel } from "../../../../../types/types";
+import { getFrogHTML } from "../ui";
 
 class Frogs {
   private container: HTMLElement;
@@ -9,18 +9,14 @@ class Frogs {
   }
 
   draw(levelInfo: IFroggyLevel) {
-    const { stylesForInit } = levelInfo;
-
     const frogsContainer = this.container.querySelector(
       ".frogs"
     ) as HTMLElement;
     frogsContainer.innerHTML = "";
 
-    if (stylesForInit && stylesForInit.find((frog) => frog === "wrap")) {
-      frogsContainer.style.flexWrap = "wrap";
-    } else {
-      frogsContainer.style.flexWrap = "nowrap";
-    }
+    const { wrapForInit } = levelInfo;
+    frogsContainer.style.cssText = "";
+    frogsContainer.style.flexWrap = wrapForInit ? "wrap" : "nowrap";
 
     const frogs = levelInfo.items;
     frogs.forEach((frog) => {
@@ -30,7 +26,7 @@ class Frogs {
       const frogNodeImg = frogNode.querySelector(
         ".frog-img"
       ) as HTMLImageElement;
-      frogNodeImg.classList.add(frog);
+      frogNodeImg.classList.add(`frog-${frog}`);
       frogNodeImg.src = `./assets/images/froggy/frog-${frog}.svg`;
 
       frogsContainer.innerHTML += frogNode.innerHTML;
