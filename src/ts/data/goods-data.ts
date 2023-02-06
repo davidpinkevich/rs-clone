@@ -1,4 +1,4 @@
-import { TLangGrid } from "../types/types";
+import { TLangGrid, TGridLocalStore } from "../types/types";
 
 const enum PageIds {
   MainPage = "#",
@@ -17,4 +17,14 @@ const LANG_GRID: TLangGrid = {
   BTN_RU: ["Русский", "Звук", "Уровень:", "Следующий"],
 };
 
-export { PageIds, LEVELS_GARDEN, LANG_GRID };
+const GRID_LS: TGridLocalStore = {
+  LS_LEVELS: "gridGarden",
+  LS_WINS: "gridGardenWins",
+  NUMBER_LEVEL: "numberLevel",
+  NUMBER_WINS: "numberWins",
+  LANG: "lang",
+  LANG_ENG: "en",
+  LANG_RU: "ru",
+};
+
+export { PageIds, LEVELS_GARDEN, LANG_GRID, GRID_LS };
