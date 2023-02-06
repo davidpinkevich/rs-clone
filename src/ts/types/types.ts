@@ -17,6 +17,11 @@ export type TRulesGarden = {
   WATER_RULES: string[];
 };
 
+export type TLangGrid = {
+  BTN_ENG: string[];
+  BTN_RU: string[];
+};
+
 type TInstructions = { [key: string]: string };
 type TStyles = { [key: string]: string };
 export type TLocalStorageObj = { [key: string]: string };
