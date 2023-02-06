@@ -10,6 +10,16 @@ const innerSurgeon = () => `
         <section class="surgeon__sidebar">
             <div class="surgeon__header">
                 <h1>CSS SURGEON</h1>
+                <div class="surgeon__controls">
+                    <div class="surgeon__counter">
+                        <span class="surgeon__indicator">
+                            <span>Level</span>
+                            <span class="surgeon__current">1</span>
+                            <span>of</span>
+                            <span class="surgeon__total">14</span>
+                        </span>
+                    </div>
+                </div>
             </div>
             <div class="surgeon__instructions">
                 <p>Welcome to CSS Surgeon. An irresponsible doctor has removed a bunch of organs from our
@@ -49,138 +59,138 @@ const innerSurgeon = () => `
         <section class="surgeon__view">
             <div class="surgeon__board">
                 <div class="surgeon__items-wrapper">
-                    <img data-level="0" class="surgeon__items surgeon__items_0 surgeon__items_hide"
+                    <img data-level="1" class="surgeon__items surgeon__items_0 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/rusty-nail-item.svg" />
-                    <img data-level="1" class="surgeon__items surgeon__items_1 surgeon__items_hide"
+                    <img data-level="2" class="surgeon__items surgeon__items_1 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/handlebar-mustache-item.svg" />
-                    <img data-level="2" class="surgeon__items surgeon__items_2 surgeon__items_hide"
+                    <img data-level="3" class="surgeon__items surgeon__items_2 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/ruby-lips-item.svg" />
-                    <img data-level="3" class="surgeon__items surgeon__items_3 surgeon__items_hide"
+                    <img data-level="4" class="surgeon__items surgeon__items_3 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pearly-white-item.svg" />
-                    <img data-level="4" class="surgeon__items surgeon__items_4 surgeon__items_hide"
+                    <img data-level="5" class="surgeon__items surgeon__items_4 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/meatier-thigh-item.svg" />
-                    <img data-level="5" class="surgeon__items surgeon__items_5 surgeon__items_hide"
+                    <img data-level="6" class="surgeon__items surgeon__items_5 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/limp-node-item.svg" />
-                    <img data-level="6" class="surgeon__items surgeon__items_6 surgeon__items_hide"
+                    <img data-level="7" class="surgeon__items surgeon__items_6 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pull-yourself-up-by-your-bootstrap-item.svg" />
-                    <img data-level="7" class="surgeon__items surgeon__items_7 surgeon__items_hide"
+                    <img data-level="8" class="surgeon__items surgeon__items_7 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/six-pack-item.svg" />
-                    <img data-level="8" class="surgeon__items surgeon__items_8 surgeon__items_hide"
+                    <img data-level="9" class="surgeon__items surgeon__items_8 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/fused-backbone-item.svg" />
-                    <img data-level="9" class="surgeon__items surgeon__items_9 surgeon__items_hide"
+                    <img data-level="10" class="surgeon__items surgeon__items_9 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/gulping-gullet-item.svg" />
-                    <img data-level="10" class="surgeon__items surgeon__items_10 surgeon__items_hide"
+                    <img data-level="11" class="surgeon__items surgeon__items_10 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/knee-jerk-reaction-item.svg" />
-                    <img data-level="11" class="surgeon__items surgeon__items_11 surgeon__items_hide"
+                    <img data-level="12" class="surgeon__items surgeon__items_11 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/mighty-python-item.svg" />
-                    <img data-level="12" class="surgeon__items surgeon__items_12 surgeon__items_hide"
+                    <img data-level="13" class="surgeon__items surgeon__items_12 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/droopy-lid-item.svg" />
-                    <img data-level="13" class="surgeon__items surgeon__items_13 surgeon__items_hide"
+                    <img data-level="14" class="surgeon__items surgeon__items_13 surgeon__items_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/spring-in-your-step-item.svg" />
                 </div>
                 <div class="surgeon__holes-wrapper">
-                    <img data-level="0" class="surgeon__holes surgeon__holes_0 surgeon__holes_hide"
+                    <img data-level="1" class="surgeon__holes surgeon__holes_0 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/rusty-nail-hole.svg"
                         style="transform: translateX(100px)" />
-                    <img data-level="1" class="surgeon__holes surgeon__holes_1 surgeon__holes_hide"
+                    <img data-level="2" class="surgeon__holes surgeon__holes_1 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/handlebar-mustache-hole.svg"
                         style="transform: translateY(100px)" />
-                    <img data-level="2" class="surgeon__holes surgeon__holes_2 surgeon__holes_hide"
+                    <img data-level="3" class="surgeon__holes surgeon__holes_2 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/ruby-lips-hole.svg"
                         style="transform: translateY(-190px)" />
-                    <img data-level="3" class="surgeon__holes surgeon__holes_3 surgeon__holes_hide"
+                    <img data-level="4" class="surgeon__holes surgeon__holes_3 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pearly-white-hole.svg" 
                         style="transform: translateX(100px) translateY(150px)" />
-                    <img data-level="4" class="surgeon__holes surgeon__holes_4 surgeon__holes_hide"
+                    <img data-level="5" class="surgeon__holes surgeon__holes_4 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/meatier-thigh-hole.svg"
                         style="transform: rotate(90deg)" />
-                    <img data-level="5" class="surgeon__holes surgeon__holes_5 surgeon__holes_hide"
+                    <img data-level="6" class="surgeon__holes surgeon__holes_5 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/limp-node-hole.svg"
                         style="transform: rotate(270deg)" />
-                    <img data-level="6" class="surgeon__holes surgeon__holes_6 surgeon__holes_hide"
+                    <img data-level="7" class="surgeon__holes surgeon__holes_6 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pull-yourself-up-by-your-bootstrap-hole.svg"
                         style="transform: translateX(50px) rotate(90deg);" />
-                    <img data-level="7" class="surgeon__holes surgeon__holes_7 surgeon__holes_hide"
+                    <img data-level="8" class="surgeon__holes surgeon__holes_7 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/six-pack-hole.svg"
                         style="transform: scale(2)" />
-                    <img data-level="8" class="surgeon__holes surgeon__holes_8 surgeon__holes_hide"
+                    <img data-level="9" class="surgeon__holes surgeon__holes_8 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/fused-backbone-hole.svg"
                         style="transform: scale(0.5, 2)" />
-                    <img data-level="9" class="surgeon__holes surgeon__holes_9 surgeon__holes_hide"
+                    <img data-level="10" class="surgeon__holes surgeon__holes_9 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/gulping-gullet-hole.svg"
                         style="transform: scale(-1, -2)" />
-                    <img data-level="10" class="surgeon__holes surgeon__holes_10 surgeon__holes_hide"
+                    <img data-level="11" class="surgeon__holes surgeon__holes_10 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/knee-jerk-reaction-hole.svg"
                         style="transform: translate(-100px, 50px) scaleY(2)" />
-                    <img data-level="11" class="surgeon__holes surgeon__holes_11 surgeon__holes_hide"
+                    <img data-level="12" class="surgeon__holes surgeon__holes_11 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/mighty-python-hole.svg"
                         style="transform: skewX(50deg)" />
-                    <img data-level="12" class="surgeon__holes surgeon__holes_12 surgeon__holes_hide"
+                    <img data-level="13" class="surgeon__holes surgeon__holes_12 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/droopy-lid-hole.svg"
                         style="transform: translateY(200px) skew(20deg, 20deg)" />
-                    <img data-level="13" class="surgeon__holes surgeon__holes_13 surgeon__holes_hide"
+                    <img data-level="14" class="surgeon__holes surgeon__holes_13 surgeon__holes_hide"
                         src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/spring-in-your-step-hole.svg"
                         style="transform: translate(100px, 50px) rotate(90deg) scale(2) skew(30deg)" />
                 </div>
                 <div class="surgeon__sam">
                     <div class="surgeon__body">
                         <div class="surgeon__overlay">
-                            <img data-level="0" class="surgeon__item surgeon__item_0 surgeon__item_hide"
+                            <img data-level="1" class="surgeon__item surgeon__item_0 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/rusty-nail-item.svg" />
-                            <img data-level="1" class="surgeon__item surgeon__item_1 surgeon__item_hide"
+                            <img data-level="2" class="surgeon__item surgeon__item_1 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/handlebar-mustache-item.svg" />
-                            <img data-level="2" class="surgeon__item surgeon__item_2 surgeon__item_hide"
+                            <img data-level="3" class="surgeon__item surgeon__item_2 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/ruby-lips-item.svg" />
-                            <img data-level="3" class="surgeon__item surgeon__item_3 surgeon__item_hide"
+                            <img data-level="4" class="surgeon__item surgeon__item_3 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pearly-white-item.svg" />
-                            <img data-level="4" class="surgeon__item surgeon__item_4 surgeon__item_hide"
+                            <img data-level="5" class="surgeon__item surgeon__item_4 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/meatier-thigh-item.svg" />
-                            <img data-level="5" class="surgeon__item surgeon__item_5 surgeon__item_hide"
+                            <img data-level="6" class="surgeon__item surgeon__item_5 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/limp-node-item.svg" />
-                            <img data-level="6" class="surgeon__item surgeon__item_6 surgeon__item_hide"
+                            <img data-level="7" class="surgeon__item surgeon__item_6 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pull-yourself-up-by-your-bootstrap-item.svg" />
-                            <img data-level="7" class="surgeon__item surgeon__item_7 surgeon__item_hide"
+                            <img data-level="8" class="surgeon__item surgeon__item_7 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/six-pack-item.svg" />
-                            <img data-level="8" class="surgeon__item surgeon__item_8 surgeon__item_hide"
+                            <img data-level="9" class="surgeon__item surgeon__item_8 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/fused-backbone-item.svg" />
-                            <img data-level="9" class="surgeon__item surgeon__item_9 surgeon__item_hide"
+                            <img data-level="10" class="surgeon__item surgeon__item_9 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/gulping-gullet-item.svg" />
-                            <img data-level="10" class="surgeon__item surgeon__item_10 surgeon__item_hide"
+                            <img data-level="11" class="surgeon__item surgeon__item_10 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/knee-jerk-reaction-item.svg" />
-                            <img data-level="11" class="surgeon__item surgeon__item_11 surgeon__item_hide"
+                            <img data-level="12" class="surgeon__item surgeon__item_11 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/mighty-python-item.svg" />
-                            <img data-level="12" class="surgeon__item surgeon__item_12 surgeon__item_hide"
+                            <img data-level="13" class="surgeon__item surgeon__item_12 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/droopy-lid-item.svg" />
-                            <img data-level="13" class="surgeon__item surgeon__item_13 surgeon__item_hide"
+                            <img data-level="14" class="surgeon__item surgeon__item_13 surgeon__item_hide"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/spring-in-your-step-item.svg" />
 
-                            <img data-level="0" class="surgeon__hole surgeon__hole_0"
+                            <img data-level="1" class="surgeon__hole surgeon__hole_0"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/rusty-nail-hole.svg" />
-                            <img data-level="1" class="surgeon__hole surgeon__hole_1"
+                            <img data-level="2" class="surgeon__hole surgeon__hole_1"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/handlebar-mustache-hole.svg" />
-                            <img data-level="2" class="surgeon__hole surgeon__hole_2"
+                            <img data-level="3" class="surgeon__hole surgeon__hole_2"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/ruby-lips-hole.svg" />
-                            <img data-level="3" class="surgeon__hole surgeon__hole_3"
+                            <img data-level="4" class="surgeon__hole surgeon__hole_3"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pearly-white-hole.svg" />
-                            <img data-level="4" class="surgeon__hole surgeon__hole_4"
+                            <img data-level="5" class="surgeon__hole surgeon__hole_4"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/meatier-thigh-hole.svg" />
-                            <img data-level="5" class="surgeon__hole surgeon__hole_5"
+                            <img data-level="6" class="surgeon__hole surgeon__hole_5"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/limp-node-hole.svg" />
-                            <img data-level="6" class="surgeon__hole surgeon__hole_6"
+                            <img data-level="7" class="surgeon__hole surgeon__hole_6"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/pull-yourself-up-by-your-bootstrap-hole.svg" />
-                            <img data-level="7" class="surgeon__hole surgeon__hole_7"
+                            <img data-level="8" class="surgeon__hole surgeon__hole_7"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/six-pack-hole.svg" />
-                            <img data-level="8" class="surgeon__hole surgeon__hole_8"
+                            <img data-level="9" class="surgeon__hole surgeon__hole_8"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/fused-backbone-hole.svg" />
-                            <img data-level="9" class="surgeon__hole surgeon__hole_9"
+                            <img data-level=10" class="surgeon__hole surgeon__hole_9"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/gulping-gullet-hole.svg" />
-                            <img data-level="10" class="surgeon__hole surgeon__hole_10"
+                            <img data-level="11" class="surgeon__hole surgeon__hole_10"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/knee-jerk-reaction-hole.svg" />
-                            <img data-level="11" class="surgeon__hole surgeon__hole_11"
+                            <img data-level="12" class="surgeon__hole surgeon__hole_11"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/mighty-python-hole.svg" />
-                            <img data-level="12" class="surgeon__hole surgeon__hole_12"
+                            <img data-level="13" class="surgeon__hole surgeon__hole_12"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/droopy-lid-hole.svg" />
-                            <img data-level="13" class="surgeon__hole surgeon__hole_13"
+                            <img data-level="14" class="surgeon__hole surgeon__hole_13"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/spring-in-your-step-hole.svg" />
                         </div>
                         <img class="surgeon__sam-img"
