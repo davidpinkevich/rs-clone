@@ -1,4 +1,5 @@
 import surgeonStore from "./data/surgeon-store";
+import levelCounter from "./level-counter";
 
 const createInstruction = () => {
   const instructionsEl = <HTMLElement>(
@@ -6,6 +7,10 @@ const createInstruction = () => {
   );
   const editorEl = <HTMLElement>document.querySelector(".surgeon__editor");
   const selectorEl = <HTMLElement>document.querySelector(".surgeon__before");
+  const controlsEl = <HTMLElement>document.querySelector(".surgeon__controls");
+
+  controlsEl.style.display = "block";
+  levelCounter();
 
   const { descr1, descr2, selector } =
     surgeonStore.levels[surgeonStore.currentLevel - 1];
