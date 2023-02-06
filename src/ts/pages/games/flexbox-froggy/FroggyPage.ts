@@ -3,7 +3,7 @@ import AppView from "./view/AppView";
 import LocalStorage from "../../../utils/LocalStorage";
 import getPageHTML from "./view/ui";
 import levels from "./data/data-levels";
-import { updateStatePage, isWin } from "./froggy-helper";
+import { updateStatePage, isWin, animateFrogs } from "./froggy-helper";
 
 class FroggyPage extends Page {
   private level: number;
@@ -61,8 +61,10 @@ class FroggyPage extends Page {
       if (isWin()) {
         (document.querySelector(".correct") as HTMLAudioElement).play();
         nextBtn?.classList.remove("disabledButton");
+        nextBtn?.classList.add("animate__animated", "animate__tada");
       } else {
         nextBtn?.classList.add("disabledButton");
+        nextBtn?.classList.remove("animate__animated", "animate__tada");
       }
     });
   }
@@ -107,7 +109,11 @@ class FroggyPage extends Page {
       completedLevels.push(this.level);
       completedLevels = Array.from(new Set(completedLevels));
       this.ls.set("completedLevels", JSON.stringify(completedLevels));
-      this.nextLevel();
+
+      animateFrogs();
+      setTimeout(() => {
+        this.nextLevel();
+      }, 800);
     });
   }
 

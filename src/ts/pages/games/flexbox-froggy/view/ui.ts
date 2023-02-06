@@ -49,7 +49,7 @@ const getSidebarHTML = () => `
 
 export const getFrogHTML = () => `
   <div class="frog__wrapper">
-    <img class="frog-img" src="./assets/images/froggy/frog-green.svg" alt="frog">
+    <img class="frog-img animate__animated animate__pulse animate__infinite" src="./assets/images/froggy/frog-green.svg" alt="frog">
   </div>
 `;
 
@@ -85,7 +85,6 @@ const getPageHTML = () => `
     </div>
     <div id="audio">
       <audio class="correct" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/correct.wav"></audio>
-      <audio class="incorrect" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/incorrect.wav"></audio>
       <audio class="boing" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/boing.wav"></audio>
       <audio class="win" src="https://codepip.com/wp-content/plugins/codepip/games/flexbox-froggy/audio/win.mp3"></audio>
     </div>

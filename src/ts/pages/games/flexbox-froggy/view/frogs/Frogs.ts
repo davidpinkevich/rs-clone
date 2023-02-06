@@ -15,6 +15,7 @@ class Frogs {
     frogsContainer.innerHTML = "";
 
     const { wrapForInit } = levelInfo;
+    frogsContainer.style.cssText = "";
     frogsContainer.style.flexWrap = wrapForInit ? "wrap" : "nowrap";
 
     const frogs = levelInfo.items;

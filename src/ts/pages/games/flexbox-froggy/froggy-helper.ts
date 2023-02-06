@@ -55,3 +55,15 @@ export const isWin = () => {
 
   return true;
 };
+
+export const animateFrogs = () => {
+  const frogWrappers = Array.from(document.querySelectorAll(".frog__wrapper"));
+
+  frogWrappers.forEach((wrap) => {
+    wrap.classList.add("animate__animated", "animate__bounceOutUp");
+  });
+
+  setTimeout(() => {
+    (document.querySelector(".boing") as HTMLAudioElement).play();
+  }, 200);
+};
