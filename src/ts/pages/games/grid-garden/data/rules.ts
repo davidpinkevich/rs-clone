@@ -32,7 +32,7 @@ const RULES_GARDEN: TRulesGarden = {
     "<div class='garden__info-text'><span class='template__info'>grid-template</span> is a shorthand property that combines <span class='template__rows-info'>grid-template-rows</span> and <span class='template__columns-info'>grid-template-columns</span>. For example, <span>grid-template: 50% 50% / 200px;</span> will create a grid with two rows that are 50% each, and one column that is 200 pixels wide.</div><div class='garden__info-example'>Try using <span class='template__info'>grid-template</span> to water an area that includes the top 60% and left 200 pixels of your garden.</div>",
   ],
   RULES_RU: [
-    "<div class='garden__info-text'Добро пожаловать в Grid Garden — место, где вы напишете CSS-код, чтобы вырастить морковный сад. Поливайте только те зоны, на которых есть морковь, используя свойство <span class='column__start-info'>grid-column-start</span>.</span></div><div class='garden__info-example'>Например, <span class='column__start-info'>grid-column-start: 3</span> покроет водой зону, начинающуюся на третьей grid-линии по вертикали, это как сказать “третья вертикальная граница на grid-сетке слева”.</div>",
+    "<div class='garden__info-text'>Добро пожаловать в Grid Garden — место, где вы напишете CSS-код, чтобы вырастить морковный сад. Поливайте только те зоны, на которых есть морковь, используя свойство <span class='column__start-info'>grid-column-start</span>.</span></div><div class='garden__info-example'>Например, <span class='column__start-info'>grid-column-start: 3</span> покроет водой зону, начинающуюся на третьей grid-линии по вертикали, это как сказать “третья вертикальная граница на grid-сетке слева”.</div>",
 
     "<div class='garden__info-text'>Когда вы используете только <span class='column__start-info'>grid-column-start</span>, grid-элемент по умолчанию “захватит” только один столбец. Однако вы можете увеличить элемент между несколькими столбцами, если добавите свойство <span class='column__end-info'>grid-column-end</span>.</div><div class='garden__info-example'>Используя <span class='column__end-info'>grid-column-end</span>, полейте всю морковь, избегая пустые участки. Ведь мы не хотим использовать воду напрасно! Помните, что морковь начинается на первой вертикальной grid-линии и заканчивается на четвёртой.</div>",
 
@@ -48,7 +48,7 @@ const RULES_GARDEN: TRulesGarden = {
 
     "<div class='garden__info-text'>А теперь попробуйте использовать сокращённое свойство <span class='row__info'>grid-row</span>.</div>",
 
-    "<div class='garden__info-text'>Вы также можете использовать <span class='column__info'>grid-column</ызфт> и <span class='row__info'>grid-row</span> вместе, чтобы охватить более крупные зоны внутри grid-сетки. Пробуйте!</div>",
+    "<div class='garden__info-text'>Вы также можете использовать <span class='column__info'>grid-column</span> и <span class='row__info'>grid-row</span> вместе, чтобы охватить более крупные зоны внутри grid-сетки. Пробуйте!</div>",
 
     "<div class='garden__info-text'>Если вас также утомляет печатать <span class='column__info'>grid-column</span> и <span class='row__info'>grid-row</span>, есть сокращённое свойство и для этого. <span area__info>grid-area</span> принимает 4 значения, разделенные косой чертой <span>/</span>: <span class='row__start-info'>grid-row-start</span>, <span class='column__start-info'>grid-column-start</span>, <span class='row__end-info'>grid-row-end</span> и <span class='column__end-info'>grid-column-end</span>.</div><div class='garden__info-example'>Пример: <span>grid-area: 1 / 1 / 3 / 6;</span>.</div>",
 
@@ -61,27 +61,27 @@ const RULES_GARDEN: TRulesGarden = {
     "<div class='garden__info-text'><span class='template__info'>grid-template</span> — сокращённый вариант комбинации <span class='template__rows-info'>grid-template-rows</span> и <span class='template__columns-info'>grid-template-columns</span>. Например, <span>grid-template: 50% 50% / 200px</span> создаст grid-сетку с двумя строками по 50% каждая и одним столбцом шириной 200 пикселей.</div><div class='garden__info-example'>Попробуйте использовать <span class='template__info'>grid-template</span>, чтобы полить зону, включающую в себя верхние 60% и левые 200 пикселей сада.</div>",
   ],
   TEXT__GARDEN: [
-    `<p class="code__garden-task-text"><span></span>garden {</p>
+    `<p class="code__garden-task-text"><span></span>#garden {</p>
+  <p class="code__garden-task-text code__garden-task-left"><span></span>display: grid;</p>
+  <p class="code__garden-task-text code__garden-task-left"><span></span>grid-template-columns: 20% 20% 20% 20% 20%;</p>
+  <p class="code__garden-task-text code__garden-task-left"><span></span>grid-template-rows: 20% 20% 20% 20% 20%;</p>
+  <p class="code__garden-task-text"><span></span>}</p>`,
+
+    `<p class="code__garden-task-text"><span></span>#garden {</p>
   <p class="code__garden-task-text"><span></span>display: grid;</p>
-  <p class="code__garden-task-textz"><span></span>grid-template-columns: 20% 20% 20% 20% 20%;</p>
+  <p class="code__garden-task-text"><span></span><input class="garden__input" type="text"></p>
   <p class="code__garden-task-text"><span></span>grid-template-rows: 20% 20% 20% 20% 20%;</p>
   <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>garden {</p>
   <p class="code__garden-task-text"><span></span>display: grid;</p>
-  <p class="code__garden-task-textz"><span></span><input class="garden__input" type="text"></p>
+  <p class="code__garden-task-text"><span></span><input class="garden__input" type="text"></p>
   <p class="code__garden-task-text"><span></span>grid-template-rows: 20% 20% 20% 20% 20%;</p>
   <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>garden {</p>
   <p class="code__garden-task-text"><span></span>display: grid;</p>
-  <p class="code__garden-task-textz"><span></span><input class="garden__input" type="text"></p>
-  <p class="code__garden-task-text"><span></span>grid-template-rows: 20% 20% 20% 20% 20%;</p>
-  <p class="code__garden-task-text"><span></span>}</p>`,
-
-    `<p class="code__garden-task-text"><span></span>garden {</p>
-  <p class="code__garden-task-text"><span></span>display: grid;</p>
-  <p class="code__garden-task-textz"><span></span>grid-template-columns: 20% 20% 20% 20% 20%;</p>
+  <p class="code__garden-task-text"><span></span>grid-template-columns: 20% 20% 20% 20% 20%;</p>
   <p class="code__garden-task-text"><span></span><input class="garden__input" type="text"></p>
   <p class="code__garden-task-text"><span></span>}</p>`,
 
@@ -92,66 +92,66 @@ const RULES_GARDEN: TRulesGarden = {
   ],
   TEXT__WATER: [
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
     <p class="code__garden-task-text">grid-column-start: 1;</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
     <p class="code__garden-task-text">grid-column-start: 5;</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
     <p class="code__garden-task-text">grid-column-start: 2;</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text"><textarea class="water__input water__input-area"></textarea></p>
+    <p class="code__garden-task-text"><span></span><textarea class="water__input water__input-area"></textarea></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text"><input class="water__input" type="text"></p>
+    <p class="code__garden-task-text"><span></span><input class="water__input" type="text"></p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text">grid-column: 1;</p>
-    <p class="code__garden-task-text">grid-row: 1;</p>
+    <p class="code__garden-task-text"><span></span>grid-column: 1;</p>
+    <p class="code__garden-task-text"><span></span>grid-row: 1;</p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text">grid-column: 1;</p>
-    <p class="code__garden-task-text">grid-row: 1;</p>
+    <p class="code__garden-task-text"><span></span>grid-column: 1;</p>
+    <p class="code__garden-task-text"><span></span>grid-row: 1;</p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text">grid-column: 1 / 6;</p>
-    <p class="code__garden-task-text">grid-row: 5 / 6;</p>
+    <p class="code__garden-task-text"><span></span>grid-column: 1 / 6;</p>
+    <p class="code__garden-task-text"><span></span>grid-row: 5 / 6;</p>
     <p class="code__garden-task-text"><span></span>}</p>`,
 
     `<p class="code__garden-task-text"><span></span>#water {</p>
-    <p class="code__garden-task-text">grid-column: 1;</p>
-    <p class="code__garden-task-text">grid-row: 1;</p>
+    <p class="code__garden-task-text"><span></span>grid-column: 1;</p>
+    <p class="code__garden-task-text"><span></span>grid-row: 1;</p>
     <p class="code__garden-task-text"><span></span>}</p>`,
   ],
   CARROT_RULES: [

@@ -3,10 +3,11 @@ const drowPageGarden = () => `<div class="garden __container">
   <div class="garden__info-header">
     <h1 class="garden__info-header-title">grid garden</h1>
     <div class="garden__info-header-settings settings__garden">
-      <div class="settings__garden-sound">Sound</div>
+      <div class="settings__garden-sound sound__grid-on"><span>Sound</span>:ON</div>
+      <div class="settings__garden-lang">English</div>
       <div class="settings__garden-levels">
         <button class='settings__garden-levels-last'></button>
-        <div class='settings__garden-levels-list'>Level: <span></span></div>
+        <div class='settings__garden-levels-list'><p>Level:</p> <span></span></div>
         <button class='settings__garden-levels-next'></button>
         <div class='state__levels'></div>
       </div>
