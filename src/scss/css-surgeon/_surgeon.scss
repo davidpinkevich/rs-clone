@@ -73,6 +73,60 @@
     font-size: 16px;
   }
 
+  &__winner {
+    display: none;
+    width: 500px;
+    background-color: #fff;
+    padding: 32px;
+    margin: 0 auto;
+    border-radius: 4px;
+    color: #555;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fed954;
+    margin: 0 auto;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background-color: rgba(254,199,55, 1);
+
+    img {
+      width: 60px;
+      filter: sepia(100%) blur(0.5px);
+    }
+  }
+
+  &__subtitle {
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  &__descr {
+    font-family: Lato, sans-serif;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  &__button {
+    margin-top: 30px;
+    text-align: center;
+  }
+
   &__board {
     position: relative;
     height: 100%;
@@ -389,6 +443,25 @@
     &:disabled {
       background-color: #c70b1f;
       opacity: .5;
+    }
+  }
+
+  &__records {
+    width: 170px;
+    height: 39px;
+    text-decoration: none;
+    padding: 0.469rem 1rem;
+    background-color: #17a2b8;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.5;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #1592a6;
     }
   }
 } 
