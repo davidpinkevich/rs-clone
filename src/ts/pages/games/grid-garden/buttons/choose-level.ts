@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 import drowLevels from "./drow-levels";
 
@@ -18,7 +19,7 @@ const chooseLevel = () => {
   next.style.background = "url(./assets/images/grid-garden/arrow-right.svg)";
 
   btns.addEventListener("click", (event: Event) => {
-    const ls = new LocalStorage("gridGarden");
+    const ls = new LocalStorage(GRID_LS.LS_LEVELS);
     const numberLevel = Number(ls.get("numberLevel"));
     if (event.target === last) {
       btnsTable.forEach((item) => {
@@ -30,7 +31,7 @@ const chooseLevel = () => {
       });
       btn.disabled = true;
       btn.classList.remove("code__garden-button-active");
-      ls.set("numberLevel", `${numberLevel - 1}`);
+      ls.set(GRID_LS.NUMBER_LEVEL, `${numberLevel - 1}`);
       next.disabled = false;
       drowLevels();
     } else if (event.target === next) {
@@ -44,7 +45,7 @@ const chooseLevel = () => {
       btnsTable[numberLevel].classList.add("table__level-active");
       btn.disabled = true;
       btn.classList.remove("code__garden-button-active");
-      ls.set("numberLevel", `${numberLevel + 1}`);
+      ls.set(GRID_LS.NUMBER_LEVEL, `${numberLevel + 1}`);
       last.disabled = false;
       drowLevels();
     }

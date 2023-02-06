@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 
 const addActiveLevelGarden = () => {
@@ -6,8 +7,8 @@ const addActiveLevelGarden = () => {
     ".state__levels-item"
   );
 
-  const lsItems = new LocalStorage("gridGarden");
-  const numberLevel = lsItems.get("numberLevel");
+  const lsItems = new LocalStorage(GRID_LS.LS_LEVELS);
+  const numberLevel = lsItems.get(GRID_LS.NUMBER_LEVEL);
 
   items.forEach((item) => {
     if (item.dataset.levelGrid === numberLevel) {

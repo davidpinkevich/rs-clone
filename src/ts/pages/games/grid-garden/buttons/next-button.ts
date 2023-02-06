@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 import drowLevels from "./drow-levels";
 import addWinsGridLS from "./wins-ls-btn";
@@ -16,13 +17,13 @@ const nextButtonLevelGrid = () => {
     btn.disabled = true;
     last.disabled = false;
     btn.classList.remove("code__garden-button-active");
-    const ls = new LocalStorage("gridGarden");
-    const numberLevel = Number(ls.get("numberLevel"));
+    const ls = new LocalStorage(GRID_LS.LS_LEVELS);
+    const numberLevel = Number(ls.get(GRID_LS.NUMBER_LEVEL));
     btnsTable[numberLevel - 1].classList.add("table__level-win");
     btnsTable[numberLevel - 1].classList.remove("table__level-active");
     btnsTable[numberLevel].classList.add("table__level-active");
     addWinsGridLS();
-    ls.set("numberLevel", `${numberLevel + 1}`);
+    ls.set(GRID_LS.NUMBER_LEVEL, `${numberLevel + 1}`);
     drowLevels();
   });
 };

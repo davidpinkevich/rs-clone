@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import RULES_GARDEN from "../data/rules";
 import LocalStorage from "../../../../utils/LocalStorage";
 
@@ -11,8 +12,8 @@ const addCarrots = () => {
   svgImage.classList.add("field__carrots-item-svg");
   carrot.append(svgImage);
 
-  const ls = new LocalStorage("gridGarden");
-  const numberLvl = ls.get("numberLevel");
+  const ls = new LocalStorage(GRID_LS.LS_LEVELS);
+  const numberLvl = ls.get(GRID_LS.NUMBER_LEVEL);
 
   carrot.setAttribute(
     "style",

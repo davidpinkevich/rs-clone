@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 
 const resetLevels = () => {
@@ -5,12 +6,12 @@ const resetLevels = () => {
     ".state__levels-item"
   );
 
-  const ls = new LocalStorage("gridGardenWins");
+  const ls = new LocalStorage(GRID_LS.LS_WINS);
   if (ls) {
-    const numberWins = JSON.parse(ls.get("numberWins"));
+    const numberWins = JSON.parse(ls.get(GRID_LS.NUMBER_WINS));
 
     const resetResult = numberWins.map(() => false);
-    ls.set("numberWins", JSON.stringify(resetResult));
+    ls.set(GRID_LS.NUMBER_WINS, JSON.stringify(resetResult));
   }
   allWins.forEach((item) => {
     item.classList.remove("table__level-win");

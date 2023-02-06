@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import RULES_GARDEN from "../data/rules";
 import LocalStorage from "../../../../utils/LocalStorage";
 import Coordinates from "../../../../utils/Coordinates";
@@ -12,8 +13,8 @@ const moveGarden = () => {
     document.querySelector(".code__garden-button")
   );
 
-  const ls = new LocalStorage("gridGarden");
-  const numberLvl = ls.get("numberLevel");
+  const ls = new LocalStorage(GRID_LS.LS_LEVELS);
+  const numberLvl = ls.get(GRID_LS.NUMBER_LEVEL);
 
   carrotsField.setAttribute(
     "style",

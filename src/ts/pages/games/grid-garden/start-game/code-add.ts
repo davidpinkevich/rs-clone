@@ -1,11 +1,12 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import RULES_GARDEN from "../data/rules";
 import LocalStorage from "../../../../utils/LocalStorage";
 
 const addCode = () => {
   const task = <HTMLElement>document.querySelector(".code__garden-task");
   task.innerHTML = "";
-  const ls = new LocalStorage("gridGarden");
-  const numberLvl = ls.get("numberLevel");
+  const ls = new LocalStorage(GRID_LS.LS_LEVELS);
+  const numberLvl = ls.get(GRID_LS.NUMBER_LEVEL);
 
   if (Number(numberLvl) <= 10) {
     task.insertAdjacentHTML("afterbegin", RULES_GARDEN.TEXT__GARDEN[0]);

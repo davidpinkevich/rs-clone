@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import RULES_GARDEN from "../data/rules";
 import LocalStorage from "../../../../utils/LocalStorage";
 
@@ -6,8 +7,8 @@ const addWater = () => {
 
   const water = document.createElement("div");
   water.classList.add("field__water-item");
-  const ls = new LocalStorage("gridGarden");
-  const numberLvl = ls.get("numberLevel");
+  const ls = new LocalStorage(GRID_LS.LS_LEVELS);
+  const numberLvl = ls.get(GRID_LS.NUMBER_LEVEL);
   water.setAttribute(
     "style",
     `${RULES_GARDEN.WATER_RULES[Number(numberLvl) - 1]}`

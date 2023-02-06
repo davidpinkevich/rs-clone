@@ -1,4 +1,4 @@
-import { LEVELS_GARDEN } from "../../../../data/goods-data";
+import { LEVELS_GARDEN, GRID_LS } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 import drowLevels from "./drow-levels";
 import resetLevels from "./reset-levels";
@@ -29,9 +29,9 @@ const addTableLevels = () => {
     if (target.dataset.levelGrid) {
       btn.disabled = true;
       btn.classList.remove("code__garden-button-active");
-      const ls = new LocalStorage("gridGarden");
+      const ls = new LocalStorage(GRID_LS.LS_LEVELS);
       ls.set("numberLevel", target.dataset.levelGrid);
-      const numberLevel = Number(ls.get("numberLevel"));
+      const numberLevel = Number(ls.get(GRID_LS.NUMBER_LEVEL));
       drowLevels();
 
       const last = <HTMLButtonElement>(
