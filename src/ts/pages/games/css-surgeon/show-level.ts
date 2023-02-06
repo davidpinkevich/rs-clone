@@ -12,13 +12,15 @@ const showLevel = () => {
   const { currentLevel } = surgeonStore;
   const { origin } = surgeonStore.levels[currentLevel - 1];
 
+  holesEl[currentLevel - 1].classList.remove("surgeon__holes_hide");
+  itemsEl[currentLevel - 1].classList.remove("surgeon__items_hide");
   samEl.style.transformOrigin = origin;
   samEl.style.transform = "scale(7)";
   viewEl.style.background = "#ffd4ce";
   setTimeout(() => {
     bodyEl.style.opacity = "0";
-    holesEl[currentLevel - 1].classList.remove("surgeon__holes_hide");
-    itemsEl[currentLevel - 1].classList.remove("surgeon__items_hide");
+    itemsEl[currentLevel - 1].style.opacity = "1";
+    holesEl[currentLevel - 1].style.opacity = "1";
   }, 2000);
 };
 
