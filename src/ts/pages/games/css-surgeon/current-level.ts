@@ -5,9 +5,17 @@ const currentLevel = () => {
     ".surgeon__item_hide"
   );
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
+  const instructionsEl = <HTMLElement>(
+    document.querySelector(".surgeon__instructions")
+  );
+  const editorEl = <HTMLElement>document.querySelector(".surgeon__editor");
+  const winnerEl = <HTMLElement>document.querySelector(".surgeon__winner");
 
   if (itemsEl.length === 0) {
     nextBtn.disabled = true;
+    instructionsEl.style.display = "none";
+    editorEl.style.display = "";
+    winnerEl.style.display = "block";
     return;
   }
 
@@ -24,8 +32,6 @@ const currentLevel = () => {
     surgeonStore.currentLevel = 0;
     nextLevels = levels.filter((level) => level > surgeonStore.currentLevel);
   }
-
-  console.log("Во время", levels, nextLevels);
 
   surgeonStore.currentLevel = Math.min(...nextLevels);
 };

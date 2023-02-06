@@ -55,6 +55,20 @@ const innerSurgeon = () => `
                 </div>
                 <button class="button button__next" disabled>Next</button>
             </div>
+            <div class="surgeon__winner">
+                <div class="surgeon__head">
+                    <div class="surgeon__img">
+                        <img src="https://codepip.com/wp-content/plugins/codepip/images/badges/css-surgeon.svg"/>
+                    </div>
+                </div>
+                <h3 class="surgeon__subtitle">CSS Surgeon</h3>
+                <div class=surgeon__descr>
+                    You're a hero! Thanks to your mastery of CSS transform, you were able to replace all the missing organs and put CSS Sam on the road to recovery. Now to find CSS Sam some clothes...
+                </div>
+                <div class="surgeon__button">
+                    <a class="button button__records" href="#">View All Badges</a>
+                </div>
+            </div>
         </section>
         <section class="surgeon__view">
             <div class="surgeon__board">
