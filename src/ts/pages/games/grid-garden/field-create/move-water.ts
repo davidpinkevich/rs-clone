@@ -1,3 +1,4 @@
+import { GRID_LS } from "../../../../data/goods-data";
 import RULES_GARDEN from "../data/rules";
 import Coordinates from "../../../../utils/Coordinates";
 import LocalStorage from "../../../../utils/LocalStorage";
@@ -7,8 +8,8 @@ const moveWater = () => {
   const btnNext = <HTMLButtonElement>(
     document.querySelector(".code__garden-button")
   );
-  const ls = new LocalStorage("gridGarden");
-  const numberLvl = ls.get("numberLevel");
+  const ls = new LocalStorage(GRID_LS.LS_LEVELS);
+  const numberLvl = ls.get(GRID_LS.NUMBER_LEVEL);
 
   if (input) {
     input.addEventListener("input", () => {
