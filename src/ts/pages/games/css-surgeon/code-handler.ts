@@ -13,7 +13,10 @@ const codeHandler = () => {
     const { currentLevel } = surgeonStore;
     const target = e.target as HTMLTextAreaElement;
 
-    itemsEl[currentLevel - 1].setAttribute("style", target.value);
+    itemsEl[currentLevel - 1].setAttribute(
+      "style",
+      `opacity: 1; ${target.value}`
+    );
 
     const coord = new Coordinates(
       itemsEl[currentLevel - 1],
