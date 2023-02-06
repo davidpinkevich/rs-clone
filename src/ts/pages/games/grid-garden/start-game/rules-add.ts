@@ -1,4 +1,4 @@
-import { LEVELS_GARDEN } from "../../../../data/goods-data";
+import { LEVELS_GARDEN, GRID_LS } from "../../../../data/goods-data";
 import RULES_GARDEN from "../data/rules";
 import LocalStorage from "../../../../utils/LocalStorage";
 
@@ -17,14 +17,14 @@ const addRules = () => {
     document.querySelector(".settings__garden-levels-list>span")
   );
 
-  const ls = new LocalStorage("gridGarden");
-  const levelGarden = Number(ls.get("numberLevel"));
-  if (!ls.get("lang")) {
-    ls.set("lang", "en");
+  const ls = new LocalStorage(GRID_LS.LS_LEVELS);
+  const levelGarden = Number(ls.get(GRID_LS.NUMBER_LEVEL));
+  if (!ls.get(GRID_LS.LANG)) {
+    ls.set(GRID_LS.LANG, GRID_LS.LANG_ENG);
   }
-  const lang = ls.get("lang");
+  const lang = ls.get(GRID_LS.LANG);
   if (!levelGarden) {
-    ls.set("numberLevel", `${LEVELS_GARDEN.START}`);
+    ls.set(GRID_LS.NUMBER_LEVEL, `${LEVELS_GARDEN.START}`);
     last.disabled = true;
   } else if (levelGarden === LEVELS_GARDEN.START) {
     last.disabled = true;
@@ -32,13 +32,12 @@ const addRules = () => {
     next.disabled = true;
   }
 
-  const numberLvl = ls.get("numberLevel");
-  lvlInfo.innerHTML = `${ls.get("numberLevel")}`;
-  console.log("numberLvl: ", numberLvl);
+  const numberLvl = ls.get(GRID_LS.NUMBER_LEVEL);
+  lvlInfo.innerHTML = `${ls.get(GRID_LS.NUMBER_LEVEL)}`;
 
-  if (lang === "en") {
+  if (lang === GRID_LS.LANG_ENG) {
     header.innerHTML = `${RULES_GARDEN.RULES_ENG[Number(numberLvl) - 1]}`;
-  } else if (lang === "ru") {
+  } else if (lang === GRID_LS.LANG_RU) {
     header.innerHTML = `${RULES_GARDEN.RULES_RU[Number(numberLvl) - 1]}`;
   }
 };
