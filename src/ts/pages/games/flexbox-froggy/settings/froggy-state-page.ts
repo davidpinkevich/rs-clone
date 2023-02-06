@@ -24,6 +24,7 @@ const updateStatePage = (level: number) => {
   resetLabel.textContent = language === "en" ? "Reset" : "Сбросить";
 
   const nextBtn = document.querySelector(".next-btn") as HTMLButtonElement;
+  nextBtn.textContent = language === "en" ? "Next" : "Следующий";
   nextBtn.classList.add("disabledButton");
 
   const input = document.querySelector("#code") as HTMLTextAreaElement;
