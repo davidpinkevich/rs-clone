@@ -14,6 +14,7 @@ class Lilies {
       ".lilies"
     ) as HTMLElement;
     liliesContainer.innerHTML = "";
+    liliesContainer.style.cssText = "";
 
     const lilies = levelInfo.items;
     lilies.forEach((lily) => {
