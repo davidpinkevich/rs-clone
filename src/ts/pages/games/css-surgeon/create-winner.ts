@@ -8,8 +8,10 @@ const createWinner = () => {
   const overlayEl = <HTMLElement>document.querySelector(".surgeon__overlay");
   const samImg = <HTMLElement>document.querySelector(".surgeon__sam-img");
   const samWinImg = <HTMLElement>document.querySelector(".surgeon__sam-win");
+  const controlsEl = <HTMLElement>document.querySelector(".surgeon__controls");
 
   nextBtn.disabled = true;
+  controlsEl.style.display = "none";
   instructionsEl.style.display = "none";
   editorEl.style.display = "";
   winnerEl.style.display = "block";

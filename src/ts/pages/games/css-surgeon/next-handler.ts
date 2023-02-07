@@ -1,6 +1,5 @@
 import createInstruction from "./create-instruction";
 import currentLevel from "./current-level";
-import surgeonStore from "./data/surgeon-store";
 import hideLevels from "./hide-levels";
 import showItem from "./show-item";
 import showLevel from "./show-level";
@@ -18,10 +17,7 @@ const nextHandler = () => {
     codeEl.value = "";
     currentLevel();
     hideLevels();
-    if (
-      surgeonStore.currentLevel === surgeonStore.levels.length &&
-      itemsEl.length === 0
-    ) {
+    if (itemsEl.length === 0) {
       return;
     }
     createInstruction();

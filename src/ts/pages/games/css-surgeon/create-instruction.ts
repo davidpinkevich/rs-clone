@@ -12,8 +12,8 @@ const createInstruction = () => {
   controlsEl.style.display = "block";
   levelCounter();
 
-  const { descr1, descr2, selector } =
-    surgeonStore.levels[surgeonStore.currentLevel - 1];
+  const { currentLevel } = surgeonStore;
+  const { descr1, descr2, selector } = surgeonStore.levels[currentLevel - 1];
 
   instructionsEl.innerHTML = `
   <p>${descr1}</p>

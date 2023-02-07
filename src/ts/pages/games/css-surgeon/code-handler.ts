@@ -1,5 +1,6 @@
 import Coordinates from "../../../utils/Coordinates";
 import surgeonStore from "./data/surgeon-store";
+import ls from "./ls";
 
 const codeHandler = () => {
   const codeEl = <HTMLElement>document.querySelector(".surgeon__code");
@@ -25,10 +26,15 @@ const codeHandler = () => {
 
     if (coord.comparisonСoordinates()) {
       nextBtn.disabled = false;
+      ls.set(`${currentLevel - 1}`, target.value);
     } else {
       nextBtn.disabled = true;
     }
   });
+
+  // codeEl.addEventListener("paste", (e) => {
+  //   e.preventDefault();
+  // });
 };
 
 export default codeHandler;

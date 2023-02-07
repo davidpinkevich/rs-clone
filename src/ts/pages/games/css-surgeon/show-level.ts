@@ -1,4 +1,5 @@
 import surgeonStore from "./data/surgeon-store";
+import disableElement from "./utils/disabled-element";
 
 const showLevel = () => {
   const holesEl: NodeListOf<HTMLElement> =
@@ -17,10 +18,12 @@ const showLevel = () => {
   samEl.style.transformOrigin = origin;
   samEl.style.transform = "scale(7)";
   viewEl.style.background = "#ffd4ce";
+  disableElement(".surgeon__code", false);
   setTimeout(() => {
     bodyEl.style.opacity = "0";
     itemsEl[currentLevel - 1].style.opacity = "1";
     holesEl[currentLevel - 1].style.opacity = "1";
+    disableElement(".surgeon__level", false);
   }, 2000);
 };
 

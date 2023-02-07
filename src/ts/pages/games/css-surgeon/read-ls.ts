@@ -18,7 +18,7 @@ const readLs = () => {
     });
   });
 
-  surgeonStore.currentLevel = Math.max(...levels);
+  surgeonStore.currentLevel = Math.min(...levels);
 
   currentLevel();
 };

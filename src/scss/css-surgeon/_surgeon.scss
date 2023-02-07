@@ -42,13 +42,96 @@
   &__counter {
     width: 140px;
     height: 30.5px;
-    padding: 0.25rem 0.4rem;
     margin: 0 auto;
     text-align: center;
     line-height: 1.5;
-    background-color: #c51126;
     color: #fff;
+    position: relative;
+    cursor: pointer;
+    z-index: 79;
+  }
+
+  &__indicator {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.25rem 0.4rem;
     border-radius: 4px;
+    background-color: #c51126;
+
+    &:hover {
+      background-color: #9e0d1d;
+    }
+  }
+
+  &__caret {
+    margin-left: 2px;
+  }
+
+  &__levels-wrapper {
+    display: none;
+    width: 225px;
+    position: absolute;
+    top: 41px;
+    left: 0;
+    padding: 1em;
+    text-align: center;
+    z-index: 80;
+    background-color: #9e0d1d;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.5;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 48%;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 12px solid #9e0d1d;
+    }
+  }
+
+  &__level {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    line-height: 26px;
+    background-color: rgba(255,255,255,.2);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+
+    &:disabled {
+      background-color: gray;
+    }
+
+    &_currnet {
+      border-color: rgba(255,255,255,.5);
+    }
+
+    &_solved {
+      background-color: #228b24;
+    }
+
+    &:hover {
+      border-color: rgba(255,255,255,.5);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
   }
 
   &__instructions {
@@ -307,6 +390,7 @@
   &__item {
     position: absolute;
     z-index: 1;
+    cursor: pointer;
 
     &_0 {
       width: 19.5px;
@@ -470,6 +554,22 @@
 
     &:hover {
       background-color: #1592a6;
+    }
+  }
+
+  &__reset {
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.5;
+    padding: 0.4em 0.8em 0.3em;
+    background-color: rgba(255,255,255,.2);
+    border-radius: 14px;
+    margin-top: 1em;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #c70b1f;
     }
   }
 } 

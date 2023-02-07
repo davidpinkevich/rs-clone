@@ -17,7 +17,28 @@ const innerSurgeon = () => `
                             <span class="surgeon__current">1</span>
                             <span>of</span>
                             <span class="surgeon__total">14</span>
+                            <span class="surgeon__caret">▾</span>
                         </span>
+                        <div class="surgeon__levels-wrapper">
+                            <div class="surgeon__levels">
+                                <button class="surgeon__level" data-level="1">1</button>
+                                <button class="surgeon__level" data-level="2">2</button>
+                                <button class="surgeon__level" data-level="3">3</button>
+                                <button class="surgeon__level" data-level="4">4</button>
+                                <button class="surgeon__level" data-level="5">5</button>
+                                <button class="surgeon__level" data-level="6">6</button>
+                                <button class="surgeon__level" data-level="7">7</button>
+                                <button class="surgeon__level" data-level="8">8</button>
+                                <button class="surgeon__level" data-level="9">9</button>
+                                <button class="surgeon__level" data-level="10">10</button>
+                                <button class="surgeon__level" data-level="11">11</button>
+                                <button class="surgeon__level" data-level="12">12</button>
+                                <button class="surgeon__level" data-level="13">13</button>
+                                <button class="surgeon__level" data-level="14">14</button>
+                            </div>
+                            <button class="button button__reset">Reset</button>
+                            <div data-close="close" class="surgeon__close">&times</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,6 +48,7 @@ const innerSurgeon = () => `
                 <p>Use the powerful CSS <code>transform</code> property to get the job done.
                     <code>transform</code> modifies elements using up to four operations at once, including
                     <code>translate</code>, <code>rotate</code>, <code>scale</code>, and <code>skew</code>.</p>
+                <p>Click the <strong>RUSTY NAIL</strong> on CSS Sam's fingertip or the button below to begin.</p>
                 <p><button class="button button__start">Start operating!</button></p>
             </div>
             <div class="surgeon__editor">
@@ -196,7 +218,7 @@ const innerSurgeon = () => `
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/six-pack-hole.svg" />
                             <img data-level="9" class="surgeon__hole surgeon__hole_8"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/fused-backbone-hole.svg" />
-                            <img data-level=10" class="surgeon__hole surgeon__hole_9"
+                            <img data-level="10" class="surgeon__hole surgeon__hole_9"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/gulping-gullet-hole.svg" />
                             <img data-level="11" class="surgeon__hole surgeon__hole_10"
                                 src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/knee-jerk-reaction-hole.svg" />
