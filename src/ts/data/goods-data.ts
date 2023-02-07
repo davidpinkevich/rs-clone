@@ -1,3 +1,5 @@
+import { TLangGrid, TGridLocalStore } from "../types/types";
+
 const enum PageIds {
   MainPage = "#",
   SurgeonPage = "#surgeon",
@@ -5,12 +7,24 @@ const enum PageIds {
   GardenPage = "#garden",
 }
 
-type TRulesGarden = {
-  FIELD: number;
-  RULES: string[];
-  CODE: string[];
-  CARROT_RULES: string[];
-  WATER_RULES: string[];
+const LEVELS_GARDEN = {
+  START: 1,
+  END: 14,
 };
 
-export { PageIds, TRulesGarden };
+const LANG_GRID: TLangGrid = {
+  BTN_ENG: ["English", "Sound", "Level:", "Next"],
+  BTN_RU: ["Русский", "Звук", "Уровень:", "Следующий"],
+};
+
+const GRID_LS: TGridLocalStore = {
+  LS_LEVELS: "gridGarden",
+  LS_WINS: "gridGardenWins",
+  NUMBER_LEVEL: "numberLevel",
+  NUMBER_WINS: "numberWins",
+  LANG: "lang",
+  LANG_ENG: "en",
+  LANG_RU: "ru",
+};
+
+export { PageIds, LEVELS_GARDEN, LANG_GRID, GRID_LS };
