@@ -209,6 +209,8 @@ const innerSurgeon = () => `
                         </div>
                         <img class="surgeon__sam-img"
                             src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/../css-sam.svg" />
+                        <img class="surgeon__sam-win"
+                            src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/images/items/../css-sam-win.svg" />
                     </div>
                 </div>
         </section>
