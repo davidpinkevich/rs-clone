@@ -1,7 +1,7 @@
-import surgeonStore from "./data/surgeon-store";
-import hideLevels from "./hide-levels";
-import showLevel from "./show-level";
-import disableElement from "./utils/disabled-element";
+import surgeonStore from "../data/surgeon-store";
+import hideLevels from "../level/hide-levels";
+import showLevel from "../level/show-level";
+import disableElement from "../utils/disabled-element";
 
 const loupe = () => {
   const { currentLevel } = surgeonStore;

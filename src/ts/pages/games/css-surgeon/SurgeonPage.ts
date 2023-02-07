@@ -1,14 +1,14 @@
 import Page from "../../abstract/page";
-import codeHandler from "./code-handler";
+import codeHandler from "./handlers/code-handler";
 import innerSurgeon from "./inner-surgeon";
-import levelsHandler from "./levels-handler";
-import loupeHandler from "./loupe-handler";
-import nextHandler from "./next-handler";
-import readLs from "./read-ls";
-import restartHandler from "./restart-handler";
-import selectLevel from "./select-level";
-import startHandler from "./start-handler";
-import volumeHandler from "./volume-handler";
+import levelsHandler from "./handlers/levels-handler";
+import loupeHandler from "./handlers/loupe-handler";
+import nextHandler from "./handlers/next-handler";
+import readLs from "./ls/read-ls";
+import restartHandler from "./handlers/restart-handler";
+import selectLevel from "./level/select-level";
+import startHandler from "./handlers/start-handler";
+import volumeHandler from "./handlers/volume-handler";
 
 class SurgeonPage extends Page {
   constructor(id: string) {

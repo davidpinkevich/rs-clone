@@ -1,5 +1,5 @@
-import surgeonStore from "./data/surgeon-store";
-import disableElement from "./utils/disabled-element";
+import surgeonStore from "../data/surgeon-store";
+import disableElement from "../utils/disabled-element";
 
 const hideLevels = () => {
   const holesEl: NodeListOf<HTMLElement> =

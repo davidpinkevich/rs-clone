@@ -1,7 +1,7 @@
-import Coordinates from "../../../utils/Coordinates";
-import surgeonStore from "./data/surgeon-store";
-import ls from "./ls";
-import showLevel from "./show-level";
+import Coordinates from "../../../../utils/Coordinates";
+import surgeonStore from "../data/surgeon-store";
+import ls from "../ls/ls";
+import showLevel from "../level/show-level";
 
 const codeHandler = () => {
   const codeEl = <HTMLElement>document.querySelector(".surgeon__code");

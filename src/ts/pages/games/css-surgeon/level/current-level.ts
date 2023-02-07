@@ -1,5 +1,5 @@
 import createWinner from "./create-winner";
-import surgeonStore from "./data/surgeon-store";
+import surgeonStore from "../data/surgeon-store";
 
 const currentLevel = () => {
   const itemsEl: NodeListOf<HTMLElement> = document.querySelectorAll(

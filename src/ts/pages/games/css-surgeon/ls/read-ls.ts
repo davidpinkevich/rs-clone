@@ -1,5 +1,5 @@
-import currentLevel from "./current-level";
-import surgeonStore from "./data/surgeon-store";
+import currentLevel from "../level/current-level";
+import surgeonStore from "../data/surgeon-store";
 import ls from "./ls";
 
 const readLs = () => {

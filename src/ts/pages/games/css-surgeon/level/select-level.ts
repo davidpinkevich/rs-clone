@@ -1,4 +1,4 @@
-import select from "./select";
+import select from "../handlers/select";
 
 const selectLevel = () => {
   const itemsEl: NodeListOf<HTMLElement> =

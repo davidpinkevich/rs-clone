@@ -1,6 +1,6 @@
-import createInstruction from "./create-instruction";
-import showLevel from "./show-level";
-import disableElement from "./utils/disabled-element";
+import createInstruction from "../level/create-instruction";
+import showLevel from "../level/show-level";
+import disableElement from "../utils/disabled-element";
 
 const startHandler = () => {
   const startBtn = <HTMLElement>document.querySelector(".button__start");

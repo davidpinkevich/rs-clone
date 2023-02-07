@@ -1,8 +1,8 @@
-import createInstruction from "./create-instruction";
-import currentLevel from "./current-level";
-import hideLevels from "./hide-levels";
-import showItem from "./show-item";
-import showLevel from "./show-level";
+import createInstruction from "../level/create-instruction";
+import currentLevel from "../level/current-level";
+import hideLevels from "../level/hide-levels";
+import showItem from "../level/show-item";
+import showLevel from "../level/show-level";
 
 const nextHandler = () => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");

@@ -1,4 +1,4 @@
-import surgeonStore from "./data/surgeon-store";
+import surgeonStore from "../data/surgeon-store";
 import levelCounter from "./level-counter";
 
 const createInstruction = () => {

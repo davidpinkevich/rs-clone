@@ -1,4 +1,4 @@
-import ls from "./ls";
+import ls from "../ls/ls";
 
 const restartHandler = () => {
   const restartBtn = <HTMLElement>document.querySelector(".button__restart");

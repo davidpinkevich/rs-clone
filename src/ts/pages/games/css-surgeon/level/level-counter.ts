@@ -1,4 +1,4 @@
-import surgeonStore from "./data/surgeon-store";
+import surgeonStore from "../data/surgeon-store";
 
 const levelCounter = () => {
   const currentEl = <HTMLElement>document.querySelector(".surgeon__current");

@@ -1,4 +1,4 @@
-import surgeonStore from "./data/surgeon-store";
+import surgeonStore from "../data/surgeon-store";
 
 const showItem = () => {
   const itemsEl: NodeListOf<HTMLElement> =

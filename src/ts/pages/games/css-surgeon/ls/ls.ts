@@ -1,4 +1,4 @@
-import LocalStorage from "../../../utils/LocalStorage";
+import LocalStorage from "../../../../utils/LocalStorage";
 
 const ls = new LocalStorage("surgeon");
 
