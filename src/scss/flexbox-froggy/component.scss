@@ -7,6 +7,12 @@ code {
   white-space: nowrap;
 }
 
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .disabledButton {
   pointer-events: none;
   opacity: 0.4;
