@@ -16,13 +16,12 @@ const nextHandler = () => {
     );
     nextBtn.disabled = true;
     codeEl.value = "";
-    hideLevels();
     currentLevel();
+    hideLevels();
     if (
       surgeonStore.currentLevel === surgeonStore.levels.length &&
       itemsEl.length === 0
     ) {
-      currentLevel();
       return;
     }
     createInstruction();
