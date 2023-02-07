@@ -37,13 +37,14 @@ const levelsHandler = () => {
       menuEl.style.display = "";
       codeEl.value = "";
       const level = Number(levelEl.getAttribute("data-level"));
-      surgeonStore.currentLevel = level;
       if (itemEl.classList.contains("surgeon__items_hide")) {
+        surgeonStore.currentLevel = level;
         createInstruction();
         showLevel();
         return;
       }
       hideLevels();
+      surgeonStore.currentLevel = level;
       createInstruction();
       answerFromLs(5000);
       setTimeout(() => {
