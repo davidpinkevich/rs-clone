@@ -7,9 +7,13 @@ import showLevel from "./show-level";
 const nextHandler = () => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
   const codeEl = <HTMLTextAreaElement>document.querySelector(".surgeon__code");
+  const audioEl = <HTMLAudioElement>(
+    document.querySelector(".surgeon__audio-correct")
+  );
 
   nextBtn.addEventListener("click", () => {
     showItem();
+    audioEl.play();
     const itemsEl: NodeListOf<HTMLElement> = document.querySelectorAll(
       ".surgeon__item_hide"
     );

@@ -8,6 +8,7 @@ import readLs from "./read-ls";
 import restartHandler from "./restart-handler";
 import selectLevel from "./select-level";
 import startHandler from "./start-handler";
+import volumeHandler from "./volume-handler";
 
 class SurgeonPage extends Page {
   constructor(id: string) {
@@ -23,6 +24,7 @@ class SurgeonPage extends Page {
     levelsHandler();
     restartHandler();
     loupeHandler();
+    volumeHandler();
   }
 
   render() {
