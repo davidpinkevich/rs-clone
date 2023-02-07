@@ -7,7 +7,7 @@ const getWinHTML = () => `
       <h3 class="win-title">Flexbox Froggy</h3>
       <div class="win-message"></div>
       <div class="badges-btn">
-        <a class="badges-link" href="#">View All Badges</a>
+        <a class="badges-link" href="#statistics">View All Badges</a>
       </div>
     </div>
   </div>
