@@ -1,14 +1,18 @@
 import Page from "../../abstract/page";
+import { getPageHTML } from "./view/ui";
+import backgr from "./test";
 
 class NthPage extends Page {
   constructor(id: string) {
     super(id);
   }
 
-  executeAfterRender(): void {}
+  executeAfterRender(): void {
+    backgr();
+  }
 
   render() {
-    this.container.innerHTML = `<a href="#">click to main from nth</a>`;
+    this.container.innerHTML = getPageHTML();
     return this.container;
   }
 }
