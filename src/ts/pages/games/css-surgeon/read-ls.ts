@@ -5,6 +5,8 @@ import ls from "./ls";
 const readLs = () => {
   const itemsEl: NodeListOf<HTMLElement> =
     document.querySelectorAll(".surgeon__item");
+  const levelsEl: NodeListOf<HTMLElement> =
+    document.querySelectorAll(".surgeon__level");
 
   const data = ls.getAll();
 
@@ -14,6 +16,7 @@ const readLs = () => {
     levels.forEach((level) => {
       if (i === level) {
         itemEl.classList.remove("surgeon__item_hide");
+        levelsEl[i].classList.add("surgeon__level_solved");
       }
     });
   });

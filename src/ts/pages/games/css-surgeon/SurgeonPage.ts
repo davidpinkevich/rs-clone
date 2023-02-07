@@ -4,6 +4,7 @@ import innerSurgeon from "./inner-surgeon";
 import levelsHandler from "./levels-handler";
 import nextHandler from "./next-handler";
 import readLs from "./read-ls";
+import restartHandler from "./restart-handler";
 import selectLevel from "./select-level";
 import startHandler from "./start-handler";
 
@@ -19,6 +20,7 @@ class SurgeonPage extends Page {
     codeHandler();
     selectLevel();
     levelsHandler();
+    restartHandler();
   }
 
   render() {

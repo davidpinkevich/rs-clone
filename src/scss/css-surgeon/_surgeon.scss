@@ -113,7 +113,7 @@
       background-color: gray;
     }
 
-    &_currnet {
+    &_current {
       border-color: rgba(255,255,255,.5);
     }
 
@@ -538,7 +538,8 @@
     }
   }
 
-  &__records {
+  &__records,
+  &__restart {
     width: 170px;
     height: 39px;
     text-decoration: none;

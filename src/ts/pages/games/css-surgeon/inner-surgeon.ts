@@ -88,6 +88,7 @@ const innerSurgeon = () => `
                     You're a hero! Thanks to your mastery of CSS transform, you were able to replace all the missing organs and put CSS Sam on the road to recovery. Now to find CSS Sam some clothes...
                 </div>
                 <div class="surgeon__button">
+                    <a class="button button__restart" href="#surgeon">New game</a>
                     <a class="button button__records" href="#">View All Badges</a>
                 </div>
             </div>
