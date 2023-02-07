@@ -5,6 +5,10 @@ const enum PageIds {
   SurgeonPage = "#surgeon",
   FroggyPage = "#froggy",
   GardenPage = "#garden",
+  ScoopsPage = "#scoops",
+  NthPage = "#nth",
+  Showdown = "#showdown",
+  Statistics = "#statistics",
 }
 
 const LEVELS_GARDEN = {
