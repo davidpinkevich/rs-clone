@@ -3,9 +3,7 @@ const changeSoundGrid = () => {
     document.querySelector(".settings__garden-sound")
   );
 
-  const soundInfo = <HTMLElement>(
-    document.querySelector(".settings__garden-sound>p")
-  );
+  const imgBtn = <HTMLImageElement>document.querySelector(".sound__img-grid");
 
   const soundOn = new Audio(
     "https://codepip.com/wp-content/plugins/codepip/games/grid-garden/audio/correct.wav"
@@ -18,10 +16,10 @@ const changeSoundGrid = () => {
   soundBtn.addEventListener("click", () => {
     soundBtn.classList.toggle("sound__grid-on");
     if (soundBtn.classList.contains("sound__grid-on")) {
-      soundInfo.innerHTML = ":ON";
+      imgBtn.src = "./assets/images/froggy/sound-on.svg";
       soundOn.play();
     } else {
-      soundInfo.innerHTML = ":OFF";
+      imgBtn.src = "./assets/images/froggy/sound-off.svg";
       soundOff.play();
     }
   });

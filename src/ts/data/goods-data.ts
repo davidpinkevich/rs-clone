@@ -13,8 +13,8 @@ const LEVELS_GARDEN = {
 };
 
 const LANG_GRID: TLangGrid = {
-  BTN_ENG: ["English", "Sound", "Level:", "Next"],
-  BTN_RU: ["Русский", "Звук", "Уровень:", "Следующий"],
+  BTN_ENG: ["English", "Level:", "Next"],
+  BTN_RU: ["Русский", "Уровень:", "Следующий"],
 };
 
 const GRID_LS: TGridLocalStore = {

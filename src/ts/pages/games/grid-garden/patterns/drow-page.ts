@@ -3,7 +3,7 @@ const drowPageGarden = () => `<div class="garden __container">
   <div class="garden__info-header">
     <h1 class="garden__info-header-title">grid garden</h1>
     <div class="garden__info-header-settings settings__garden">
-      <div class="settings__garden-sound sound__grid-on"><span>Sound</span><p>:ON</p></div>
+      <div class="settings__garden-sound sound__grid-on"><img class="sound__img-grid" src="./assets/images/froggy/sound-on.svg"></div>
       <div class="settings__garden-lang">English</div>
       <div class="settings__garden-levels">
         <button class='settings__garden-levels-last'></button>
