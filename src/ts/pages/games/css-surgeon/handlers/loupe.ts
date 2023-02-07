@@ -11,6 +11,7 @@ const loupe = () => {
 
   if (itemEl.classList.contains("surgeon__items_hide")) {
     disableElement(".surgeon__level", true);
+    disableElement(".surgeon__see", true);
     showLevel();
     return;
   }
