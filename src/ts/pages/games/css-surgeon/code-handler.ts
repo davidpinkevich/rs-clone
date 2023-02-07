@@ -1,6 +1,7 @@
 import Coordinates from "../../../utils/Coordinates";
 import surgeonStore from "./data/surgeon-store";
 import ls from "./ls";
+import showLevel from "./show-level";
 
 const codeHandler = () => {
   const codeEl = <HTMLElement>document.querySelector(".surgeon__code");
@@ -13,6 +14,15 @@ const codeHandler = () => {
     const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
     const { currentLevel } = surgeonStore;
     const target = e.target as HTMLTextAreaElement;
+
+    const itemEl = <HTMLElement>(
+      document.querySelector(`.surgeon__items_${currentLevel - 1}`)
+    );
+
+    if (itemEl.classList.contains("surgeon__items_hide")) {
+      showLevel();
+      return;
+    }
 
     itemsEl[currentLevel - 1].setAttribute(
       "style",

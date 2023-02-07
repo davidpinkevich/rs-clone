@@ -9,7 +9,7 @@ const createInstruction = () => {
   const selectorEl = <HTMLElement>document.querySelector(".surgeon__before");
   const controlsEl = <HTMLElement>document.querySelector(".surgeon__controls");
 
-  controlsEl.style.display = "block";
+  controlsEl.style.display = "flex";
   levelCounter();
 
   const { currentLevel } = surgeonStore;

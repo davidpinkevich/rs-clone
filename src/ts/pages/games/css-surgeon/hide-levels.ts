@@ -25,6 +25,7 @@ const hideLevels = () => {
   samEl.style.transformOrigin = origin;
   bodyEl.style.opacity = "1";
   samEl.style.transform = "scale(1)";
+  disableElement(".surgeon__level", false);
 };
 
 export default hideLevels;

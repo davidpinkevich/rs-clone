@@ -37,12 +37,14 @@
 
   &__controls {
     display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 
   &__counter {
     width: 140px;
     height: 30.5px;
-    margin: 0 auto;
     text-align: center;
     line-height: 1.5;
     color: #fff;
@@ -60,12 +62,41 @@
     background-color: #c51126;
 
     &:hover {
-      background-color: #9e0d1d;
+      background-color: #9e0d1d;;
     }
   }
 
   &__caret {
     margin-left: 2px;
+  }
+
+  &__see,
+  &__volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30.5px;
+    background-color: #c51126;
+    border-radius: 4px;
+    cursor: pointer;
+
+    img {
+      height: 20px;
+      width: 20px;
+     filter: invert(100%);
+    }
+
+    &:hover {
+      background-color: #9e0d1d;;
+    }
+  }
+
+  &__see {
+
+    &:disabled {
+      background-color: gray;
+    }
   }
 
   &__levels-wrapper {

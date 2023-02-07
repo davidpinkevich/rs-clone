@@ -40,6 +40,15 @@ const innerSurgeon = () => `
                             <div data-close="close" class="surgeon__close">&times</div>
                         </div>
                     </div>
+                    <button class="surgeon__see">
+                        <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f00e-512.png"/>
+                    </button>
+                    <div class="surgeon__volume">
+                        <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f028-512.png"/>
+                        <div class="surgeon__audio" style="display: none">
+                            <audio class="surgeon__audio="surgeon__audio-correct" src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/audio/correct.wav"></audio>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="surgeon__instructions">

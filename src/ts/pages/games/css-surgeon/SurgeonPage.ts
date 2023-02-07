@@ -2,6 +2,7 @@ import Page from "../../abstract/page";
 import codeHandler from "./code-handler";
 import innerSurgeon from "./inner-surgeon";
 import levelsHandler from "./levels-handler";
+import loupeHandler from "./loupe-handler";
 import nextHandler from "./next-handler";
 import readLs from "./read-ls";
 import restartHandler from "./restart-handler";
@@ -21,6 +22,7 @@ class SurgeonPage extends Page {
     selectLevel();
     levelsHandler();
     restartHandler();
+    loupeHandler();
   }
 
   render() {

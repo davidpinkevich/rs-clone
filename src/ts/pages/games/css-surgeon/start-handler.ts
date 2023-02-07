@@ -7,6 +7,7 @@ const startHandler = () => {
 
   startBtn.addEventListener("click", () => {
     disableElement(".surgeon__level", true);
+    disableElement(".surgeon__see", true);
     createInstruction();
     showLevel();
   });

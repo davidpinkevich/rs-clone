@@ -27,13 +27,23 @@ const levelsHandler = () => {
       const codeEl = <HTMLTextAreaElement>(
         document.querySelector(".surgeon__code")
       );
+      const { currentLevel } = surgeonStore;
+      const itemEl = <HTMLElement>(
+        document.querySelector(`.surgeon__items_${currentLevel - 1}`)
+      );
       disableElement(".button__next", true);
       disableElement(".surgeon__level", true);
+      disableElement(".surgeon__see", true);
       menuEl.style.display = "";
       codeEl.value = "";
-      hideLevels();
       const level = Number(levelEl.getAttribute("data-level"));
       surgeonStore.currentLevel = level;
+      if (itemEl.classList.contains("surgeon__items_hide")) {
+        createInstruction();
+        showLevel();
+        return;
+      }
+      hideLevels();
       createInstruction();
       answerFromLs(5000);
       setTimeout(() => {

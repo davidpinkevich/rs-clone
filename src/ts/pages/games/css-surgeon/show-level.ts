@@ -24,6 +24,7 @@ const showLevel = () => {
     itemsEl[currentLevel - 1].style.opacity = "1";
     holesEl[currentLevel - 1].style.opacity = "1";
     disableElement(".surgeon__level", false);
+    disableElement(".surgeon__see", false);
   }, 2000);
 };
 

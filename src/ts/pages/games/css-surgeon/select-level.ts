@@ -1,8 +1,4 @@
-import answerFromLs from "./answer-from-ls";
-import createInstruction from "./create-instruction";
-import surgeonStore from "./data/surgeon-store";
-import showLevel from "./show-level";
-import disableElement from "./utils/disabled-element";
+import select from "./select";
 
 const selectLevel = () => {
   const itemsEl: NodeListOf<HTMLElement> =
@@ -12,23 +8,13 @@ const selectLevel = () => {
 
   holesEl.forEach((holeEl) => {
     holeEl.addEventListener("click", () => {
-      const level = Number(holeEl.getAttribute("data-level"));
-      surgeonStore.currentLevel = level;
-      disableElement(".surgeon__level", true);
-      createInstruction();
-      answerFromLs(2000);
-      showLevel();
+      select(holeEl);
     });
   });
 
   itemsEl.forEach((itemEl) => {
     itemEl.addEventListener("click", () => {
-      const level = Number(itemEl.getAttribute("data-level"));
-      surgeonStore.currentLevel = level;
-      disableElement(".surgeon__level", true);
-      createInstruction();
-      answerFromLs(2000);
-      showLevel();
+      select(itemEl);
     });
   });
 };
