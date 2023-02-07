@@ -7,9 +7,6 @@ const changeLangGrid = () => {
   const btn = <HTMLButtonElement>(
     document.querySelector(".settings__garden-lang")
   );
-  const sound = <HTMLElement>(
-    document.querySelector(".settings__garden-sound>span")
-  );
   const level = <HTMLElement>(
     document.querySelector(".settings__garden-levels-list>p")
   );
@@ -17,7 +14,7 @@ const changeLangGrid = () => {
     document.querySelector(".code__garden-button")
   );
 
-  const btns = [btn, sound, level, next];
+  const btns = [btn, level, next];
 
   const ls = new LocalStorage(GRID_LS.LS_LEVELS);
   if (ls.get(GRID_LS.LANG) === GRID_LS.LANG_ENG) {

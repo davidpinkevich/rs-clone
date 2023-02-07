@@ -10,7 +10,6 @@ $md2: 1400px;
 
 [id*="#garden"] {
   background-color: $gardenColor;
-  text-shadow: 1px 1px 1px black;
   font-size: 16px;
   padding-top: 50px; // убрать после хедера
   padding-left: 15px;
@@ -73,7 +72,6 @@ $md2: 1400px;
   margin-top: 0;
   margin-bottom: 10px;
   color: $textCodeColor;
-  text-shadow: none;
   display: flex;
 }
 // field
@@ -162,8 +160,8 @@ $md2: 1400px;
 
 .field__water-item {
   // background-color: rgb(66, 66, 219);
-  background-color: rgb(47, 47, 253);
-  opacity: 0.4;
+  background-color: rgb(75,133,173);
+  opacity: 0.8;
   z-index: 5;
 }
 
@@ -245,11 +243,9 @@ $md2: 1400px;
   height: 30px;
   border-radius: 50%;
   filter: invert(100%);
-  box-shadow: inset 0px 0px 2px 2px black;
   transition: all 0.2s;
 
   &:hover {
-    transform: scale(1.25);
     box-shadow: inset 0px 0px 3px 3px black;
   }
 
@@ -292,7 +288,6 @@ $md2: 1400px;
 }
 
 .settings__garden-levels-list {
-  box-shadow: inset 0px 0px 2px 2px white;
   user-select: none;
   display: flex;
   justify-content: center;
@@ -301,12 +296,11 @@ $md2: 1400px;
   color: $textColor;
   cursor: pointer;
   width: 100px;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 5px 10px;
   transition: all 0.3s;
   &:hover {
-    transform: scale(1.1);
-    box-shadow: inset 0px 0px 3px 3px white;
+    background-color: rgb(158,200,146);
   }
 
   @media (max-width:$md2){
@@ -418,19 +412,28 @@ $md2: 1400px;
   width: 100px;
   align-items: center;
   background-color: rgb(125,182,109);
-  box-shadow: inset 0px 0px 2px 2px white;
   color: $textColor;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 5px 8px;
   transition: all 0.3s;
   &:hover {
-    transform: scale(1.1);
-    box-shadow: inset 0px 0px 3px 3px white;
+    background-color: rgb(158,200,146);
   }
 
   @media (max-width:$md2){
     @include adaptiv-320(width, 100, 75);
+  }
+}
+
+.settings__garden-sound {
+  position: relative;
+  padding: 0;
+  width: 40px;
+
+  & img {
+    width: 25px;
+    height: 25px;
   }
 }
 
