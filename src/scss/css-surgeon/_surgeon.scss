@@ -41,6 +41,8 @@
 
   &__counter {
     width: 140px;
+    height: 30.5px;
+    padding: 0.25rem 0.4rem;
     margin: 0 auto;
     text-align: center;
     line-height: 1.5;
@@ -79,6 +81,7 @@
     background-color: #fff;
     padding: 32px;
     margin: 0 auto;
+    margin-top: 16px;
     border-radius: 4px;
     color: #555;
   }
@@ -293,6 +296,11 @@
 
   &__sam-img {
     max-height: 100%;
+  }
+
+  &__sam-win {
+    max-width: 100%;
+    display: none;
   }
 
   &__hole,
