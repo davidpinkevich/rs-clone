@@ -63,3 +63,107 @@
     background-repeat: no-repeat;
   }
 }
+
+.track {
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6.6rem;
+    display: block;
+    width: 100%;
+    height: 8rem;
+    background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/track.png');
+    background-size: 30rem;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    z-index: 10;
+  }
+
+  position: relative;
+
+  .doors {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    .left, .right {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .doors .left::after,
+  .doors .left::before,
+  .doors .right::after,
+  .doors .right::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5rem;
+    display: block;
+    width: 6rem;
+    height: 15rem;
+    background-size: 6rem;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    z-index: 20;
+  }
+
+  .doors .left::before,
+  .doors .right::before {
+    background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/door-before.png');
+    z-index: 30; 
+  }
+
+  .doors .left::after,
+  .doors .right::after {
+    background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/door.png');
+  }
+
+  .doors .right::after,
+  .doors .right::before {
+    left: auto;
+    right: 0;
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+
+  .elements {
+    position: relative;
+    left: 0;
+    top: 4.1rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    z-index: 20;
+    overflow: hidden;
+
+    .element {
+      position: relative;
+      width: 4.5em;
+      min-width: 4.5em;
+      height: 6em;
+      margin: 6em 0.25em 0.5em;
+      background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/cart.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-size: 14px;
+      // -webkit-transform: translateX(100vw);
+      // transform: translateX(100vw);
+      transition: 1s transform;
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .2));
+    }
+
+    .element.target {
+      background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/cart-full.png');
+    }
+  }
+}

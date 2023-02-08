@@ -9,6 +9,31 @@ const getEnvironmentHTML = () => `
   </div>
 `;
 
+export const getElementHTML = () => `<div class="element cart"></div>`;
+
+const getTrackHTML = () => `
+  <div class="track">
+    <div class="doors">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+    <div class="elements">
+      ${getElementHTML()}
+      ${getElementHTML()}
+      ${getElementHTML()}
+      ${getElementHTML()}
+      ${getElementHTML()}
+      ${getElementHTML()}
+      <div class="element cart target"></div>
+      ${getElementHTML()}
+    </div>
+  </div>
+`;
+
+const getWindowHTML = () => `
+  <div class="window"></div>
+`;
+
 const getMusicHTML = () => `
   <div id="audio">
     <audio class="trolley" src="https://codepip.com/wp-content/plugins/codepip/games/nth-cart/audio/trolley.mp3"></audio>
@@ -22,7 +47,9 @@ export const getPageHTML = () => `
   <section class="cave">
     <header class="header nth-header"></header>
     ${getEnvironmentHTML()}
+    ${getTrackHTML()}
     ${getMusicHTML()}
+    ${getWindowHTML()}
   </section>
 `;
 
