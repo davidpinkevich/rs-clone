@@ -1,11 +1,11 @@
 const innerSurgeon = () => `
 <header class="header">
-<div class="container">
+<div class="__container">
     <a href="#">click to main from surgeon</a>
 </div>
 </header>
 <main class="surgeon">
-<div class="container">
+<div class="__container">
     <div class="surgeon__wrapper">
         <section class="surgeon__sidebar">
             <div class="surgeon__header">
@@ -13,9 +13,9 @@ const innerSurgeon = () => `
                 <div class="surgeon__controls">
                     <div class="surgeon__counter">
                         <span class="surgeon__indicator">
-                            <span>Level</span>
+                            <span class="surgeon__lvl">Level</span>
                             <span class="surgeon__current">1</span>
-                            <span>of</span>
+                            <span class="surgeon__of">of</span>
                             <span class="surgeon__total">14</span>
                             <span class="surgeon__caret">▾</span>
                         </span>
