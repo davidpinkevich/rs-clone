@@ -1,4 +1,6 @@
-const surgeonStore = {
+import { TSurgeonStore } from "../../../../types/types";
+
+const surgeonStore: TSurgeonStore = {
   levels: [
     {
       level: 1,

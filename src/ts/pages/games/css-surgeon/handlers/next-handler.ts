@@ -5,14 +5,14 @@ import showItem from "../level/show-item";
 import showLevel from "../level/show-level";
 import disableElement from "../utils/disabled-element";
 
-const nextHandler = () => {
+const nextHandler = (): void => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
   const codeEl = <HTMLTextAreaElement>document.querySelector(".surgeon__code");
   const audioEl = <HTMLAudioElement>(
     document.querySelector(".surgeon__audio-correct")
   );
 
-  nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", (): void => {
     showItem();
     audioEl.play();
     const itemsEl: NodeListOf<HTMLElement> = document.querySelectorAll(

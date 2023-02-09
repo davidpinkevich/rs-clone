@@ -5,7 +5,7 @@ import hideLevels from "../level/hide-levels";
 import showLevel from "../level/show-level";
 import disableElement from "../utils/disabled-element";
 
-const levelsHandler = () => {
+const levelsHandler = (): void => {
   const counterEl = <HTMLElement>document.querySelector(".surgeon__indicator");
   const menuEl = <HTMLElement>(
     document.querySelector(".surgeon__levels-wrapper")
@@ -40,8 +40,8 @@ const levelsHandler = () => {
     menuEl.style.display = "";
   });
 
-  levelsEl.forEach((levelEl) => {
-    levelEl.addEventListener("click", () => {
+  levelsEl.forEach((levelEl): void => {
+    levelEl.addEventListener("click", (): void => {
       const codeEl = <HTMLTextAreaElement>(
         document.querySelector(".surgeon__code")
       );

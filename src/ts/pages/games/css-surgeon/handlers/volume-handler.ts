@@ -1,4 +1,4 @@
-const volumeHandler = () => {
+const volumeHandler = (): void => {
   const audioEl = <HTMLAudioElement>(
     document.querySelector(".surgeon__audio-correct")
   );
@@ -7,7 +7,7 @@ const volumeHandler = () => {
 
   let volume = 1;
 
-  volumeBtn.addEventListener("click", () => {
+  volumeBtn.addEventListener("click", (): void => {
     if (volume) {
       volumeImg.src =
         "https://cdn0.iconfinder.com/data/icons/zondicons/20/volume-off-256.png";
