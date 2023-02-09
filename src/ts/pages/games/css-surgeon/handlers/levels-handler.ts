@@ -22,6 +22,24 @@ const levelsHandler = () => {
     menuEl.style.display = "";
   });
 
+  document.body.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (
+      target.classList.contains("surgeon__counter") ||
+      target.classList.contains("surgeon__indicator") ||
+      target.classList.contains("surgeon__lvl") ||
+      target.classList.contains("surgeon__current") ||
+      target.classList.contains("surgeon__of") ||
+      target.classList.contains("surgeon__total") ||
+      target.classList.contains("surgeon__caret") ||
+      target.classList.contains("surgeon__levels-wrapper") ||
+      target.classList.contains("surgeon__levels")
+    ) {
+      return;
+    }
+    menuEl.style.display = "";
+  });
+
   levelsEl.forEach((levelEl) => {
     levelEl.addEventListener("click", () => {
       const codeEl = <HTMLTextAreaElement>(
@@ -32,7 +50,6 @@ const levelsHandler = () => {
         document.querySelector(`.surgeon__items_${currentLevel - 1}`)
       );
       disableElement(".button__next", true);
-      disableElement(".surgeon__level", true);
       disableElement(".surgeon__see", true);
       menuEl.style.display = "";
       codeEl.value = "";
@@ -44,6 +61,7 @@ const levelsHandler = () => {
         return;
       }
       hideLevels();
+      disableElement(".surgeon__level", true);
       surgeonStore.currentLevel = level;
       createInstruction();
       answerFromLs(5000);
