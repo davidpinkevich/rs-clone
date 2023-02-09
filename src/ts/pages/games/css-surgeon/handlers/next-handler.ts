@@ -3,6 +3,7 @@ import currentLevel from "../level/current-level";
 import hideLevels from "../level/hide-levels";
 import showItem from "../level/show-item";
 import showLevel from "../level/show-level";
+import disableElement from "../utils/disabled-element";
 
 const nextHandler = () => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
@@ -21,6 +22,8 @@ const nextHandler = () => {
     codeEl.value = "";
     currentLevel();
     hideLevels();
+    disableElement(".surgeon__see", true);
+    disableElement(".surgeon__level", true);
     if (itemsEl.length === 0) {
       return;
     }
