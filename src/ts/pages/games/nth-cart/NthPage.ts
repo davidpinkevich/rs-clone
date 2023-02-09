@@ -9,7 +9,7 @@ class NthPage extends Page {
 
   constructor(id: string) {
     super(id);
-    this.level = 1; // ... localStorage.getItem() || 1;
+    this.level = 10; // ... localStorage.getItem() || 1;
     this.view = new AppView();
   }
 
