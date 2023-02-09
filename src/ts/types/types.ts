@@ -8,6 +8,12 @@ export interface IFroggyLevel {
   order?: string;
 }
 
+export interface INthLevel {
+  instructions: string;
+  carts: string[];
+  styles: string[];
+}
+
 export type TRulesGarden = {
   FIELD: number;
   RULES_ENG: string[];

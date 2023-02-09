@@ -17,21 +17,43 @@ const getTrackHTML = () => `
       <div class="left"></div>
       <div class="right"></div>
     </div>
-    <div class="elements">
-      ${getElementHTML()}
-      ${getElementHTML()}
-      ${getElementHTML()}
-      ${getElementHTML()}
-      ${getElementHTML()}
-      ${getElementHTML()}
-      <div class="element cart target"></div>
-      ${getElementHTML()}
+    <div class="elements animate__animated">
+      
     </div>
   </div>
 `;
 
+export const getSelectorHTML = () => `
+  <div class="selector">
+    <div class="prefix"></div>
+    <input class="input" type="text" autofocus autocomplete = "off" autocorrect = "off" autocapitalize = "off" spellcheck = "false" >
+  </div>
+`;
+
 const getWindowHTML = () => `
-  <div class="window"></div>
+  <div class="window">
+    <div class="toolbar">
+      <div class="toolbar__title">Nth Cart</div>
+      <div class="toolbar__levels">
+          <button class="button prev-btn">
+            <div class="arrow"></div>
+          </button>
+          <div class="level-indicator">
+            1 0f 40 ▾
+          </div>
+          <button class="button next-btn">
+            <div class="arrow"></div>
+          </button>
+      </div>
+    </div>
+    <div class="instructions"></div>
+    <div class="editor">
+      <div class="selectors">
+
+      </div>
+      <button class="button submit-btn">Submit ↵</button>
+    </div>
+  </div>
 `;
 
 const getMusicHTML = () => `
@@ -52,5 +74,3 @@ export const getPageHTML = () => `
     ${getWindowHTML()}
   </section>
 `;
-
-export const test = () => ``;

@@ -1,14 +1,21 @@
 import Page from "../../abstract/page";
+import AppView from "./view/AppView";
 import { getPageHTML } from "./view/ui";
-import backgr from "./test";
 
 class NthPage extends Page {
+  private level: number;
+
+  private view: AppView;
+
   constructor(id: string) {
     super(id);
+    this.level = 1; // ... localStorage.getItem() || 1;
+    this.view = new AppView();
   }
 
   executeAfterRender(): void {
-    backgr();
+    this.view.drawEnvironment();
+    this.view.draw(this.level);
   }
 
   render() {
