@@ -32,11 +32,8 @@ class Carts {
       elements.classList.remove("animate__fadeInRightBig");
     }, 3000);
 
-    // console.log(
-    //   document.querySelectorAll(
-    //     ".elements :nth-last-child(n + 3):nth-last-child(-n + 6)"
-    //   )
-    // );
+    // const test = ".elements :nth-last-child(n + 3):nth-last-child(-n + 6)";
+    // console.log(document.querySelectorAll(test));
   }
 }
 
