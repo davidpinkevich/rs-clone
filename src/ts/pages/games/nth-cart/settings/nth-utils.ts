@@ -5,7 +5,7 @@ export const checkInput = (inputValue: string) => {
 
   const trimValue = inputValue.replace(/ /g, "");
 
-  if (/n[\d]+/.test(trimValue)) return false;
+  if (/n[\d]+/.test(trimValue) || trimValue === "") return false;
 
   const regexp = /^(([-+])?(\d+)?n)?\+?(\d+)?$/gm;
   return regexp.test(trimValue);

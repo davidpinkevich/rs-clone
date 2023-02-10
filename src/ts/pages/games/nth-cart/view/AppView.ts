@@ -1,6 +1,6 @@
-import Carts from "./Carts/Carts";
-import Environment from "./Environment/Environment";
-import InfoWindow from "./Window/Window";
+import Carts from "./carts/Carts";
+import Environment from "./environment/Environment";
+import InfoWindow from "./window/Window";
 
 class AppView {
   private environment: Environment;

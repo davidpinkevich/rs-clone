@@ -14,6 +14,10 @@ export interface INthLevel {
   styles: string[];
 }
 
+export interface INthState {
+  currentLevel: number
+}
+
 export type TRulesGarden = {
   FIELD: number;
   RULES_ENG: string[];
