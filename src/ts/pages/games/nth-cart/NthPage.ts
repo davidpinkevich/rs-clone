@@ -46,7 +46,10 @@ class NthPage extends Page {
       }
 
       const selectorString = createSelectorString(levelInfo);
-      console.log(document.querySelectorAll(selectorString));
+      const pickedSelectors = document.querySelectorAll(selectorString);
+      pickedSelectors.forEach((picked) => {
+        picked.classList.add("picked");
+      });
     });
   }
 }

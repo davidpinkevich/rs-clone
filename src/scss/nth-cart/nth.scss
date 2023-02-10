@@ -146,7 +146,7 @@
     align-items: center;
     flex-wrap: nowrap;
     z-index: 20;
-    overflow: hidden;
+    // overflow: hidden;
     --animate-duration: 1.2s;
 
     .element {
@@ -181,6 +181,35 @@
         font-size: 1.2em;
         font-weight: 900;
         -webkit-text-stroke: 1px rgba(0, 0, 0, .3);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -6em;
+        width: 4.5em;
+        height: 6em;
+        background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/barrel.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .2));
+        filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .2));
+        -webkit-transform: translateY(-50vh);
+        transform: translateY(-50vh);
+        -webkit-transition: opacity 1s ease-in, -webkit-transform .5s ease-out;
+        transition: opacity 1s ease-in, -webkit-transform .5s ease-out;
+        transition: transform .5s ease-out, opacity 1s ease-in;
+        transition: transform .5s ease-out, opacity 1s ease-in, -webkit-transform .5s ease-out;
+        // opacity: 0;
+        z-index: -5;
+      }
+    }
+    .element.picked {
+      &::after {
+        -webkit-transform: translateY(0) !important;
+        transform: translateY(0) !important;
+        opacity: 1 !important;
       }
     }
 
