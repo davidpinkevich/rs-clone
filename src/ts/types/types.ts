@@ -15,7 +15,7 @@ export interface INthLevel {
 }
 
 export interface INthState {
-  currentLevel: number
+  currentLevel: number;
 }
 
 export type TRulesGarden = {

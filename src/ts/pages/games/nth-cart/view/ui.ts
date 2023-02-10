@@ -9,7 +9,7 @@ const getEnvironmentHTML = () => `
   </div>
 `;
 
-export const getElementHTML = () => `<div class="element cart"></div>`;
+export const getElementHTML = () => `<div class="element"></div>`;
 
 const getTrackHTML = () => `
   <div class="track">

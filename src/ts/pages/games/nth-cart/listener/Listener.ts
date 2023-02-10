@@ -1,6 +1,6 @@
 import levels from "../data/data-levels";
 import state from "../data/state";
-import { checkInput, createSelectorString } from "../settings/nth-utils";
+import { checkInput, createSelectorString, isWin } from "../settings/nth-utils";
 
 class Listener {
   public allListener() {
@@ -18,18 +18,18 @@ class Listener {
       );
 
       const carts = document.querySelectorAll(".element");
+      carts.forEach((cart) => cart.classList.remove("picked"));
       if (!isValidInputs) {
-        carts.forEach((cart) => cart.classList.remove("picked"));
         return;
       }
-
-      carts.forEach((cart) => cart.classList.remove("picked"));
 
       const selectorString = createSelectorString(levelInfo);
       const pickedSelectors = document.querySelectorAll(selectorString);
       pickedSelectors.forEach((picked) => {
         picked.classList.add("picked");
       });
+
+      console.log(isWin());
     });
   }
 }

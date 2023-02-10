@@ -22,3 +22,14 @@ export const createSelectorString = (levelInfo: INthLevel) => {
 
   return selectorString;
 };
+
+export const isWin = () => {
+  const pickedElements = document.querySelectorAll(".picked");
+  const targetElements = document.querySelectorAll(".target");
+
+  return (
+    Array.from(pickedElements).every((pickedElement) =>
+      pickedElement.classList.contains("target")
+    ) && targetElements.length === pickedElements.length
+  );
+};
