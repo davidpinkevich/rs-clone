@@ -8,7 +8,7 @@ export const checkInput = (inputValue: string) => {
 
   const trimValue = inputValue.replace(/ /g, "");
 
-  if (/n[\d]+/.test(trimValue) || trimValue === "") return false;
+  if (/n[\d]+/.test(trimValue)) return false;
 
   const regexp = /^(([-+])?(\d+)?n)?\+?(\d+)?$/gm;
   return regexp.test(trimValue);
@@ -18,8 +18,10 @@ export const createSelectorString = (levelInfo: INthLevel) => {
   const inputs = document.querySelectorAll(".input");
   let selectorString = ".elements";
   levelInfo.styles.forEach((style, index) => {
-    selectorString += index === 0 ? `${style}(` : `)${style}(`;
-    selectorString += (inputs[index] as HTMLInputElement).value;
+    if ((inputs[index] as HTMLInputElement).value !== "") {
+      selectorString += index === 0 ? `${style}(` : `)${style}(`;
+      selectorString += (inputs[index] as HTMLInputElement).value;
+    }
   });
   selectorString += ")";
 
@@ -62,7 +64,7 @@ export const executeAfterWin = (pickedSelectors: NodeListOf<Element>) => {
   }, 3400);
 
   setTimeout(() => {
-    state.currentLevel = +1;
+    state.currentLevel += 1;
     ls.set("currentLevel", String(state.currentLevel));
     const view = new AppView();
     view.drawLevel(state.currentLevel);

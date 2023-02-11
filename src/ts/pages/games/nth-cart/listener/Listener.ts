@@ -28,14 +28,21 @@ class Listener {
     submitBtn?.addEventListener("click", () => {
       const levelInfo = levels[state.currentLevel - 1];
 
+      const carts = document.querySelectorAll(".element");
+      carts.forEach((cart) => cart.classList.remove("picked"));
+
       const inputs = document.querySelectorAll(".input");
       const isValidInputs = Array.from(inputs).every((input) =>
         checkInput((input as HTMLInputElement).value)
       );
-
-      const carts = document.querySelectorAll(".element");
-      carts.forEach((cart) => cart.classList.remove("picked"));
       if (!isValidInputs) {
+        return;
+      }
+
+      const isNotValidInputs = Array.from(inputs).every(
+        (input) => (input as HTMLInputElement).value === ""
+      );
+      if (isNotValidInputs) {
         return;
       }
 

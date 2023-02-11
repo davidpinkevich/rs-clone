@@ -294,7 +294,7 @@
       }
 
       .level-indicator {
-        width: 6rem;
+        width: 6.4rem;
         display: flex;
         justify-content: center;
         background-color: #34393d;
@@ -370,6 +370,7 @@
     overflow-y: auto;
     padding: 1rem 2.5rem;
     transition: .3s opacity;
+    line-height: 1.4;
 
     p {
       margin-bottom: 1rem;
