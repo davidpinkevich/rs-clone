@@ -33,6 +33,28 @@ export type TGridLocalStore = {
   LANG_RU: string;
 };
 
+export type TScoopsLinks = {
+  CUP: string;
+  CUP_MASK: string;
+  CONE: string;
+  CONE_MASK: string;
+  CONE_CHOCOLATE: string;
+  CHOCO_MASK: string;
+  CHAIR: string;
+};
+
+export type TRulesScoops = {
+  RULE: string[];
+  ANSWER: string[];
+  HTML_CODE: Array<string[]>;
+  HTML_CODE_NUMBERS: string[];
+  SCOOPS: Array<Array<string[]>>;
+};
+
+export type TColorsScoops = {
+  PINK: string;
+};
+
 type TInstructions = { [key: string]: string };
 type TStyles = { [key: string]: string };
 export type TLocalStorageObj = { [key: string]: string };

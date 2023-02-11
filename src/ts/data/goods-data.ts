@@ -1,4 +1,9 @@
-import { TLangGrid, TGridLocalStore } from "../types/types";
+import {
+  TLangGrid,
+  TGridLocalStore,
+  TScoopsLinks,
+  TColorsScoops,
+} from "../types/types";
 
 const enum PageIds {
   MainPage = "#",
@@ -31,4 +36,30 @@ const GRID_LS: TGridLocalStore = {
   LANG_RU: "ru",
 };
 
-export { PageIds, LEVELS_GARDEN, LANG_GRID, GRID_LS };
+const LINKS_SCOOPS: TScoopsLinks = {
+  CUP: "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cup.svg",
+  CUP_MASK:
+    "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cup-mask.svg",
+  CONE: "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cone.svg",
+  CONE_MASK:
+    "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cone-mask.svg",
+  CONE_CHOCOLATE:
+    "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cone-chocolate.svg",
+  CHOCO_MASK:
+    "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cone-chocolate-mask.svg",
+  CHAIR:
+    "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/stool.svg",
+};
+
+const COLORS_SCOOPS: TColorsScoops = {
+  PINK: "rgb(245,92,150)",
+};
+
+export {
+  PageIds,
+  LEVELS_GARDEN,
+  LANG_GRID,
+  GRID_LS,
+  LINKS_SCOOPS,
+  COLORS_SCOOPS,
+};
