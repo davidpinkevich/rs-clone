@@ -27,6 +27,7 @@ class Cone {
         break;
       case "choco":
         img.src = LINKS_SCOOPS.CONE_CHOCOLATE;
+        item.classList.add("cone__body-black");
         break;
       default:
     }
