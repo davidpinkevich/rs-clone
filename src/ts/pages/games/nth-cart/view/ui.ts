@@ -17,9 +17,20 @@ const getTrackHTML = () => `
       <div class="left"></div>
       <div class="right"></div>
     </div>
-    <div class="elements animate__animated">
+    <div class="elements__wrapper">
       
     </div>
+  </div>
+`;
+
+export const getLevelHTML = () => `<span class="level-marker">1</span>`;
+
+const getDropdownMenuHTML = () => `
+  <div class="dropdown-menu show">
+    <div class="levels-menu">
+
+    </div>
+    <div class="settings"></div>
   </div>
 `;
 
@@ -35,15 +46,16 @@ const getWindowHTML = () => `
     <div class="toolbar">
       <div class="toolbar__title">Nth Cart</div>
       <div class="toolbar__levels">
-          <button class="button prev-btn">
-            <div class="arrow"></div>
-          </button>
-          <div class="level-indicator">
-            1 0f 40 ▾
-          </div>
-          <button class="button next-btn">
-            <div class="arrow"></div>
-          </button>
+        <button class="button prev-btn">
+          <div class="arrow"></div>
+        </button>
+        <div class="level-indicator">
+          1 0f 40 ▾
+        </div>
+        <button class="button next-btn">
+          <div class="arrow"></div>
+        </button>
+        ${getDropdownMenuHTML()}
       </div>
     </div>
     <div class="instructions"></div>

@@ -17,7 +17,7 @@ class NthPage extends Page {
 
   public executeAfterRender(): void {
     this.view.drawEnvironment();
-    this.view.draw(state.currentLevel);
+    this.view.drawLevel(state.currentLevel);
     this.listener.allListener();
   }
 

@@ -146,11 +146,10 @@
     align-items: center;
     flex-wrap: nowrap;
     z-index: 20;
-    // overflow: hidden;
-    --animate-duration: 1.2s;
 
     .element {
       position: relative;
+      transition: 1s transform;
       width: 4.5em;
       min-width: 4.5em;
       height: 6em;
@@ -159,9 +158,8 @@
       background-size: cover;
       background-repeat: no-repeat;
       font-size: 14px;
-      // -webkit-transform: translateX(100vw);
-      // transform: translateX(100vw);
       transition: 1s transform;
+      transform: translateX(100vw);
       filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .2));
 
       &::before {
@@ -201,7 +199,6 @@
         transition: opacity 1s ease-in, -webkit-transform .5s ease-out;
         transition: transform .5s ease-out, opacity 1s ease-in;
         transition: transform .5s ease-out, opacity 1s ease-in, -webkit-transform .5s ease-out;
-        // opacity: 0;
         z-index: -5;
       }
     }
@@ -212,9 +209,23 @@
         opacity: 1 !important;
       }
     }
-
     .element.target {
       background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/cart-full.png');
+    }
+    .element.win {
+      &::after {
+        background-image: url('https://codepip.com/wp-content/plugins/codepip/games/nth-cart/images/barrel-full.png');
+      }
+    }
+  }
+  .elements.enter {
+    .element {
+      transform: translateX(0);
+    }
+  }
+  .elements.exit {
+    .element {
+      transform: translateX(-100vw);
     }
   }
 }
@@ -251,6 +262,7 @@
       display: flex;
       align-items: center;
       gap: 3px;
+      position: relative;
 
       .arrow {
         width: 0;
@@ -298,14 +310,66 @@
         }
       }
     }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 2.2rem;
+      left: -128px;
+      z-index: 1000;
+      display: none;
+      float: left;
+      min-width: 10rem;
+      width: 418px;
+      padding: 0.5rem 0;
+      margin: 0.125rem 0 0;
+      font-size: 1rem;
+      color: #212529;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      background-color: #34393d;
+
+      .level-marker {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        margin: 0.25rem;
+        position: relative;
+        background-color: #999;
+        border: 4px solid transparent;
+        border-radius: 50%;
+        font-size: 14px;
+        font-weight: 700;
+        color: #fff;
+        cursor: pointer;
+        transition: .2s border-color;
+
+        &:hover {
+          border: 4px solid white;
+        }
+      }
+
+      .level-marker.solved {
+        background-color: #8e4dac;
+      }
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
   }
 
   .instructions {
-    height: 12rem;
+    height: 14rem;
     overflow-y: auto;
     padding: 1rem 2.5rem;
-    -webkit-transition: .2s opacity;
-    transition: .2s opacity;
+    transition: .3s opacity;
 
     p {
       margin-bottom: 1rem;
@@ -314,6 +378,7 @@
 
     code {
       font-family: source code pro, monospace;
+      padding: 0 3px;
       font-weight: 700;
       white-space: nowrap;
       background-color: #e9e8e8;
@@ -336,6 +401,7 @@
       display: flex;
       align-items: center;
       gap: 2px;
+      transition: .3s opacity;
 
       .selector {
         display: flex;

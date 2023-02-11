@@ -1,10 +1,26 @@
 import levels from "../data/data-levels";
+import ls from "../data/ls";
 import state from "../data/state";
-import { checkInput, createSelectorString, isWin } from "../settings/nth-utils";
+import {
+  changeLevel,
+  checkInput,
+  createSelectorString,
+  executeAfterWin,
+  isWin,
+} from "../settings/nth-utils";
+import AppView from "../view/AppView";
 
 class Listener {
+  private view: AppView;
+
+  constructor() {
+    this.view = new AppView();
+  }
+
   public allListener() {
     this.submitListener();
+    this.nextLevelListener();
+    this.prevLevelListener();
   }
 
   private submitListener() {
@@ -29,7 +45,27 @@ class Listener {
         picked.classList.add("picked");
       });
 
-      console.log(isWin());
+      if (isWin()) {
+        executeAfterWin(pickedSelectors);
+      }
+    });
+  }
+
+  private nextLevelListener() {
+    const nextBtn = document.querySelector(".next-btn");
+    nextBtn?.addEventListener("click", () => {
+      state.currentLevel += 1;
+      ls.set("currentLevel", String(state.currentLevel));
+      changeLevel();
+    });
+  }
+
+  private prevLevelListener() {
+    const prevBtn = document.querySelector(".prev-btn");
+    prevBtn?.addEventListener("click", () => {
+      state.currentLevel -= 1;
+      ls.set("currentLevel", String(state.currentLevel));
+      changeLevel();
     });
   }
 }

@@ -1,3 +1,4 @@
+import updateState from "../settings/nth-state";
 import Carts from "./carts/Carts";
 import Environment from "./environment/Environment";
 import InfoWindow from "./window/Window";
@@ -27,9 +28,10 @@ class AppView {
     this.environment.draw();
   }
 
-  draw(level: number) {
+  drawLevel(level: number) {
     this.drawCarts(level);
     this.drawWindow(level);
+    updateState();
   }
 }
 
