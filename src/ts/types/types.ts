@@ -16,6 +16,7 @@ export interface INthLevel {
 
 export interface INthState {
   currentLevel: number;
+  completedLevels: number[];
 }
 
 export type TRulesGarden = {

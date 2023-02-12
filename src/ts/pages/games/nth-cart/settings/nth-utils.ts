@@ -69,6 +69,11 @@ export const executeAfterWin = (pickedSelectors: NodeListOf<Element>) => {
     const view = new AppView();
     view.drawLevel(state.currentLevel);
   }, 4100);
+
+  const completedLevelsArray = state.completedLevels;
+  completedLevelsArray.push(state.currentLevel);
+  const uniqueLevels = Array.from(new Set(completedLevelsArray));
+  ls.set("completedLevels", JSON.stringify(uniqueLevels));
 };
 
 export const changeLevel = () => {
