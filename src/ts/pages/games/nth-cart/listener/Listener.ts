@@ -1,6 +1,7 @@
 import levels from "../data/data-levels";
 import ls from "../data/ls";
 import state from "../data/state";
+import { toggleSound } from "../settings/nth-sound";
 import {
   changeLevel,
   checkInput,
@@ -22,6 +23,8 @@ class Listener {
     this.nextLevelListener();
     this.prevLevelListener();
     this.levelsListener();
+    this.resetListener();
+    this.soundListener();
   }
 
   private submitListener() {
@@ -53,8 +56,16 @@ class Listener {
         picked.classList.add("picked");
       });
 
+      const dragAudio = document.querySelector(".dragging") as HTMLAudioElement;
+      dragAudio.currentTime = 0;
+      dragAudio.play();
+
       if (isWin()) {
-        executeAfterWin(pickedSelectors);
+        if (state.currentLevel === 40) {
+          this.view.drawWin(pickedSelectors);
+        } else {
+          executeAfterWin(pickedSelectors);
+        }
       }
     });
   }
@@ -77,11 +88,13 @@ class Listener {
     });
   }
 
-  levelsListener() {
+  private levelsListener() {
     document.body.addEventListener("click", (e) => {
       const target = e.target as HTMLElement;
       const dropdownMenu = document.querySelector(".dropdown-menu");
-      if (
+      if (target.closest(".reset")) {
+        dropdownMenu?.classList.remove("show");
+      } else if (
         target.closest(".level-indicator") ||
         target.closest(".dropdown-menu")
       ) {
@@ -96,6 +109,24 @@ class Listener {
         ls.set("currentLevel", String(state.currentLevel));
         changeLevel();
       }
+    });
+  }
+
+  private resetListener() {
+    const reset = document.querySelector(".reset") as HTMLElement;
+    reset.addEventListener("click", () => {
+      state.currentLevel = 1;
+      state.completedLevels = [];
+      ls.set("currentLevel", String(state.currentLevel));
+      ls.set("completedLevels", JSON.stringify(state.completedLevels));
+      changeLevel();
+    });
+  }
+
+  private soundListener() {
+    const sound = document.querySelector(".sound");
+    sound?.addEventListener("click", () => {
+      toggleSound();
     });
   }
 }
