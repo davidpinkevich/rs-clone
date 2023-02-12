@@ -2,7 +2,7 @@ import levels from "../../data/data-levels";
 import { getElementHTML } from "../ui";
 
 class Carts {
-  draw(level: number) {
+  public draw(level: number) {
     const elementsWrapper = document.querySelector(".elements__wrapper");
 
     const elements = document.createElement("div");

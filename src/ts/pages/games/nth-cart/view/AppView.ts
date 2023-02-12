@@ -1,6 +1,7 @@
 import updateState from "../settings/nth-state";
 import Carts from "./carts/Carts";
 import Environment from "./environment/Environment";
+import Win from "./win/Win";
 import InfoWindow from "./window/Window";
 
 class AppView {
@@ -10,10 +11,17 @@ class AppView {
 
   private infoWindow: InfoWindow;
 
+  private win: Win;
+
   constructor() {
     this.environment = new Environment();
     this.carts = new Carts();
     this.infoWindow = new InfoWindow();
+    this.win = new Win();
+  }
+
+  drawWin(pickedSelectors: NodeListOf<Element>) {
+    this.win.draw(pickedSelectors);
   }
 
   drawCarts(level: number) {

@@ -1,5 +1,5 @@
 class Environment {
-  draw() {
+  public draw() {
     (document.querySelector(".cave") as HTMLElement).style.backgroundImage =
       "url('./assets/images/nth-cart/background.png')";
 

@@ -44,11 +44,19 @@ export const executeAfterWin = (pickedSelectors: NodeListOf<Element>) => {
     pickedSelectors.forEach((picked) => {
       picked.classList.remove("target");
       picked.classList.add("win");
+
+      const correctAud = document.querySelector(".correct") as HTMLAudioElement;
+      correctAud.currentTime = 0;
+      correctAud.play();
     });
   }, 1200);
   setTimeout(() => {
     pickedSelectors.forEach((picked) => {
       picked.classList.remove("picked");
+
+      const dragAudio = document.querySelector(".dragging") as HTMLAudioElement;
+      dragAudio.currentTime = 0;
+      dragAudio.play();
     });
   }, 2200);
   setTimeout(() => {
@@ -58,6 +66,10 @@ export const executeAfterWin = (pickedSelectors: NodeListOf<Element>) => {
   }, 2400);
 
   setTimeout(() => {
+    const trolleyAudio = document.querySelector(".trolley") as HTMLAudioElement;
+    trolleyAudio.currentTime = 0;
+    trolleyAudio.play();
+
     document.querySelector(".elements")?.classList.add("exit");
     document.querySelector(".instructions")?.classList.add("hidden");
     document.querySelector(".selectors")?.classList.add("hidden");
@@ -78,6 +90,10 @@ export const executeAfterWin = (pickedSelectors: NodeListOf<Element>) => {
 
 export const changeLevel = () => {
   setTimeout(() => {
+    const trolleyAudio = document.querySelector(".trolley") as HTMLAudioElement;
+    trolleyAudio.currentTime = 0;
+    trolleyAudio.play();
+
     document.querySelector(".elements")?.classList.add("exit");
     document.querySelector(".instructions")?.classList.add("hidden");
     document.querySelector(".selectors")?.classList.add("hidden");

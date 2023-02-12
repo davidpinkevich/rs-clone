@@ -30,7 +30,12 @@ const getDropdownMenuHTML = () => `
     <div class="levels-menu">
 
     </div>
-    <div class="settings"></div>
+    <div class="settings">
+      <div class="reset">Reset</div>
+      <div class="sound">
+        <img class="sound-img" src="./assets/images/froggy/sound-on.svg" width="25px" height="25px" alt="sound">
+      </div>
+    </div>
   </div>
 `;
 

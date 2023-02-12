@@ -1,8 +1,9 @@
 import levels from "../../data/data-levels";
+import state from "../../data/state";
 import { getLevelHTML, getSelectorHTML } from "../ui";
 
 class InfoWindow {
-  draw(level: number) {
+  public draw(level: number) {
     const instructions = document.querySelector(".instructions") as HTMLElement;
     instructions.classList.remove("hidden");
     document.querySelector(".selectors")?.classList.remove("hidden");
@@ -26,7 +27,7 @@ class InfoWindow {
     this.drawLevelsMenu();
   }
 
-  drawLevelsMenu() {
+  private drawLevelsMenu() {
     const levelsContainer = document.querySelector(
       ".levels-menu"
     ) as HTMLElement;
@@ -43,8 +44,11 @@ class InfoWindow {
       currentLevel.setAttribute("data-level", String(counter));
       currentLevel.textContent = String(counter);
 
-      counter += 1;
+      if (state.completedLevels.find((level) => level === counter)) {
+        currentLevel.classList.add("solved");
+      }
 
+      counter += 1;
       levelsContainer.innerHTML += levelNode.innerHTML;
     });
   }
