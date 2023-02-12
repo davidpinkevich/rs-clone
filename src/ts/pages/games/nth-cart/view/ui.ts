@@ -26,7 +26,7 @@ const getTrackHTML = () => `
 export const getLevelHTML = () => `<span class="level-marker">1</span>`;
 
 const getDropdownMenuHTML = () => `
-  <div class="dropdown-menu show">
+  <div class="dropdown-menu">
     <div class="levels-menu">
 
     </div>

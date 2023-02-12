@@ -21,6 +21,7 @@ class Listener {
     this.submitListener();
     this.nextLevelListener();
     this.prevLevelListener();
+    this.levelsListener();
   }
 
   private submitListener() {
@@ -73,6 +74,28 @@ class Listener {
       state.currentLevel -= 1;
       ls.set("currentLevel", String(state.currentLevel));
       changeLevel();
+    });
+  }
+
+  levelsListener() {
+    document.body.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+      if (
+        target.closest(".level-indicator") ||
+        target.closest(".dropdown-menu")
+      ) {
+        dropdownMenu?.classList.add("show");
+      } else {
+        dropdownMenu?.classList.remove("show");
+      }
+
+      if (target.closest(".level-marker")) {
+        dropdownMenu?.classList.remove("show");
+        state.currentLevel = Number(target.dataset.level);
+        ls.set("currentLevel", String(state.currentLevel));
+        changeLevel();
+      }
     });
   }
 }
