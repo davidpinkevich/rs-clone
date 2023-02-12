@@ -1,0 +1,467 @@
+@keyframes spin {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.showdown {
+  font-family: 'Reggae One', cursive;
+  max-height: 94vh;
+  color: #fff;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__sidebar {
+    width: 450px;
+    height: calc(100vh - 58px);
+    padding: 1.5rem 2rem 1rem;
+    background-color: #171717;
+    background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/sidebar.svg");
+    background-position: left bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    overflow-y: auto;
+
+    h1 {
+      font-size: 1.6rem;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+
+  &__counter {
+    position: relative;
+  }
+
+  &__indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, .25);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color .15s ease-in-out;
+
+    span {
+      display: block;
+      margin-left: 5px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .35);
+    }
+  }
+
+  &__levels-wrapper {
+    display: none;
+    width: 400px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%, 2.75rem);
+    z-index: 1000;
+    padding: 0.5rem;
+    background-color: #515151;
+    border: none;
+    border-radius: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #515151;
+    }
+  }
+
+  &__levels {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__instructions {
+    font-family: source sans pro, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 16px;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    pre {
+      padding: 0.5rem 1rem;
+      background-color: #212121;
+      border-radius: 5px;
+      color: #fff;
+      font-family: source code pro, monospace;
+      font-weight: 700;
+    }
+  }
+
+  &__main {
+    width: calc(100% - 450px);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__panel {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    font-family: source code pro, monospace;
+    font-size: 2.2rem;
+    font-weight: 900;
+    cursor: pointer;
+    user-select: none;
+    transition: height .2s, filter .2s;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      transition: transform .2s;
+    }
+
+    &:hover {
+      height: 60%;
+
+      .showdown__selector {
+        transform: scale(1.3);
+      }
+
+      .showdown__background::before {
+        animation: spin 20s linear infinite;
+      }
+
+      &::after {
+        transform: translateX(100px) scale(1.3);
+      }
+    }
+  }
+
+  &__top {
+    border-bottom: 2px solid #171717;
+    z-index: 10;
+
+    &::before {
+      background-position: left bottom;
+      background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/ninja-left.svg");
+    }
+
+    &::after {
+      background-position: left bottom;
+      background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/sword-left.svg");
+      transform-origin: center bottom;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 200vmax;
+      height: 200vmax;
+      background-size: 200vmax;
+      transform: rotateZ(0);
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      perspective: 1000;
+    }
+
+    &_top {
+      background-color: #498ceb;
+
+      &::before {
+        left: -80vmax;
+        bottom: -100vmax;
+        background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/sunburst.svg");
+      }
+    }
+
+    &_bottom {
+      background-color: #8c39ba;
+
+      &::before {
+        right: -80vmax;
+        bottom: -100vmax;
+        background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/sunburst.svg");
+      }
+    }
+  }
+
+  &__versus {
+    position: absolute;
+    left: calc(50% - 30px);
+    bottom: calc(60px / -2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    z-index: 20;
+    border-radius: 50%;
+    background-color: #171717;
+    font-family: reggae one, cursive;
+    font-size: calc(60px / 2);
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  &__selector {
+    margin-top: 1.5rem;
+    transition: transform .2s;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  &__specificity {
+    display: flex;
+    margin: 0 2px;
+    font-family: 'Source Code Pro',monospace;
+    line-height: 1.2;
+    white-space: nowrap;
+    z-index: 10;
+    margin-top: 0.25rem;
+    font-size: 1.25rem;
+    opacity: 0;
+
+    span {
+      display: inline-block;
+      background-color: rgba(255,255,255,.2);
+      padding: 0 5px;
+
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+
+      &:nth-child(2) {
+        margin: 0 2px;
+      }
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 2px solid #171717;
+
+    &::before {
+      background-position: right bottom;
+      background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/ninja-right.svg");
+    }
+
+    &::after {
+      background-position: right bottom;
+      background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/sword-right.svg");
+      transform-origin: center bottom;
+      z-index: -1;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: calc(50% - 120px / 2);
+    height: 120px;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #171717;
+    border-radius: 0;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform .2s;
+    opacity: 0;
+    user-select: none;
+    z-index: 30;
+    cursor: pointer;
+
+    &_incorrect {
+      left: 4rem;
+      transform: skew(-5deg);
+
+      &:hover {
+        transform: skew(-5deg) scale(1.1);
+      }
+    }
+
+    &_correct {
+      right: 4rem;
+      transform: skew(5deg);
+
+      &:hover {
+        transform: skew(5deg) scale(1.1);
+      }
+    }
+
+    h2 {
+      font-family: 'Reggae One', cursive;
+      font-size: 1.6rem;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    span {
+      text-align: center;
+    }
+  }
+}
+
+.btn {
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  cursor: pointer;
+  color: #fff;
+
+  &__prev,
+  &__next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, .25);
+    border-radius: 0;
+    padding: 0;
+
+    img {
+      display: block;
+      width: 60%;
+      height: 65%;
+      filter: invert(100%);
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .35);
+    }
+
+    &:disabled {
+      opacity: .4;
+      pointer-events: none;
+    }
+  }
+
+  &__level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.2rem;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+
+    &_current {
+      border: 2px solid rgba(255, 255, 255, .9);
+      background-color: rgba(0, 0, 0, .8);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-image: url(../assets/images/showdown/lock.svg);
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(255, 255, 255, .2);
+      filter: invert(100%);
+      font-size: 0;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .8);
+    }
+  }
+
+  &__volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30.5px;
+    background-color: rgba(0, 0, 0, .4);
+    margin: 0 auto;
+    margin-top: 16px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .8);
+    }
+  }
+}
