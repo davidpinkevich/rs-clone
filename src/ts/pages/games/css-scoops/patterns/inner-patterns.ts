@@ -1,9 +1,22 @@
+import { LEVELS_SCOOPS } from "../../../../data/goods-data";
+
 const drawPageScoops = () =>
   `<div class="scoops">
     <div class="scoops__sidebar">
       <div class="scoops__sidebar-header header__sidebar">
         <div class="header__sidebar-title">CSS SCOOPS</div>
-        <div class="header__sidebar-levels animate__pulse">levels</div>
+        <div class="header__sidebar-levels">
+          <button class="header__sidebar-levels-last"></button>
+          <button class="header__sidebar-levels-main">Level <span>1</span> of ${LEVELS_SCOOPS.END}</button>
+          <button class="header__sidebar-levels-next"></button>
+          <div class="table__scoop">
+            <div class="table__scoop-levels"></div>
+            <div class="table__scoop-buttons">
+              <div class="table__scoop-buttons-refresh"><img class="img__refresh-scoop"></div>
+              <div class="table__scoop-buttons-sound"><img class="img__sound-scoop"></div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="scoops__sidebar-body body__sidebar">
         <div class="body__sidebar-rules"></div>
@@ -16,7 +29,7 @@ const drawPageScoops = () =>
               <div>&nbsp;&nbsp;your-styles: here;</div>
               <div>&nbsp;&nbsp;your-styles: here;</div>
               <div>}</div>
-              <button class="code__css-submit">submit</button>
+              <button class="code__css-submit" disabled>submit</button>
             </div>
           </div>
         </div>
@@ -36,7 +49,6 @@ const drawPageScoops = () =>
               <div class="code__html-bottom-wrapper">
                 <div class="code__html-bottom">
                   <div class="code__html-bottom-numbers">1<br>2<br>3<br>4<br></div>
-                  <div class="code__html-body"></div>
                 </div>
               </div>
             </div>
