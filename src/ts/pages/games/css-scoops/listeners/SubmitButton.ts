@@ -37,11 +37,17 @@ class SubmitButtonScoops {
       const lastLevel = <HTMLButtonElement>(
         document.querySelector(".header__sidebar-levels-last")
       );
+      const nextLevel = <HTMLButtonElement>(
+        document.querySelector(".header__sidebar-levels-next")
+      );
       const infoLevelTable = <HTMLElement>(
         document.querySelector(".header__sidebar-levels-main>span")
       );
       const ls = new LocalStorage("cssScoops");
       const numberLevel = Number(ls.get("numberLevel"));
+      if (numberLevel === LEVELS_SCOOPS.END - 1) {
+        nextLevel.disabled = true;
+      }
       if (numberLevel !== LEVELS_SCOOPS.END) {
         infoLevelTable.innerHTML = `${numberLevel + 1}`;
         if (!ls.get("numberWins")) {
