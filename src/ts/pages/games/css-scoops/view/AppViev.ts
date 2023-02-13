@@ -23,11 +23,17 @@ class VievScoops {
     const window = <HTMLElement>document.querySelector(".window__scoops");
 
     window.classList.add("move__level-scoop");
-    setTimeout(() => window.classList.remove("move__level-scoop"), 1000);
-    window.innerHTML = "";
-
-    const portion = new Portion(RULES_SCOOPS.SCOOPS[this.numberLevel], window);
-    portion.createPortion();
+    setTimeout(() => {
+      window.classList.remove("move__level-scoop");
+      window.innerHTML = "";
+      const portion = new Portion(
+        RULES_SCOOPS.SCOOPS[this.numberLevel],
+        window
+      );
+      portion.createPortion();
+    }, 1000);
+    setTimeout(() => window.classList.add("level__scoop-back"), 1000);
+    setTimeout(() => window.classList.remove("level__scoop-back"), 3000);
   }
 
   drawNewLevel() {
