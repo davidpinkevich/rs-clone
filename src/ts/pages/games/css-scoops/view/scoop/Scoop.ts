@@ -32,6 +32,18 @@ class Scoop extends ScoopListeners {
       case "pink":
         item.style.backgroundColor = COLORS_SCOOPS.PINK;
         break;
+      case "lemon":
+        item.style.backgroundColor = COLORS_SCOOPS.LEMON;
+        break;
+      case "choco":
+        item.style.backgroundColor = COLORS_SCOOPS.CHOCO;
+        break;
+      case "mint":
+        item.style.backgroundColor = COLORS_SCOOPS.MINT;
+        break;
+      case "mystery":
+        item.style.backgroundColor = COLORS_SCOOPS.MYSTERY;
+        break;
       default:
     }
     if (this.parameters.split("-")[2] === "pulse") {
