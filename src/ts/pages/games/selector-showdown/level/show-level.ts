@@ -1,7 +1,10 @@
-import showdownStore from "./data/showdown-store";
-import randomNumbers from "./utils/random-numbers";
+import checkRange from "./check-range";
+import currLevel from "./current-level";
+import showdownStore from "../data/showdown-store";
+import lsShowdown from "../ls/ls-showdown";
+import randomNumbers from "../utils/random-numbers";
 
-const showLevel = () => {
+const showLevel = (): void => {
   const instructionsEl = <HTMLElement>(
     document.querySelector(".showdown__instructions")
   );
@@ -23,6 +26,7 @@ const showLevel = () => {
   );
 
   const { currentLevel } = showdownStore;
+  lsShowdown.set("curr", `${currentLevel}`);
   const { descr, info } = showdownStore.levels[currentLevel - 1];
   const [first, second] = randomNumbers(2);
   const selector1 = info[first].selector;
@@ -48,6 +52,9 @@ const showLevel = () => {
   panelBottomEl.setAttribute("data-score", score2);
   selectorBottomEl.innerHTML = selector2;
   specificityBottomEl.innerHTML = score2Html;
+
+  currLevel();
+  checkRange();
 };
 
 export default showLevel;
