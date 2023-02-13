@@ -1,11 +1,11 @@
 const innerSurgeon = () => `
 <header class="header">
-<div class="container">
+<div class="__container">
     <a href="#">click to main from surgeon</a>
 </div>
 </header>
 <main class="surgeon">
-<div class="container">
+<div class="__container">
     <div class="surgeon__wrapper">
         <section class="surgeon__sidebar">
             <div class="surgeon__header">
@@ -13,9 +13,9 @@ const innerSurgeon = () => `
                 <div class="surgeon__controls">
                     <div class="surgeon__counter">
                         <span class="surgeon__indicator">
-                            <span>Level</span>
+                            <span class="surgeon__lvl">Level</span>
                             <span class="surgeon__current">1</span>
-                            <span>of</span>
+                            <span class="surgeon__of">of</span>
                             <span class="surgeon__total">14</span>
                             <span class="surgeon__caret">▾</span>
                         </span>
@@ -44,7 +44,7 @@ const innerSurgeon = () => `
                         <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f00e-512.png"/>
                     </button>
                     <div class="surgeon__volume">
-                        <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f028-512.png"/>
+                        <img src="./assets/images/froggy/sound-on.svg"/>
                         <div class="surgeon__audio" style="display: none">
                             <audio class="surgeon__audio-correct" src="https://codepip.com/wp-content/plugins/codepip/games/css-surgeon/audio/correct.wav"></audio>
                         </div>

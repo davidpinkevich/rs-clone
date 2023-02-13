@@ -3,15 +3,16 @@ import currentLevel from "../level/current-level";
 import hideLevels from "../level/hide-levels";
 import showItem from "../level/show-item";
 import showLevel from "../level/show-level";
+import disableElement from "../utils/disabled-element";
 
-const nextHandler = () => {
+const nextHandler = (): void => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
   const codeEl = <HTMLTextAreaElement>document.querySelector(".surgeon__code");
   const audioEl = <HTMLAudioElement>(
     document.querySelector(".surgeon__audio-correct")
   );
 
-  nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", (): void => {
     showItem();
     audioEl.play();
     const itemsEl: NodeListOf<HTMLElement> = document.querySelectorAll(
@@ -21,6 +22,8 @@ const nextHandler = () => {
     codeEl.value = "";
     currentLevel();
     hideLevels();
+    disableElement(".surgeon__see", true);
+    disableElement(".surgeon__level", true);
     if (itemsEl.length === 0) {
       return;
     }

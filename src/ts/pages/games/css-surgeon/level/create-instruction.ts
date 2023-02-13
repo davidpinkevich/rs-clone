@@ -1,7 +1,7 @@
 import surgeonStore from "../data/surgeon-store";
 import levelCounter from "./level-counter";
 
-const createInstruction = () => {
+const createInstruction = (): void => {
   const instructionsEl = <HTMLElement>(
     document.querySelector(".surgeon__instructions")
   );

@@ -74,3 +74,33 @@ export type TColorsScoops = {
 type TInstructions = { [key: string]: string };
 type TStyles = { [key: string]: string };
 export type TLocalStorageObj = { [key: string]: string };
+
+type TLevelSurgeon = {
+  level: number;
+  selector: string;
+  descr1: string;
+  descr2: string;
+  origin: string;
+};
+
+export type TSurgeonStore = {
+  levels: TLevelSurgeon[];
+  currentLevel: number;
+};
+
+export type TSelectorShowdown = {
+  selector: string;
+  score: string;
+};
+
+export type TLevelShowdown = {
+  level: number;
+  descr: string;
+  info: TSelectorShowdown[];
+};
+
+export type TShowdownStore = {
+  levels: TLevelShowdown[];
+  currentLevel: number;
+  volume: number;
+};

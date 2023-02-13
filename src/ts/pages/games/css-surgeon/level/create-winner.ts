@@ -1,4 +1,4 @@
-const createWinner = () => {
+const createWinner = (): void => {
   const nextBtn = <HTMLButtonElement>document.querySelector(".button__next");
   const instructionsEl = <HTMLElement>(
     document.querySelector(".surgeon__instructions")
