@@ -9,7 +9,7 @@ const getWinHTML = () => `
       <div class="badges-btn">
         <a class="badges-link" href="#statistics">View All Badges</a>
       </div>
-    </div>
+    </div> 
   </div>
 `;
 
