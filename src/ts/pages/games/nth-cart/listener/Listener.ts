@@ -1,24 +1,21 @@
-import Sound from "../settings/nth-sound";
+import Sound from "../settings/Sound";
 import AppView from "../view/AppView";
 import levels from "../data/data-levels";
 import ls from "../data/ls";
 import state from "../data/state";
-import {
-  changeLevel,
-  checkInput,
-  createSelectorString,
-  executeAfterWin,
-  isWin,
-} from "../settings/nth-utils";
+import Utils from "../settings/Utils";
 
 class Listener {
   private view: AppView;
 
   private sound: Sound;
 
+  private utils: Utils;
+
   constructor() {
     this.view = new AppView();
     this.sound = new Sound();
+    this.utils = new Utils();
   }
 
   public allListener() {
@@ -40,7 +37,7 @@ class Listener {
 
       const inputs = document.querySelectorAll(".input");
       const isValidInputs = Array.from(inputs).every((input) =>
-        checkInput((input as HTMLInputElement).value)
+        this.utils.checkInput((input as HTMLInputElement).value)
       );
       if (!isValidInputs) {
         return;
@@ -53,7 +50,7 @@ class Listener {
         return;
       }
 
-      const selectorString = createSelectorString(levelInfo);
+      const selectorString = this.utils.createSelectorString(levelInfo);
       const pickedSelectors = document.querySelectorAll(selectorString);
       pickedSelectors.forEach((picked) => {
         picked.classList.add("picked");
@@ -63,11 +60,11 @@ class Listener {
       dragAudio.currentTime = 0;
       dragAudio.play();
 
-      if (isWin()) {
+      if (this.utils.isWin()) {
         if (state.currentLevel === 40) {
           this.view.drawWin(pickedSelectors);
         } else {
-          executeAfterWin(pickedSelectors);
+          this.utils.executeAfterWin(pickedSelectors);
         }
       }
     });
@@ -78,7 +75,7 @@ class Listener {
     nextBtn?.addEventListener("click", () => {
       state.currentLevel += 1;
       ls.set("currentLevel", String(state.currentLevel));
-      changeLevel();
+      this.utils.changeLevel();
     });
   }
 
@@ -87,7 +84,7 @@ class Listener {
     prevBtn?.addEventListener("click", () => {
       state.currentLevel -= 1;
       ls.set("currentLevel", String(state.currentLevel));
-      changeLevel();
+      this.utils.changeLevel();
     });
   }
 
@@ -110,7 +107,7 @@ class Listener {
         dropdownMenu?.classList.remove("show");
         state.currentLevel = Number(target.dataset.level);
         ls.set("currentLevel", String(state.currentLevel));
-        changeLevel();
+        this.utils.changeLevel();
       }
     });
   }
@@ -122,7 +119,7 @@ class Listener {
       state.completedLevels = [];
       ls.set("currentLevel", String(state.currentLevel));
       ls.set("completedLevels", JSON.stringify(state.completedLevels));
-      changeLevel();
+      this.utils.changeLevel();
     });
   }
 

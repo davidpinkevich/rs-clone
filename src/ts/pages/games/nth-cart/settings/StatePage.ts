@@ -1,4 +1,4 @@
-import Sound from "./nth-sound";
+import Sound from "./Sound";
 import levels from "../data/data-levels";
 import state from "../data/state";
 

@@ -1,4 +1,4 @@
-import StatePage from "../settings/nth-state";
+import StatePage from "../settings/StatePage";
 import Carts from "./carts/Carts";
 import Environment from "./environment/Environment";
 import Win from "./win/Win";
