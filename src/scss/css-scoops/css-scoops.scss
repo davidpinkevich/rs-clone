@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+$darkBackScoops: rgb(3,49,67);
+$colorWallkScoops: rgb(35,132,138);
+$underCounterScoops: rgb(34,174,182);
+$coloreCodeScoops: rgb(4,60,82);
+$colorButtonScoops: rgb(245,92,150);
+
+cup, cone, scoop {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+scoop {
+  margin-left: 20px;
+}
+.scoop__table {
+  margin-left: 0;
+}
+
+.scoops {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 59px;
+  color: white;
+  background-color: rgb(19,94,117);
+}
+
+.scoops__sidebar {
+  width: 35%;
+  background: repeating-linear-gradient(to right,#0d6d8b,#0d6d8b 40px,#0d6986 40px,#0d6986 80px);
+}
+
+.scoops__game {
+  flex-grow: 1;
+}
+
+.header__sidebar {
+  background-color: $coloreCodeScoops;
+  position: relative;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-image: url("https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/fringe.svg");
+    background-size: 400px;
+    background-repeat: repeat-x;
+  }
+}
+
+.header__sidebar-title {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: 'Dosis', sans-serif;
+}
+
+.body__sidebar-rules {
+  font-size: 16px;
+  line-height: 150%;
+  font-family: "source sans pro",sans-serif;
+
+  & span {
+    background-color: rgb(61,135,158);
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 0 5px;
+  }
+
+  & p {
+    margin-bottom: 15px;
+  }
+}
+
+.scoops__underline {
+  display: inline;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.scoops__game-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+  background-color: $colorWallkScoops;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-width: calc(50vh - 59px) 0 0 100vw;
+    border-color: transparent transparent transparent rgba(0,0,0,.05);
+  }
+}
+
+.scoops__game-bottom {
+  background-color: $underCounterScoops;
+  height: 40%;
+}
+
+.game__html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body__sidebar {
+  padding: 32px;
+}
+
+.code__css-top {
+  background-color: $darkBackScoops;
+  padding: 8px;
+  border-radius:4px 4px 0 0;
+}
+
+.code__css-bottom {
+  display: flex;
+  gap: 8px;
+  line-height: 170%;
+  background-color: $coloreCodeScoops;
+  border-radius: 0 0 4px 4px;
+}
+
+.code__css-bottom-numbers,
+.code__html-bottom-numbers {
+  background-color: $darkBackScoops;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+  color: rgb(59,101,115);
+  padding: 8px;
+  border-radius: 0 0 0px 4px;
+}
+
+.code__html-bottom-numbers {
+  padding-top: 0;
+}
+
+.code__css-body {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 8px;
+}
+.code__css-input {
+width: 90%;
+line-height: 170%;
+border-radius: 4px;
+padding: 0 8px;
+}
+
+.code__css-submit {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+  background-color: $colorButtonScoops;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 10px 16px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgb(243,58,128);
+  }
+
+  &:disabled {
+    background-color: rgb(235, 179, 200);
+    pointer-events: none;
+  }
+}
+
+.scoops__game-header-table {
+  height: 96px;
+  width: 100%;
+  background-color: #91ccc0;
+}
+
+.scoops__game-header-shadow {
+  width: 100%;
+  height: 16px;
+  background-color: rgb(70,151,135);
+}
+
+.game__html {
+  position: relative;
+}
+
+.game__html-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game__html-item {
+  position: relative;
+  width: 33%;
+  height: 160%;
+  top: 20%;
+
+  & img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.game__html-body {
+  width: 80%;
+  height: 60%;
+}
+
+.code__html-body {
+  width: 95%;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.game__html-code {
+  position: relative;
+  height: 100%;
+  z-index: 2;
+}
+
+.code__html {
+  height: 100%;
+}
+.code__html-top {
+  background-color: $darkBackScoops;
+  padding: 4px 8px;
+  border-radius:4px 4px 0 0;
+}
+
+.code__html-bottom {
+  display: flex;
+  gap: 8px;
+  line-height: 170%;
+  background-color: $coloreCodeScoops;
+  border-radius: 0 0 4px 4px;
+}
+
+.code__html-bottom-wrapper {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.window__scoops {
+  position: relative;
+  top: 60px;
+  gap: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.cup__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 116px;
+  width: 96px;
+
+  & img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cup-mask.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 5;
+    pointer-events: none;
+  }
+}
+
+.cone__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 116px;
+  width: 96px;
+
+  & img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cone-mask.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 5;
+    pointer-events: none;
+  }
+}
+
+.cone__body-black {
+  &::after {
+    content: "";
+    background-image: url("https://codepip.com/wp-content/plugins/codepip/games/css-scoops/images/cone-chocolate-mask.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 5;
+    pointer-events: none;
+  }
+}
+
+@keyframes PulseScoops {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.10);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-scoops {
+  animation: PulseScoops 1s ease-in infinite;
+}
+
+.portion__body {
+  position: relative;
+  z-index: 50;
+  width: 96px;
+  height: 116px;
+  bottom: 0;
+  transition: all 0.3s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    bottom: -10%;
+    width: 80%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: #469787;
+    -webkit-transform: translateZ(-1px) rotate(5deg);
+    transform: translateZ(-1px) rotate(5deg);
+  }
+}
+
+.scoop__body {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  z-index: 3;
+  overflow: hidden;
+  position: relative;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+
+  &::after {
+    position: absolute;
+    border-radius: 50%;
+    content: "";
+    left: 0;
+    top: 1px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    box-shadow: inset 0px 4px 4px 1px white;
+  }
+
+  &::before {
+    position: absolute;
+    border-radius: 50%;
+    content: "";
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    box-shadow: 0px 0px 20px 0px black;
+  }
+}
+
+.cup__scoop-img,
+.cone__scoop-img {
+  z-index: 2;
+}
+
+.cup__scoop-img-mask,
+.cone__scoop-img-mask {
+  z-index: 11;
+}
+
+.translate-scoops {
+  transition: all 0.3s;
+  transform: scale(1.1);
+  bottom: -5%;
+}
+
+.scoop__hover {
+  transition: all 0.3s;
+  width: 80px;
+  height: 80px;
+  left: 8%;
+  z-index: 20;
+}
+
+.html__hover {
+  transition: all 0.2s;
+  background-color: rgb(30,80,100);
+}
+
+.header__sidebar-levels {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__sidebar-levels-last,
+.header__sidebar-levels-next {
+  position: relative;
+  background-color: rgb(4,60,82);
+  width: 37px;
+  height: 37px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  & img {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    left: calc(50% - 8px);
+    top: calc(50% - 8px);
+  }
+
+  &:hover {
+    background-color: $darkBackScoops;
+  }
+}
+
+.header__sidebar-levels-main {
+  position: relative;
+  background-color: rgb(4,60,82);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 700;
+  color: white;
+  font-size: 16px;
+  width: 120px;
+  height: 37px;
+  font-family: 'Dosis', sans-serif;
+
+  &::after {
+    content: ''; 
+    position: absolute; 
+    right: 0;
+    top: 45%;
+    border: 7px solid transparent;
+    border-top: 7px solid white;
+  }
+  &:hover {
+    background-color: $darkBackScoops;
+  }
+}
+
+.table__scoop {
+  position: absolute;
+  cursor: auto;
+  display: none;
+  z-index: 10;
+  padding: 16px;
+  left: -15%;
+  top: 100%;
+  width: 280px;
+  height: 220px;
+  background-color: white;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.table__scoop-levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+}
+
+.table__scoop-levels-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  background-color: rgb(179,202,207);
+  transition: all 0.2s;
+
+  &:hover {
+    border: solid 4px rgb(157,178,182);
+  }
+}
+
+.table__scoop-buttons {
+  display: flex;
+  color: rgb(235, 179, 200);
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.current__scoop {
+  border: solid 4px rgb(157,178,182);
+  &.scoop__win {
+    border: solid 4px rgba(21, 98, 34, 0.5);
+  }
+}
+
+.scoop__win {
+  background-color: rgb(74,151,135);
+
+  &:hover {
+    border: solid 4px rgba(3, 46, 10, 0.5);
+  }
+}
