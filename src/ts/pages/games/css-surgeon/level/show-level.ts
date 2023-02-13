@@ -1,7 +1,7 @@
 import surgeonStore from "../data/surgeon-store";
 import disableElement from "../utils/disabled-element";
 
-const showLevel = () => {
+const showLevel = (): void => {
   const holesEl: NodeListOf<HTMLElement> =
     document.querySelectorAll(".surgeon__holes");
   const itemsEl: NodeListOf<HTMLElement> =
@@ -19,7 +19,7 @@ const showLevel = () => {
   samEl.style.transform = "scale(7)";
   viewEl.style.background = "#ffd4ce";
   disableElement(".surgeon__code", false);
-  setTimeout(() => {
+  setTimeout((): void => {
     bodyEl.style.opacity = "0";
     itemsEl[currentLevel - 1].style.opacity = "1";
     holesEl[currentLevel - 1].style.opacity = "1";

@@ -3,7 +3,7 @@ import hideLevels from "../level/hide-levels";
 import showLevel from "../level/show-level";
 import disableElement from "../utils/disabled-element";
 
-const loupe = () => {
+const loupe = (): void => {
   const { currentLevel } = surgeonStore;
   const itemEl = <HTMLElement>(
     document.querySelector(`.surgeon__items_${currentLevel - 1}`)

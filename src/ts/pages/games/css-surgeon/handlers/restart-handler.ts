@@ -1,6 +1,6 @@
 import ls from "../ls/ls";
 
-const restartHandler = () => {
+const restartHandler = (): void => {
   const restartBtn = <HTMLElement>document.querySelector(".button__restart");
   const resetBtn = <HTMLElement>document.querySelector(".button__reset");
 
@@ -10,11 +10,11 @@ const restartHandler = () => {
     window.location.reload();
   };
 
-  resetBtn.addEventListener("click", (e) => {
+  resetBtn.addEventListener("click", (e): void => {
     newGame(e);
   });
 
-  restartBtn.addEventListener("click", (e) => {
+  restartBtn.addEventListener("click", (e): void => {
     newGame(e);
   });
 };

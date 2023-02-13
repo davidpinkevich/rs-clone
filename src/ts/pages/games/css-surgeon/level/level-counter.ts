@@ -1,6 +1,6 @@
 import surgeonStore from "../data/surgeon-store";
 
-const levelCounter = () => {
+const levelCounter = (): void => {
   const currentEl = <HTMLElement>document.querySelector(".surgeon__current");
   const levelsEl: NodeListOf<HTMLElement> =
     document.querySelectorAll(".surgeon__level");

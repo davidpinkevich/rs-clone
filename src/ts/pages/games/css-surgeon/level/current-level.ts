@@ -1,7 +1,7 @@
 import createWinner from "./create-winner";
 import surgeonStore from "../data/surgeon-store";
 
-const currentLevel = () => {
+const currentLevel = (): void => {
   const itemsEl: NodeListOf<HTMLElement> = document.querySelectorAll(
     ".surgeon__item_hide"
   );
@@ -13,7 +13,7 @@ const currentLevel = () => {
 
   const levels: number[] = [];
 
-  itemsEl.forEach((itemEl) => {
+  itemsEl.forEach((itemEl): void => {
     const level = Number(itemEl.getAttribute("data-level"));
     levels.push(level);
   });

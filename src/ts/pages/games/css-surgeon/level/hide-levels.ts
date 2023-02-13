@@ -1,7 +1,7 @@
 import surgeonStore from "../data/surgeon-store";
 import disableElement from "../utils/disabled-element";
 
-const hideLevels = () => {
+const hideLevels = (): void => {
   const holesEl: NodeListOf<HTMLElement> =
     document.querySelectorAll(".surgeon__holes");
   const itemsEl: NodeListOf<HTMLElement> =

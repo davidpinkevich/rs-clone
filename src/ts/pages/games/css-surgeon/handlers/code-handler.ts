@@ -3,10 +3,10 @@ import surgeonStore from "../data/surgeon-store";
 import ls from "../ls/ls";
 import showLevel from "../level/show-level";
 
-const codeHandler = () => {
+const codeHandler = (): void => {
   const codeEl = <HTMLElement>document.querySelector(".surgeon__code");
 
-  codeEl.addEventListener("input", (e) => {
+  codeEl.addEventListener("input", (e): void => {
     const holesEl: NodeListOf<HTMLElement> =
       document.querySelectorAll(".surgeon__holes");
     const itemsEl: NodeListOf<HTMLElement> =

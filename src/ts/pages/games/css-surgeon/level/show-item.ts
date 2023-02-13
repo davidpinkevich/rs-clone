@@ -1,6 +1,6 @@
 import surgeonStore from "../data/surgeon-store";
 
-const showItem = () => {
+const showItem = (): void => {
   const itemsEl: NodeListOf<HTMLElement> =
     document.querySelectorAll(".surgeon__item");
   const levelsEl: NodeListOf<HTMLElement> =
