@@ -1,7 +1,7 @@
+import AppView from "../AppView";
 import getWinnersView from "./winUI";
 import state from "../../data/state";
 import ls from "../../data/ls";
-import AppView from "../AppView";
 
 class Win {
   public draw(pickedSelectors: NodeListOf<Element>) {

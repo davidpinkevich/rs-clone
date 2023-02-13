@@ -13,8 +13,6 @@ class Environment {
 
     (document.querySelector(".table") as HTMLElement).style.backgroundImage =
       "url('./assets/images/nth-cart/table.png')";
-
-    // console.log(document.querySelectorAll(".elements :nth-child(n + 5)"));
   }
 }
 
