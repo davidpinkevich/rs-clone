@@ -20,9 +20,10 @@ class VievScoops {
   }
 
   renderWindow() {
-    // сюда надо вставить наши столбики с разными штуками
     const window = <HTMLElement>document.querySelector(".window__scoops");
 
+    window.classList.add("move__level-scoop");
+    setTimeout(() => window.classList.remove("move__level-scoop"), 1000);
     window.innerHTML = "";
 
     const portion = new Portion(RULES_SCOOPS.SCOOPS[this.numberLevel], window);
