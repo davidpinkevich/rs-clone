@@ -39,6 +39,11 @@ class SoundScoops extends RefreshScoop {
       "https://codepip.com/wp-content/plugins/codepip/games/css-scoops/audio/the-entertainer.mp3"
     );
     audio.play();
+
+    const result = <HTMLElement>document.querySelector(".link__result");
+    result.addEventListener("click", () => {
+      audio.pause();
+    });
   }
 
   soundListener() {

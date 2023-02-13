@@ -56,7 +56,6 @@ class TableLevels extends SoundScoops {
       const target = <HTMLElement>event.target;
       if (target.classList.contains("table__scoop-levels-item")) {
         const level = Number(target.getAttribute("data-table"));
-        console.log(level);
         const ls = new LocalStorage("cssScoops");
         ls.set("numberLevel", String(level));
         infoLevel.innerHTML = `${level}`;

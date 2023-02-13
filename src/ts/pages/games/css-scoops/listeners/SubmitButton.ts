@@ -1,6 +1,7 @@
 import { LEVELS_SCOOPS } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 import VievScoops from "../view/AppViev";
+import Result from "./Result";
 
 class SubmitButtonScoops {
   public btnSubmit: HTMLButtonElement;
@@ -47,6 +48,12 @@ class SubmitButtonScoops {
       const numberLevel = Number(ls.get("numberLevel"));
       if (numberLevel === LEVELS_SCOOPS.END - 1) {
         nextLevel.disabled = true;
+      }
+      if (numberLevel === LEVELS_SCOOPS.END) {
+        const mainPage = <HTMLElement>document.querySelector(".scoops");
+        mainPage.classList.add("shadow");
+        const result = new Result();
+        result.openResult();
       }
       if (numberLevel !== LEVELS_SCOOPS.END) {
         infoLevelTable.innerHTML = `${numberLevel + 1}`;
