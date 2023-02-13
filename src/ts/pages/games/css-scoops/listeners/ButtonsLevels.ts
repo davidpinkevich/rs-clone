@@ -132,6 +132,7 @@ class ButtonsLevels extends TableLevels {
     this.disabledLevelBtn();
     this.startButtonsTable();
     this.addRefreshListener();
+    this.changeLevelsTable();
   }
 }
 

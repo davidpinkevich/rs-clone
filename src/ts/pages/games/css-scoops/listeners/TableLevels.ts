@@ -1,5 +1,7 @@
+import { LEVELS_SCOOPS } from "../../../../data/goods-data";
 import LocalStorage from "../../../../utils/LocalStorage";
 import SoundScoops from "./SoundScoops";
+import VievScoops from "../view/AppViev";
 
 class TableLevels extends SoundScoops {
   public table: HTMLElement;
@@ -25,6 +27,55 @@ class TableLevels extends SoundScoops {
       document.querySelector(".header__sidebar-levels-main")
     );
     return btnTable;
+  }
+
+  changeLevelsTable() {
+    const tableLevels = <HTMLElement>(
+      document.querySelector(".table__scoop-levels")
+    );
+
+    const mainbtnTable = <HTMLElement>(
+      document.querySelector(".header__sidebar-levels-main")
+    );
+
+    const tableHidden = <HTMLElement>document.querySelector(".table__scoop");
+
+    const infoLevel = <HTMLElement>(
+      document.querySelector(".header__sidebar-levels-main>span")
+    );
+
+    const lastLevel = <HTMLButtonElement>(
+      document.querySelector(".header__sidebar-levels-last")
+    );
+
+    const nextLevel = <HTMLButtonElement>(
+      document.querySelector(".header__sidebar-levels-next")
+    );
+
+    tableLevels.addEventListener("click", (event: Event) => {
+      const target = <HTMLElement>event.target;
+      if (target.classList.contains("table__scoop-levels-item")) {
+        const level = Number(target.getAttribute("data-table"));
+        console.log(level);
+        const ls = new LocalStorage("cssScoops");
+        ls.set("numberLevel", String(level));
+        infoLevel.innerHTML = `${level}`;
+        if (level === LEVELS_SCOOPS.START) {
+          lastLevel.disabled = true;
+          nextLevel.disabled = false;
+        } else if (level === LEVELS_SCOOPS.END) {
+          lastLevel.disabled = false;
+          nextLevel.disabled = true;
+        } else {
+          lastLevel.disabled = false;
+          nextLevel.disabled = false;
+        }
+        const view = new VievScoops(level - 1);
+        view.drawNewLevel();
+        mainbtnTable.classList.remove("table__active");
+        tableHidden.style.display = "none";
+      }
+    });
   }
 
   getLevels() {

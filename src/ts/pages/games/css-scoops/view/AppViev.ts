@@ -1,9 +1,5 @@
-// import { LINKS_SCOOPS } from "../../../../data/goods-data";
 import RULES_SCOOPS from "../data/rules-scoops";
 import DrawScoops from "./rules/ScoopsDraw";
-// import Cup from "../patterns/Cup";
-// import Cone from "./cone/Cone";
-// import Scoop from "./scoop/Scoop";
 import Portion from "./portion/Portion";
 
 class VievScoops {
@@ -17,7 +13,7 @@ class VievScoops {
     const rulesBody = <HTMLElement>(
       document.querySelector(".body__sidebar-rules")
     );
-    const htmlBody = <HTMLElement>document.querySelector(".code__html-body");
+    const htmlBody = <HTMLElement>document.querySelector(".code__html-bottom");
 
     const rule = new DrawScoops(this.numberLevel, rulesBody, htmlBody);
     rule.innerTotalViev();
