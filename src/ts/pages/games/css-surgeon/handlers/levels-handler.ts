@@ -55,6 +55,7 @@ const levelsHandler = (): void => {
       codeEl.value = "";
       const level = Number(levelEl.getAttribute("data-level"));
       if (itemEl.classList.contains("surgeon__items_hide")) {
+        disableElement(".surgeon__level", true);
         surgeonStore.currentLevel = level;
         createInstruction();
         showLevel();

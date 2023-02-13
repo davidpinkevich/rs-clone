@@ -9,13 +9,11 @@ const volumeHandler = (): void => {
 
   volumeBtn.addEventListener("click", (): void => {
     if (volume) {
-      volumeImg.src =
-        "https://cdn0.iconfinder.com/data/icons/zondicons/20/volume-off-256.png";
+      volumeImg.src = "./assets/images/froggy/sound-off.svg";
       audioEl.volume = 0;
       volume = 0;
     } else {
-      volumeImg.src =
-        "https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f028-512.png";
+      volumeImg.src = "./assets/images/froggy/sound-on.svg";
       audioEl.volume = 1;
       volume = 1;
     }
