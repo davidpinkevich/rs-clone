@@ -37,7 +37,7 @@ type TInstructions = { [key: string]: string };
 type TStyles = { [key: string]: string };
 export type TLocalStorageObj = { [key: string]: string };
 
-type TLevel = {
+type TLevelSurgeon = {
   level: number;
   selector: string;
   descr1: string;
@@ -46,6 +46,23 @@ type TLevel = {
 };
 
 export type TSurgeonStore = {
-  levels: TLevel[];
+  levels: TLevelSurgeon[];
   currentLevel: number;
+};
+
+export type TSelectorShowdown = {
+  selector: string;
+  score: string;
+};
+
+export type TLevelShowdown = {
+  level: number;
+  descr: string;
+  info: TSelectorShowdown[];
+};
+
+export type TShowdownStore = {
+  levels: TLevelShowdown[];
+  currentLevel: number;
+  volume: number;
 };
