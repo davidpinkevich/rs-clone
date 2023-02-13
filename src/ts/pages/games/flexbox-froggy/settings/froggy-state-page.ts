@@ -18,10 +18,12 @@ const updateStatePage = (level: number) => {
   const rightArrow = document.querySelector(".arrow.right");
   if (level === 1) {
     leftArrow?.classList.add("disabledButton");
-  } else if (level === levels.length) {
-    rightArrow?.classList.add("disabledButton");
   } else {
     leftArrow?.classList.remove("disabledButton");
+  }
+  if (level === levels.length) {
+    rightArrow?.classList.add("disabledButton");
+  } else {
     rightArrow?.classList.remove("disabledButton");
   }
 

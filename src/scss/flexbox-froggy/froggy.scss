@@ -7,12 +7,6 @@ $boardColor: #1f5768;
 $editorColor: #e0e0e0;
 $lineNumbersColor: #999;
 
-.container {
-  max-width: 1600px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .froggy-page {
   font-family: source sans pro, sans-serif;
   background-color: $pageColor;
@@ -136,7 +130,7 @@ $lineNumbersColor: #999;
       right: 31px;
       max-width: 160px;
       padding: 1em 0.5em;
-      z-index: 20;
+      z-index: 2000;
 
       .levels {
         display: flex;
@@ -179,7 +173,7 @@ $lineNumbersColor: #999;
       border-radius: 4px;
       font-size: 12px;
       line-height: 1.5;
-      z-index: 60;
+      z-index: 160;
       opacity: 1;
 
       &::after {
