@@ -4,6 +4,7 @@ import VievScoops from "../view/AppViev";
 import SubmitButtonScoops from "./SubmitButton";
 import InputScoops from "./InputScoops";
 import TableLevels from "./TableLevels";
+import Result from "./Result";
 
 class ButtonsLevels extends TableLevels {
   public last: HTMLButtonElement;
@@ -122,6 +123,11 @@ class ButtonsLevels extends TableLevels {
     });
   }
 
+  viewResult() {
+    const result = new Result();
+    result.viewResult();
+  }
+
   startButtons() {
     this.changeLevels();
     this.viewNumberLevel();
@@ -133,6 +139,7 @@ class ButtonsLevels extends TableLevels {
     this.startButtonsTable();
     this.addRefreshListener();
     this.changeLevelsTable();
+    this.viewResult();
   }
 }
 
