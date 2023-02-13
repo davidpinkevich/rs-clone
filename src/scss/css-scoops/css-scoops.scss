@@ -13,6 +13,19 @@ cup, cone, scoop {
   transition: all 0.2s;
 }
 
+.shadow {
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: 120;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+  }
+}
 scoop {
   margin-left: 20px;
 }
@@ -27,11 +40,22 @@ scoop {
   padding-top: 59px;
   color: white;
   background-color: rgb(19,94,117);
+
+  @media (max-width:950px) {
+    flex-direction: column;
+    overflow: auto;
+  }
 }
 
 .scoops__sidebar {
+  position: relative;
+  z-index: 3;
   width: 35%;
   background: repeating-linear-gradient(to right,#0d6d8b,#0d6d8b 40px,#0d6986 40px,#0d6986 80px);
+
+  @media (max-width:950px){
+    width: 100%;
+  }
 }
 
 .scoops__game {
@@ -121,9 +145,14 @@ scoop {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width:950px) {
+    overflow-y: hidden;
+  }
 }
 
 .body__sidebar {
+  position: relative;
+  z-index: 5;
   padding: 32px;
 }
 
@@ -182,8 +211,18 @@ padding: 0 8px;
   color: white;
   text-transform: uppercase;
   border-radius: 4px;
-  padding: 10px 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
   transition: all 0.3s;
+
+  @media (max-width:$md2) {
+    @include adaptiv-320(padding-top, 10, 5);
+    @include adaptiv-320(padding-bottom, 10, 5);
+    @include adaptiv-320(padding-left, 16, 8);
+    @include adaptiv-320(padding-right, 16, 8);
+  }
 
   &:hover {
     background-color: rgb(243,58,128);
@@ -237,8 +276,8 @@ padding: 0 8px;
   }
 }
 .game__html-body {
-  width: 80%;
-  height: 60%;
+  width: 90%;
+  height: 80%;
 }
 
 .code__html-body {
@@ -272,15 +311,24 @@ padding: 0 8px;
 
 .code__html-bottom-wrapper {
   overflow-y: scroll;
-  height: 100%;
+  &::-webkit-scrollbar { 
+    width: 0px;
+  }
+  height: 80%;
 }
 
 .window__scoops {
   position: relative;
+  z-index: 1;
   top: 60px;
   gap: 28px;
   display: flex;
   justify-content: center;
+  transition: all 1s;
+
+  @media (max-width:$md2) {
+    @include adaptiv-320(gap, 28, 10);
+  }
 }
 
 .cup__body {
@@ -289,6 +337,10 @@ padding: 0 8px;
   right: 0;
   height: 116px;
   width: 96px;
+
+  @media (max-width: 550px) {
+    width: 50px;
+  }
 
   & img {
     position: absolute;
@@ -319,6 +371,10 @@ padding: 0 8px;
   right: 0;
   height: 116px;
   width: 96px;
+
+  @media (max-width: 550px) {
+    width: 50px;
+  }
 
   & img {
     position: absolute;
@@ -383,6 +439,10 @@ padding: 0 8px;
   bottom: 0;
   transition: all 0.3s;
 
+  @media (max-width: 550px) {
+    width: 50px;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -394,6 +454,10 @@ padding: 0 8px;
     background-color: #469787;
     -webkit-transform: translateZ(-1px) rotate(5deg);
     transform: translateZ(-1px) rotate(5deg);
+
+    @media (max-width: 550px) {
+      bottom: 5%;
+    }
   }
 }
 
@@ -407,6 +471,10 @@ padding: 0 8px;
   width: 74px;
   height: 74px;
   border-radius: 50%;
+
+  @media (max-width: 550px) {
+    width: 40px;
+  }
 
   &::after {
     position: absolute;
@@ -478,6 +546,11 @@ padding: 0 8px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
+  user-select: none;
+
+  &:disabled {
+    pointer-events: none;
+  }
 
   & img {
     position: absolute;
@@ -529,6 +602,12 @@ padding: 0 8px;
   width: 280px;
   height: 220px;
   background-color: white;
+  user-select: none;
+
+  @media (max-width:950px) {
+    left: -40%;
+    width: 240px;
+  }
 
   &:hover {
     background-color: white;
@@ -579,4 +658,88 @@ padding: 0 8px;
   &:hover {
     border: solid 4px rgba(3, 46, 10, 0.5);
   }
+}
+
+.table__scoop-buttons-sound,
+.table__scoop-buttons-refresh {
+  position: relative;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+
+  & img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes moveLevel {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes moveLevelBack {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.move__level-scoop {
+  animation: moveLevel;
+  animation-duration: 1s;
+}
+
+.result__scoops {
+  position: absolute;
+  border-radius: 12px;
+  font-size: 18px;
+  z-index: 130;
+  display: none;
+  width: 400px;
+  height: 400px;
+  top: 15%;
+  left: calc(50% - 150px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  color: rgb(103, 81, 81);
+
+  @media (max-width:1200px) {
+    @include adaptiv-320(width, 400, 300);
+  }
+}
+
+.result__scoops-img {
+  width: 140px;
+  height: 140px;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.level__scoop-back {
+  animation: moveLevelBack;
+  animation-duration: 1s;
 }

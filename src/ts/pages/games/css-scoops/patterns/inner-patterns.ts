@@ -72,7 +72,7 @@ const drawPageScoops = () =>
       <h2 class="result__scoops-title">CSS Scoops</h2>
       <p class="result__scoops-text">Here's the scoop: you know your selectors.</p>
       <p class="result__scoops-text">Kick back, enjoy a frozen treat, and keep delivering that CSS knowledge.</p>
-      <a href="#" class="link__result">result</a>
+      <a href="#statistics" class="link__result">result</a>
   </div>
   </div>`;
 
