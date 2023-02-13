@@ -4,7 +4,13 @@ import state from "../data/state";
 import AppView from "../view/AppView";
 
 class Utils {
-  checkInput(inputValue: string) {
+  private view: AppView;
+
+  constructor() {
+    this.view = new AppView();
+  }
+
+  public checkInput(inputValue: string) {
     if (/(^[ ]*(even|odd)[ ]*$)/.test(inputValue)) return true;
 
     const trimValue = inputValue.replace(/ /g, "");
@@ -15,7 +21,7 @@ class Utils {
     return regexp.test(trimValue);
   }
 
-  createSelectorString(levelInfo: INthLevel) {
+  public createSelectorString(levelInfo: INthLevel) {
     const inputs = document.querySelectorAll(".input");
     let selectorString = ".elements";
     levelInfo.styles.forEach((style, index) => {
@@ -29,7 +35,7 @@ class Utils {
     return selectorString;
   }
 
-  isWin() {
+  public isWin() {
     const pickedElements = document.querySelectorAll(".picked");
     const targetElements = document.querySelectorAll(".target");
 
@@ -40,7 +46,7 @@ class Utils {
     );
   }
 
-  executeAfterWin(pickedSelectors: NodeListOf<Element>) {
+  public executeAfterWin(pickedSelectors: NodeListOf<Element>) {
     setTimeout(() => {
       pickedSelectors.forEach((picked) => {
         picked.classList.remove("target");
@@ -85,8 +91,7 @@ class Utils {
     setTimeout(() => {
       state.currentLevel += 1;
       ls.set("currentLevel", String(state.currentLevel));
-      const view = new AppView();
-      view.drawLevel(state.currentLevel);
+      this.view.drawLevel(state.currentLevel);
     }, 4100);
 
     const completedLevelsArray = state.completedLevels;
@@ -95,7 +100,7 @@ class Utils {
     ls.set("completedLevels", JSON.stringify(uniqueLevels));
   }
 
-  changeLevel() {
+  public changeLevel() {
     setTimeout(() => {
       const trolleyAudio = document.querySelector(
         ".trolley"
@@ -109,8 +114,7 @@ class Utils {
     }, 300);
 
     setTimeout(() => {
-      const view = new AppView();
-      view.drawLevel(state.currentLevel);
+      this.view.drawLevel(state.currentLevel);
     }, 800);
   }
 }

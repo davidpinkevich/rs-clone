@@ -9,7 +9,7 @@ class StatePage {
     this.sound = new Sound();
   }
 
-  updateState() {
+  public updateState() {
     const track = document.querySelector(".track") as HTMLElement;
     track.style.display = "block";
 

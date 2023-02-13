@@ -2,7 +2,7 @@ import ls from "../data/ls";
 import state from "../data/state";
 
 class Sound {
-  setVolume() {
+  private setVolume() {
     const allAudio = document.querySelectorAll("audio");
     allAudio.forEach((audio) => {
       const currAudio = audio;
@@ -10,7 +10,7 @@ class Sound {
     });
   }
 
-  setSound() {
+  public setSound() {
     const sound = state.audio;
     const soundImg = document.querySelector(".sound-img") as HTMLImageElement;
     soundImg.src = `./assets/images/froggy/sound-${sound}.svg`;
@@ -18,7 +18,7 @@ class Sound {
     this.setVolume();
   }
 
-  toggleSound() {
+  public toggleSound() {
     let sound = state.audio;
     sound = sound === "on" ? "off" : "on";
     state.audio = sound;
