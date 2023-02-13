@@ -21,6 +21,11 @@ const LEVELS_GARDEN = {
   END: 14,
 };
 
+const LEVELS_SCOOPS = {
+  START: 1,
+  END: 20,
+};
+
 const LANG_GRID: TLangGrid = {
   BTN_ENG: ["English", "Level:", "Next"],
   BTN_RU: ["Русский", "Уровень:", "Следующий"],
@@ -53,6 +58,10 @@ const LINKS_SCOOPS: TScoopsLinks = {
 
 const COLORS_SCOOPS: TColorsScoops = {
   PINK: "rgb(245,92,150)",
+  LEMON: "rgb(237,212,69)",
+  CHOCO: "rgb(148,94,70)",
+  MINT: "rgb(166,220,113)",
+  MYSTERY: "rgb(96,110,129)",
 };
 
 export {
@@ -62,4 +71,5 @@ export {
   GRID_LS,
   LINKS_SCOOPS,
   COLORS_SCOOPS,
+  LEVELS_SCOOPS,
 };

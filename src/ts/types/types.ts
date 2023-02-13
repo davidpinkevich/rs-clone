@@ -45,14 +45,18 @@ export type TScoopsLinks = {
 
 export type TRulesScoops = {
   RULE: string[];
-  ANSWER: string[];
+  ANSWER: Array<string[]>;
   HTML_CODE: Array<string[]>;
-  HTML_CODE_NUMBERS: string[];
+  HTML_CODE_NUMBERS: number[];
   SCOOPS: Array<Array<string[]>>;
 };
 
 export type TColorsScoops = {
   PINK: string;
+  LEMON: string;
+  CHOCO: string;
+  MINT: string;
+  MYSTERY: string;
 };
 
 type TInstructions = { [key: string]: string };
