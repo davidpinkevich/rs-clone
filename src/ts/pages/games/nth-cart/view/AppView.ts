@@ -1,4 +1,4 @@
-import updateState from "../settings/nth-state";
+import StatePage from "../settings/nth-state";
 import Carts from "./carts/Carts";
 import Environment from "./environment/Environment";
 import Win from "./win/Win";
@@ -13,11 +13,14 @@ class AppView {
 
   private win: Win;
 
+  private statePage: StatePage;
+
   constructor() {
     this.environment = new Environment();
     this.carts = new Carts();
     this.infoWindow = new InfoWindow();
     this.win = new Win();
+    this.statePage = new StatePage();
   }
 
   drawWin(pickedSelectors: NodeListOf<Element>) {
@@ -39,7 +42,7 @@ class AppView {
   drawLevel(level: number) {
     this.drawCarts(level);
     this.drawWindow(level);
-    updateState();
+    this.statePage.updateState();
   }
 }
 

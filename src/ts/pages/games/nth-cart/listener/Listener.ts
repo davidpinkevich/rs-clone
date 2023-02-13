@@ -1,7 +1,8 @@
+import Sound from "../settings/nth-sound";
+import AppView from "../view/AppView";
 import levels from "../data/data-levels";
 import ls from "../data/ls";
 import state from "../data/state";
-import { toggleSound } from "../settings/nth-sound";
 import {
   changeLevel,
   checkInput,
@@ -9,13 +10,15 @@ import {
   executeAfterWin,
   isWin,
 } from "../settings/nth-utils";
-import AppView from "../view/AppView";
 
 class Listener {
   private view: AppView;
 
+  private sound: Sound;
+
   constructor() {
     this.view = new AppView();
+    this.sound = new Sound();
   }
 
   public allListener() {
@@ -126,7 +129,7 @@ class Listener {
   private soundListener() {
     const sound = document.querySelector(".sound");
     sound?.addEventListener("click", () => {
-      toggleSound();
+      this.sound.toggleSound();
     });
   }
 }
