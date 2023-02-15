@@ -26,6 +26,37 @@ const LEVELS_SCOOPS = {
   END: 20,
 };
 
+const NUMBER_GAMES = {
+  START: 1,
+  END: 6,
+  LEVEL: 1,
+};
+// SurgeonPage = "#surgeon",
+// FroggyPage = "#froggy",
+// GardenPage = "#garden",
+// ScoopsPage = "#scoops",
+// NthPage = "#nth",
+// Showdown = "#showdown",
+const GAMES_INFO = {
+  LINKS: ["#scoops", "#nth", "#showdown", "#garden", "#froggy", "#surgeon"],
+  NAME: [
+    "CSS Scoops",
+    "NTH Cart",
+    "Selector Showdown",
+    "Grid Garden",
+    "Flexbox Froggy",
+    "CSS Surgeon",
+  ],
+  INFO: [
+    "A game for learning CSS selectors",
+    "A game for learning about the :nth-child() CSS selector",
+    "A game about CSS selector specificity",
+    "A game for learning CSS grid",
+    "A game for learning CSS flexbox",
+    "A game for learning to scale, rotate, and move elements with CSS transform",
+  ],
+};
+
 const LANG_GRID: TLangGrid = {
   BTN_ENG: ["English", "Level:", "Next"],
   BTN_RU: ["Русский", "Уровень:", "Следующий"],
@@ -72,4 +103,6 @@ export {
   LINKS_SCOOPS,
   COLORS_SCOOPS,
   LEVELS_SCOOPS,
+  NUMBER_GAMES,
+  GAMES_INFO,
 };
