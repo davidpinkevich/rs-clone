@@ -41,11 +41,6 @@ class App {
     });
   }
 
-  constructor() {
-    // this.initialPage = new MainPage('main-page');
-    // this.header = new Header('header', 'header');
-  }
-
   run() {
     this.enableRouteChange();
   }
