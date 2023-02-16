@@ -78,8 +78,9 @@ const getViewHTML = () => `
 
 const getPageHTML = () => `
   <section class="froggy-page">
-    <header class="header froggy-header">
-      <div class="container"></div>
+    <header class="main__header">
+      <a href="#" class="main__header-logo">SpaceCSS</a>
+      <a href="#statistics" class="main__header-results">Results</a>
     </header>
     <div class="main froggy-main">
       <div class="container">

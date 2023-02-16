@@ -1,3 +1,17 @@
+@keyframes headerHidden {
+  0% {
+    top: -100%;
+  }
+
+  50% {
+    top: -50%;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
 .cave {
   background-color: #4f483c;
   min-height: 100vh;
@@ -8,12 +22,12 @@
   counter-reset: index;
   overflow: hidden;
   font-family: 'Kanit', sans-serif;
-}
 
-.nth-header {
-  background-color: #2c2826;
-  position: relative;
-  z-index: 11;
+  .main__header {
+    z-index: 11;
+    background-color: #2c2826;
+    animation: headerHidden 0.5s;
+  }
 }
 
 .environment {

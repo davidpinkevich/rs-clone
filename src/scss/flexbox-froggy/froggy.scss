@@ -2,10 +2,23 @@
 @import './winners-view.scss';
 
 $pageColor: #43a047;
-$headerColor: #397f3c;
 $boardColor: #1f5768;
 $editorColor: #e0e0e0;
 $lineNumbersColor: #999;
+
+@keyframes headerHidden {
+  0% {
+    top: -100%;
+  }
+
+  50% {
+    top: -50%;
+  }
+
+  100% {
+    top: 0;
+  }
+}
 
 .froggy-page {
   font-family: source sans pro, sans-serif;
@@ -15,13 +28,14 @@ $lineNumbersColor: #999;
   flex-direction: column;
   min-height: 100vh;
   height: 100%;
-}
 
-.froggy-header {
-  background-color: $headerColor;
+  .main__header {
+    animation: headerHidden 0.5s;
+  }
 }
 
 .froggy-main {
+  margin-top: 60px;
   flex: 1 1 auto;
 }
 

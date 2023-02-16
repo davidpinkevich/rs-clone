@@ -84,7 +84,10 @@ const getMusicHTML = () => `
 
 export const getPageHTML = () => `
   <section class="cave">
-    <header class="header nth-header"></header>
+    <header class="main__header">
+      <a href="#" class="main__header-logo">SpaceCSS</a>
+      <a href="#statistics" class="main__header-results">Results</a>
+    </header>
     ${getEnvironmentHTML()}
     ${getTrackHTML()}
     ${getMusicHTML()}
