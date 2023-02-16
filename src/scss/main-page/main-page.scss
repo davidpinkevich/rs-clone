@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
+@mixin adaptiv($property, $startSize, $minSize) {
+	#{$property}: calc(#{$minSize + px} + (#{$startSize} - #{$minSize}) * ((100vw - 320px) / (1600 - 320)));
+}
+
 .main__space {
   font-family: 'Kanit', sans-serif;
   position: relative;
@@ -40,12 +44,23 @@
   width: 500px;
   height: 300px;
   opacity: 0.3;
+
+  @media (max-width: 1600px) {
+    @include adaptiv(width, 500, 250);
+    @include adaptiv(height, 300, 150);
+  }
+
 }
 
 .main__body-planet {
   width: 500px;
   height: 300px;
   background-size: cover;
+
+  @media (max-width: 1600px) {
+    @include adaptiv(width, 500, 250);
+    @include adaptiv(height, 300, 150);
+  }
 }
 
 .move__wrapper-stars {
@@ -202,6 +217,11 @@
   opacity: 0.5;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (max-width: 1600px) {
+    @include adaptiv(width, 350, 175);
+    @include adaptiv(height, 250, 125);
+  }
 }
 
 .main__body-ground-right {
@@ -212,6 +232,11 @@
   height: 450px;
   opacity: 0.5;
   background-size: cover;
+
+  @media (max-width: 1600px) {
+    @include adaptiv(width, 450, 225);
+    @include adaptiv(height, 450, 225);
+  }
 }
 
 .move__wrapper-star-one {
@@ -290,13 +315,19 @@
 
 .main__games {
   position: fixed;
-  left: calc(50% - 200px);
+  left: calc(50% - 195px);
   top: 13%;
   border-radius: 20px;
   color: white;
   width: 390px;
   height: 450px;
   z-index: 5;
+
+  @media (max-width:600px) {
+    width: 210px;
+    height: 300px;
+    left: calc(50% - 105px);
+  }
 
   animation: hiddenGame 1s ease-in-out;
 }
@@ -306,6 +337,11 @@
   font-size: 36px;
   margin-bottom: 10px;
   text-shadow: 3px 3px 3px black;
+
+  @media (max-width: 1600px) {
+    @include adaptiv(font-size, 36, 18);
+    margin-bottom: 5px;
+  }
 }
 
 .main__games-body {
@@ -337,6 +373,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+
+  @media (max-width:600px) {
+    padding: 10px 10px 40px 10px;
+  }
 
   animation: pulseGameBody 8s infinite;
 }
@@ -418,6 +458,11 @@
   height: 80px;
   transform: rotate(180deg);
   background: none;
+
+  @media (max-width:600px) { 
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .games__body-last-img,
@@ -456,6 +501,11 @@
   width: 80px;
   height: 80px;
   background: none;
+
+  @media (max-width:600px) { 
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .games__body-last,

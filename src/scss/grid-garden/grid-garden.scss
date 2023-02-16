@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;600;0,700;1,400;1,700&display=swap');
 $gardenColor: rgb(93,164,73);
 $codeColor: rgb(224,224,224);
 $textColor: rgb(248, 244, 244);
@@ -11,7 +14,7 @@ $md2: 1400px;
 [id*="#garden"] {
   background-color: $gardenColor;
   font-size: 16px;
-  padding-top: 50px; // убрать после хедера
+  padding-top: 90px; // убрать после хедера
   padding-left: 15px;
   padding-right: 15px;
   height: 100vh;
@@ -20,10 +23,24 @@ $md2: 1400px;
     @include adaptiv-320(font-size, 16, 12);
   }
 }
+
+@keyframes gardenHidden {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: -50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
 .garden {
+  position: relative;
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  animation: gardenHidden 1s;
 
   @media (max-width:850px){
     flex-direction: column;
@@ -38,6 +55,7 @@ $md2: 1400px;
 
 .garden__info-rules {
   color: $textColor;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .garden__info-header {
@@ -53,6 +71,7 @@ $md2: 1400px;
 
 .garden__info-header-title {
   text-transform: uppercase;
+  font-family: 'Autour One', cursive;
   margin: 0;
   color: $textColor;
 }
@@ -69,6 +88,7 @@ $md2: 1400px;
 }
 
 .code__garden-task-text {
+  font-family: 'Source Code Pro', monospace;
   margin-top: 0;
   margin-bottom: 10px;
   color: $textCodeColor;
@@ -159,9 +179,7 @@ $md2: 1400px;
 }
 
 .field__water-item {
-  // background-color: rgb(66, 66, 219);
-  background-color: rgb(75,133,173);
-  opacity: 0.8;
+  background: url("https://codepip.com/wp-content/plugins/codepip/games/grid-garden/images/water.svg");
   z-index: 5;
 }
 
@@ -230,23 +248,42 @@ $md2: 1400px;
 }
 // кнопки переключения лвлов
 .settings__garden-levels {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 1px;
+}
+
+.img__arrow-garden-left,
+.img__arrow-garden-right {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+.settings__garden-levels-last {
+  border-radius: 4px 0 0 4px;
+}
+
+.settings__garden-levels-next {
+  border-radius: 0 4px 4px 0;
 }
 
 .settings__garden-levels-last,
 .settings__garden-levels-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   background-color: rgb(125,182,109);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  filter: invert(100%);
+  width: 32px;
+  height: 100%;
+  // border-radius: 50%;
   transition: all 0.2s;
+  background-size: cover;
 
   &:hover {
-    box-shadow: inset 0px 0px 3px 3px black;
+    background-color: rgb(158,200,146);
   }
 
   &:disabled {
@@ -296,7 +333,6 @@ $md2: 1400px;
   color: $textColor;
   cursor: pointer;
   width: 100px;
-  border-radius: 4px;
   padding: 5px 10px;
   transition: all 0.3s;
   &:hover {
@@ -314,9 +350,22 @@ $md2: 1400px;
   background-color: rgb(44,62,80);
   border-radius: 4px;
   z-index: 2;
-  top: 105px;
+  top: 55px;
   padding: 10px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 65px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #2c3e50;
+  }
 }
+
 .state__levels-wrapper {
   width: 155px;
   height: 165px;
