@@ -4,7 +4,7 @@ import PageFactory from "./PageFactory";
 class App {
   private static container: HTMLElement = document.body;
 
-  static renderNewPage(idPage: string) {
+  private static renderNewPage(idPage: string) {
     App.container.innerHTML = "";
     let page: Page | null = null;
 
@@ -14,8 +14,22 @@ class App {
     if (page) {
       const pageHTML = page.render();
       App.container.append(pageHTML);
+      App.changeFavicon(idPage);
       page.executeAfterRender();
     }
+  }
+
+  private static changeFavicon(idPage: string) {
+    const favicon = document.querySelector(
+      'link[rel="shortcut icon"]'
+    ) as HTMLLinkElement;
+
+    const path = `./assets/icons/${
+      idPage === "" || idPage === "#" ? "space" : idPage.slice(1)
+    }.ico`;
+    favicon.href = path;
+
+    document.head.appendChild(favicon);
   }
 
   private enableRouteChange() {
@@ -25,11 +39,6 @@ class App {
       const currentHash = window.location.hash;
       App.renderNewPage(currentHash);
     });
-  }
-
-  constructor() {
-    // this.initialPage = new MainPage('main-page');
-    // this.header = new Header('header', 'header');
   }
 
   run() {
