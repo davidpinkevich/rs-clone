@@ -1,7 +1,12 @@
 import { LEVELS_SCOOPS } from "../../../../data/goods-data";
 
 const drawPageScoops = () =>
-  `<div class="scoops">
+  `
+  <header class="main__header">
+    <a href="#" class="main__header-logo">SpaceCSS</a>
+    <a href="#statistics" class="main__header-results">Results</a>
+  </header>
+  <div class="scoops">
     <div class="scoops__sidebar">
       <div class="scoops__sidebar-header header__sidebar">
         <div class="header__sidebar-title">CSS SCOOPS</div>
@@ -72,7 +77,7 @@ const drawPageScoops = () =>
       <h2 class="result__scoops-title">CSS Scoops</h2>
       <p class="result__scoops-text">Here's the scoop: you know your selectors.</p>
       <p class="result__scoops-text">Kick back, enjoy a frozen treat, and keep delivering that CSS knowledge.</p>
-      <a href="#statistics" class="link__result">result</a>
+      <a href="#statistics" class="link__result">Results</a>
   </div>
   </div>`;
 

@@ -34,6 +34,7 @@ scoop {
 }
 
 .scoops {
+  position: relative;
   display: flex;
   height: 100vh;
   overflow: hidden;
@@ -156,18 +157,25 @@ scoop {
   padding: 32px;
 }
 
+.code__body {
+  font-family: "source sans pro", sans-serif;
+}
+
 .code__css-top {
   background-color: $darkBackScoops;
   padding: 8px;
   border-radius:4px 4px 0 0;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .code__css-bottom {
   display: flex;
   gap: 8px;
   line-height: 170%;
+  font-size: 18px;
   background-color: $coloreCodeScoops;
   border-radius: 0 0 4px 4px;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .code__css-bottom-numbers,
@@ -278,6 +286,7 @@ padding: 0 8px;
 .game__html-body {
   width: 90%;
   height: 80%;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .code__html-body {
@@ -742,4 +751,25 @@ padding: 0 8px;
 .level__scoop-back {
   animation: moveLevelBack;
   animation-duration: 1s;
+}
+
+.link__result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background-color: rgb(204, 148, 63);
+  color: white;
+  font-size: 22px;
+  transition: all 0.2s;
+  animation: pulseArrow 2s infinite;
+
+  &:hover {
+    background-color: rgb(221, 141, 22);
+    box-shadow: inset 0px 0px 2px 2px black;
+    transform: scale(1.2);
+    animation: none;
+  }
 }

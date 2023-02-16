@@ -11,17 +11,28 @@ const chooseLevel = () => {
   const last = <HTMLButtonElement>(
     document.querySelector(".settings__garden-levels-last")
   );
-  last.style.background = "url(./assets/images/grid-garden/arrow-left.svg)";
+  const imgLeft = document.createElement("div");
+  imgLeft.classList.add("img__arrow-garden-left");
+  imgLeft.style.backgroundImage = "url(./assets/images/scoops/arrow-left.svg)";
+  last.append(imgLeft);
 
   const next = <HTMLButtonElement>(
     document.querySelector(".settings__garden-levels-next")
   );
-  next.style.background = "url(./assets/images/grid-garden/arrow-right.svg)";
+  const imgRight = document.createElement("div");
+  imgRight.classList.add("img__arrow-garden-right");
+  imgRight.style.backgroundImage =
+    "url(./assets/images/scoops/arrow-right.svg)";
+  next.append(imgRight);
 
   btns.addEventListener("click", (event: Event) => {
+    const target = <HTMLElement>event.target;
     const ls = new LocalStorage(GRID_LS.LS_LEVELS);
     const numberLevel = Number(ls.get("numberLevel"));
-    if (event.target === last) {
+    if (
+      target === last ||
+      target.classList.contains("img__arrow-garden-left")
+    ) {
       btnsTable.forEach((item) => {
         if (Number(item.getAttribute("data-level-grid")) === numberLevel - 1) {
           item.classList.add("table__level-active");
@@ -34,7 +45,10 @@ const chooseLevel = () => {
       ls.set(GRID_LS.NUMBER_LEVEL, `${numberLevel - 1}`);
       next.disabled = false;
       drowLevels();
-    } else if (event.target === next) {
+    } else if (
+      target === next ||
+      target.classList.contains("img__arrow-garden-right")
+    ) {
       btnsTable.forEach((item) => {
         if (Number(item.getAttribute("data-level-grid")) === numberLevel + 1) {
           item.classList.add("table__level-active");
