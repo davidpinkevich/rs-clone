@@ -1,4 +1,9 @@
-const drowPageGarden = () => `<div class="garden __container">
+const drowPageGarden = () => `
+<header class="main__header">
+  <a href="#" class="main__header-logo">SpaceCSS</a>
+  <a href="#statistics" class="main__header-results">Results</a>
+</header>
+<div class="garden">
 <div class="garden__info">
   <div class="garden__info-header">
     <h1 class="garden__info-header-title">grid garden</h1>
