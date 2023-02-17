@@ -20,6 +20,7 @@ class Listener {
 
   public allListener() {
     this.submitListener();
+    this.enterListener();
     this.nextLevelListener();
     this.prevLevelListener();
     this.levelsListener();
@@ -27,45 +28,55 @@ class Listener {
     this.soundListener();
   }
 
+  private submit() {
+    const levelInfo = levels[state.currentLevel - 1];
+
+    const carts = document.querySelectorAll(".element");
+    carts.forEach((cart) => cart.classList.remove("picked"));
+
+    const inputs = document.querySelectorAll(".input");
+    const isValidInputs = Array.from(inputs).every((input) =>
+      this.utils.checkInput((input as HTMLInputElement).value)
+    );
+    if (!isValidInputs) {
+      return;
+    }
+
+    const isNotValidInputs = Array.from(inputs).every(
+      (input) => (input as HTMLInputElement).value === ""
+    );
+    if (isNotValidInputs) {
+      return;
+    }
+
+    const selectorString = this.utils.createSelectorString(levelInfo);
+    const pickedSelectors = document.querySelectorAll(selectorString);
+    pickedSelectors.forEach((picked) => {
+      picked.classList.add("picked");
+    });
+
+    const dragAudio = document.querySelector(".dragging") as HTMLAudioElement;
+    dragAudio.currentTime = 0;
+    dragAudio.play();
+
+    if (this.utils.isWin()) {
+      if (state.currentLevel === 40) {
+        this.view.drawWin(pickedSelectors);
+      } else {
+        this.utils.executeAfterWin(pickedSelectors);
+      }
+    }
+  }
+
   private submitListener() {
     const submitBtn = document.querySelector(".submit-btn");
-    submitBtn?.addEventListener("click", () => {
-      const levelInfo = levels[state.currentLevel - 1];
+    submitBtn?.addEventListener("click", this.submit);
+  }
 
-      const carts = document.querySelectorAll(".element");
-      carts.forEach((cart) => cart.classList.remove("picked"));
-
-      const inputs = document.querySelectorAll(".input");
-      const isValidInputs = Array.from(inputs).every((input) =>
-        this.utils.checkInput((input as HTMLInputElement).value)
-      );
-      if (!isValidInputs) {
-        return;
-      }
-
-      const isNotValidInputs = Array.from(inputs).every(
-        (input) => (input as HTMLInputElement).value === ""
-      );
-      if (isNotValidInputs) {
-        return;
-      }
-
-      const selectorString = this.utils.createSelectorString(levelInfo);
-      const pickedSelectors = document.querySelectorAll(selectorString);
-      pickedSelectors.forEach((picked) => {
-        picked.classList.add("picked");
-      });
-
-      const dragAudio = document.querySelector(".dragging") as HTMLAudioElement;
-      dragAudio.currentTime = 0;
-      dragAudio.play();
-
-      if (this.utils.isWin()) {
-        if (state.currentLevel === 40) {
-          this.view.drawWin(pickedSelectors);
-        } else {
-          this.utils.executeAfterWin(pickedSelectors);
-        }
+  private enterListener() {
+    document.body.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        this.submit();
       }
     });
   }
