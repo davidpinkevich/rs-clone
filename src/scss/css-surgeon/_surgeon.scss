@@ -1,12 +1,12 @@
-.header {
-  height: 58px;
-  background-color: #c70b1f;
-}
-
 .surgeon {
-  min-height: 94vh;
+  min-height: calc(100vh - 60px);
   background-color: #fee764;
   font-family: Lato, sans-serif;
+
+  &__headers {
+    height: 60px;
+    background-color: #c70b1f;
+  }
 
   &__wrapper {
     display: flex;
@@ -296,7 +296,7 @@
     width: 50%;
     padding: 54px 0 54px 0;
     position: relative;
-    min-height: 94vh;
+    height: calc(100vh - 60px);
     transition: background-color .2s ease-in-out 2s;
     overflow: hidden;
   }
@@ -398,14 +398,21 @@
 
   &__body {
     margin: 0 auto;
-    width: 427px;
-    height: 787px;
+    // width: 427px;
+    height: 100%;
     position: relative;
     transition: opacity 0.2s ease-in-out;
+    display: inline-block;
   }
 
   &__sam {
+    height: 100%;
+    width: 100%;
     transition: transform 3s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
   }
 
   &__sam-img {
@@ -413,7 +420,7 @@
   }
 
   &__sam-win {
-    max-width: 100%;
+    max-height: 100%;
     display: none;
   }
 
