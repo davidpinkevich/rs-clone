@@ -1,11 +1,11 @@
 const innerSurgeon = () => `
-<header class="header">
-<div class="__container">
-    <a href="#">click to main from surgeon</a>
-</div>
+<header class="main__header">
+    <a href="#" class="main__header-logo">SpaceCSS</a>
+    <a href="#statistics" class="main__header-results">Results</a>
 </header>
 <main class="surgeon">
 <div class="__container">
+<div class="surgeon__headers"></div>
     <div class="surgeon__wrapper">
         <section class="surgeon__sidebar">
             <div class="surgeon__header">

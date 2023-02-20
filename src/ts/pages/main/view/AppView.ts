@@ -5,6 +5,12 @@ class MainPageView {
       "url(./assets/images/main-page/background.jpg)";
   }
 
+  drawElemBackStatistic() {
+    const elemBackground = <HTMLElement>document.querySelector(".main__body");
+    elemBackground.style.backgroundImage =
+      "url(./assets/images/main-page/space.jpg)";
+  }
+
   drawPlanet() {
     const planet = <HTMLElement>document.querySelector(".main__body-planet");
     planet.style.backgroundImage = "url(./assets/images/main-page/planet.svg)";
@@ -71,6 +77,16 @@ class MainPageView {
     this.drawGroundLeft();
     this.drawStar();
     this.drawArrow();
+    this.drawFooter();
+  }
+
+  drawStatisticsPage() {
+    this.drawElemBackStatistic();
+    this.drawPlanet();
+    this.drawStars();
+    this.drawGroundRigth();
+    this.drawGroundLeft();
+    this.drawStar();
     this.drawFooter();
   }
 }

@@ -104,3 +104,11 @@ export type TShowdownStore = {
   currentLevel: number;
   volume: number;
 };
+
+export enum ETotalLevels {
+  Scoops = 20,
+  SurgeonOrGarden = 14,
+  Froggy = 24,
+  Nth = 40,
+  Showdown = 64,
+}

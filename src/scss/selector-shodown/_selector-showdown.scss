@@ -12,13 +12,18 @@
   max-height: 94vh;
   color: #fff;
 
+  &__headers {
+    height: 60px;
+    background-color: #000;
+  }
+
   &__wrapper {
     display: flex;
   }
 
   &__sidebar {
     width: 450px;
-    height: calc(100vh - 58px);
+    height: calc(100vh - 60px);
     padding: 1.5rem 2rem 1rem;
     background-color: #171717;
     background-image: url("https://codepip.com/wp-content/plugins/codepip/games/selector-showdown/images/sidebar.svg");

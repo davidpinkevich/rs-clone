@@ -1,10 +1,10 @@
 const showdownUi = () => `
-<header class="header" style="background-color: #000">
-  <div class="__container">
-    <a href="#">click to main from showdown</a>
-  </div>
+<header class="main__header">
+  <a href="#" class="main__header-logo">SpaceCSS</a>
+  <a href="#statistics" class="main__header-results">Results</a>
 </header>
 <main class="showdown">
+  <div class="showdown__headers"></div>
   <div class="showdown__wrapper">
     <section class="showdown__sidebar">
       <h1>SELECTOR SHOWDOWN</h1>
