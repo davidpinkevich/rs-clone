@@ -70,7 +70,9 @@ class Listener {
 
   private submitListener() {
     const submitBtn = document.querySelector(".submit-btn");
-    submitBtn?.addEventListener("click", this.submit);
+    submitBtn?.addEventListener("click", () => {
+      this.submit();
+    });
   }
 
   private enterListener() {
