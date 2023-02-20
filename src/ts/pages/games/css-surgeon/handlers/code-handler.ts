@@ -42,9 +42,9 @@ const codeHandler = (): void => {
     }
   });
 
-  codeEl.addEventListener("paste", (e) => {
-    e.preventDefault();
-  });
+  // codeEl.addEventListener("paste", (e) => {
+  //   e.preventDefault();
+  // });
 };
 
 export default codeHandler;
