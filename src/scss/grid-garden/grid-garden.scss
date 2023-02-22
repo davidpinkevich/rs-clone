@@ -528,7 +528,7 @@ $md2: 1400px;
   }
 }
 
-.grid__result-body-link {
+.grid__result-body-link a {
   background-color: green;
   cursor: pointer;
   color: white;
@@ -538,6 +538,7 @@ $md2: 1400px;
   align-items: center;
   padding: 10px 20px;
   transition: all 0.4s;
+  text-decoration: none;
 
   &:hover {
     transform: scale(1.11);
