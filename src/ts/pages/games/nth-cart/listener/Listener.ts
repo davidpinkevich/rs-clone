@@ -86,7 +86,10 @@ class Listener {
   private nextLevelListener() {
     const nextBtn = document.querySelector(".next-btn");
     nextBtn?.addEventListener("click", () => {
-      state.currentLevel += 1;
+      state.currentLevel =
+        state.currentLevel >= levels.length
+          ? levels.length
+          : state.currentLevel + 1;
       ls.set("currentLevel", String(state.currentLevel));
       this.utils.changeLevel();
     });
@@ -95,7 +98,7 @@ class Listener {
   private prevLevelListener() {
     const prevBtn = document.querySelector(".prev-btn");
     prevBtn?.addEventListener("click", () => {
-      state.currentLevel -= 1;
+      state.currentLevel = state.currentLevel < 1 ? 1 : state.currentLevel - 1;
       ls.set("currentLevel", String(state.currentLevel));
       this.utils.changeLevel();
     });
