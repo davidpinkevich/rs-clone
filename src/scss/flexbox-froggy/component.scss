@@ -1,0 +1,26 @@
+.froggy-page {
+  code {
+    padding: 0 2px;
+    background-color: rgba(255, 255, 255, .2);
+    font-family: source code pro, monospace;
+    font-weight: 900;
+    color: rgba(255, 255, 255, .8);
+    white-space: nowrap;
+  }
+}
+
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.disabledButton {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.hidden {
+  opacity: 0;
+}

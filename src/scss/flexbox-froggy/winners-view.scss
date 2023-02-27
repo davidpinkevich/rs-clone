@@ -1,0 +1,53 @@
+.winners-view {
+  max-width: 500px;
+  background-color: #F5F7F9;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 4px;
+}
+
+.winners-content {
+  padding: 25px;
+  color: black;
+  text-align: center;
+}
+
+.gold-img {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.win-title {
+  margin: 1rem 0 0.5rem;
+}
+
+.win-message {
+  line-height: 1.5;
+}
+
+.badges-btn {
+  margin-top: 3rem;
+
+  a {
+    cursor: pointer;
+    background-color: #aaa;
+    border-color: #aaa;
+    padding: 0.469rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, .6);
+    vertical-align: middle;
+    line-height: 1.5;
+    transition: all .15s ease-in-out;
+    max-width: 180px;
+    text-decoration: none;
+    background-color: #aaa;
+
+    &:hover {
+      background-color: #999999;
+    }
+  }
+}

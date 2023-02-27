@@ -1,0 +1,239 @@
+@keyframes hiddenAchievement {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: -50%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+.statistics {
+  width: 1200px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  color: white;
+  z-index: 5;
+  animation: hiddenAchievement 1s ease-in-out;
+
+  h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 3px black;
+  }
+
+  &__wrapper {
+    width: 100%;
+    z-index: 3;
+    width: 100%;
+    max-height: calc(100vh - 125px - 70px);
+    overflow-y: scroll;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    animation: pulseGameBody 8s infinite; 
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__achievements {
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__achievement {
+    width: 537px;
+    height: 136px;
+    display: inline-flex;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 1em;
+    box-shadow: 0 0 2px rgb(0 0 0 / 20%);
+    color: #fff;
+
+    &_1 {
+      background-color: #2a8489;
+
+      .modal__badge {
+
+        &::after {
+          background-image: url("https://codepip.com/wp-content/plugins/codepip/images/badges/css-scoops.svg");
+        }
+      }
+    }
+
+    &_2 {
+      background-color: #9c1021;
+
+      .modal__badge {
+
+        &::after {
+          background-image: url("https://codepip.com/wp-content/plugins/codepip/images/badges/css-surgeon.svg");
+        }
+      }
+    }
+
+    &_3 {
+      background-color: #1d4d5b;
+
+      .modal__badge {
+
+        &::after {
+          background-image: url("https://codepip.com/wp-content/plugins/codepip/images/badges/flexbox-froggy.svg");
+        }
+      }
+    }
+
+    &_4 {
+      background-color: #569c40;
+
+      .modal__badge {
+
+        &::after {
+          background-image: url("https://codepip.com/wp-content/plugins/codepip/images/badges/grid-garden.svg");
+        }
+      }
+    }
+
+    &_5 {
+      background-color: #2c2826;
+
+      .modal__badge {
+
+        &::after {
+          background-image: url("https://codepip.com/wp-content/plugins/codepip/images/badges/nth-cart.svg");
+        }
+      }
+    }
+
+    &_6 {
+      background-color: #222222;
+    }
+  }
+
+  &__details {
+    width: 100%;
+    margin-left: 2em;
+  }
+
+  h4 {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 21.6px;
+      line-height: 1.2;
+    }
+  }
+
+  &__meter {
+    margin-top: 0.5em;
+    height: 8px;
+    background-color: rgba(0,0,0,.25);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &__bar {
+    width: 48%;
+    height: 100%;
+    background-color: rgba(255,255,255,.85);
+    border-radius: 5px;
+  }
+
+  &__progress {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 1279px) {
+  .statistics {
+    width: 600px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    &__wrapper {
+      overflow-y: scroll;
+      max-height: calc(100vh - 70px - 125px);
+      margin: 0 auto;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+
+    &__achievements {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    &__achievement {
+      padding: 10px 15px;
+      height: 120px;
+      margin: 10px;
+
+      .modal__badge {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .statistics {
+    width: 320px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    &__achievement {
+      padding: 10px;
+      width: 300px;
+      height: 105px;
+      margin: 5px;
+
+      .modal__badge {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    h4 {
+      display: inline-block;
+      margin-bottom: 5px;
+  
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1;
+      }
+    }
+
+    &__progress {
+      font-size: 14px;
+    }
+  }
+}
