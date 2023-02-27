@@ -18,18 +18,20 @@ const gardenData = (): void => {
     barEl.style.width = "0%";
     return;
   }
+  console.log("123");
   const countCompletedLevels = JSON.parse(data.numberWins).filter(
     (level: boolean) => level === true
   ).length;
 
   const totalLevels: number = ETotalLevels.SurgeonOrGarden;
 
-  if (countCompletedLevels) {
+  if (countCompletedLevels >= 0) {
     const procentCompleted = resolveProcentCompleted(
       countCompletedLevels,
       totalLevels
     );
     currentLevelEl.textContent = `${countCompletedLevels}`;
+    console.log(procentCompleted);
     barEl.style.width = `${procentCompleted}%`;
   }
 };

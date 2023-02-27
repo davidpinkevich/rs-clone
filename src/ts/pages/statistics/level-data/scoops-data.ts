@@ -13,7 +13,7 @@ const scoopsData = (): void => {
 
   const scoopsLs = new LocalStorage("cssScoops");
   const data = scoopsLs.getAll();
-  if (!data.numberWins) {
+  if (!data.numberWins || JSON.parse(data.numberWins).length === 0) {
     currentLevelEl.textContent = "0";
     barEl.style.width = "0%";
     return;

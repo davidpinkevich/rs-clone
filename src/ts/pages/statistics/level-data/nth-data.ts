@@ -13,7 +13,7 @@ const nthData = (): void => {
 
   const nthLs = new LocalStorage("nth");
   const data = nthLs.getAll();
-  if (!data.completedLevels) {
+  if (!data.completedLevels || JSON.parse(data.completedLevels).length === 0) {
     currentLevelEl.textContent = "0";
     barEl.style.width = "0%";
     return;
