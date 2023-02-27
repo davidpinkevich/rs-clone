@@ -10,6 +10,8 @@ const showLevel = (): void => {
   const samEl = <HTMLElement>document.querySelector(".surgeon__sam");
   const bodyEl = <HTMLElement>document.querySelector(".surgeon__body");
 
+  if (holesEl.length === 0) return;
+
   const { currentLevel } = surgeonStore;
   const { origin } = surgeonStore.levels[currentLevel - 1];
 

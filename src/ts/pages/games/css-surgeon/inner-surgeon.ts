@@ -89,7 +89,7 @@ const innerSurgeon = () => `
             <div class="surgeon__winner">
                 <div class="surgeon__head">
                     <div class="surgeon__img">
-                        <img src="https://codepip.com/wp-content/plugins/codepip/images/badges/css-surgeon.svg"/>
+                        <span class="modal__badge"></span>
                     </div>
                 </div>
                 <h3 class="surgeon__subtitle">CSS Surgeon</h3>
@@ -98,7 +98,7 @@ const innerSurgeon = () => `
                 </div>
                 <div class="surgeon__button">
                     <a class="button button__restart" href="#surgeon">New game</a>
-                    <a class="button button__records" href="#">View All Badges</a>
+                    <a class="button button__records" href="#statistics">View All Badges</a>
                 </div>
             </div>
         </section>

@@ -214,17 +214,12 @@
   }
 
   &__img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    background-color: rgba(254, 199, 55, 1);
 
-    img {
-      width: 60px;
-      filter: sepia(100%) blur(0.5px);
+    .modal__badge {
+
+      &::after {
+        background-image: url("https://codepip.com/wp-content/plugins/codepip/images/badges/css-surgeon.svg");
+      }
     }
   }
 
